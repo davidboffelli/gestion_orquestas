@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/person/")
+@RequestMapping("/api/persons")
 public class PersonREST {
 
     @Autowired
@@ -25,7 +25,7 @@ public class PersonREST {
 
         try{
 
-            return ResponseEntity.created((new URI("/api/person" + temporal.getId()))).body(temporal);
+            return ResponseEntity.created((new URI("/api/persons" + temporal.getId()))).body(temporal);
         }
         catch(Exception e){
 
