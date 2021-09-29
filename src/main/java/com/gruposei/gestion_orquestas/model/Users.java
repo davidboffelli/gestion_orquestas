@@ -3,22 +3,52 @@ package com.gruposei.gestion_orquestas.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "persons")
-public class Person {
+@Table(name = "users")
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String username;
+    private String password;
     private String name;
+    private String lastname;
     private String email;
     private String address;
 
-    public Person() {
+    public Users() {
     }
 
-    public Person(Long id, String name, String email, String address) {
+    public String getUsername() {
+        return username;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Users(Long id, String username, String password, String name, String lastname, String email, String address) {
         this.id = id;
+        this.username = username;
+        this.password = password;
         this.name = name;
+        this.lastname = lastname;
         this.email = email;
         this.address = address;
     }
