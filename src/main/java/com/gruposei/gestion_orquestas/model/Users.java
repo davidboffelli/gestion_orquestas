@@ -15,6 +15,7 @@ public class Users {
     private String lastname;
     private String email;
     private String address;
+    private boolean enabled;
 
     public Users() {
     }
@@ -29,6 +30,14 @@ public class Users {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     public void setUsername(String username) {
