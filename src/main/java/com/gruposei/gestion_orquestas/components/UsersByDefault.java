@@ -4,6 +4,7 @@ import com.gruposei.gestion_orquestas.model.Users;
 import com.gruposei.gestion_orquestas.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -12,12 +13,15 @@ public class UsersByDefault implements CommandLineRunner{
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
     @Override
     public void run(String... args) throws Exception {
 
         Users user = new Users();
         user.setUsername("david");
-        user.setPassword("123");
+        user.setPassword(bCryptPasswordEncoder.encode("123"));
         user.setName("David");
         user.setLastname("Boffelli");
         user.setEmail("davidboffelli@yahoo.com");
@@ -27,7 +31,7 @@ public class UsersByDefault implements CommandLineRunner{
 
         user = new Users();
         user.setUsername("admin");
-        user.setPassword("admin");
+        user.setPassword(bCryptPasswordEncoder.encode("admin"));
         user.setName("Admin");
         user.setLastname("Admin");
         user.setEmail("gruposei@yahoo.com");
@@ -37,7 +41,7 @@ public class UsersByDefault implements CommandLineRunner{
 
         user = new Users();
         user.setUsername("guest");
-        user.setPassword("123");
+        user.setPassword(bCryptPasswordEncoder.encode("123"));
         user.setName("Guest");
         user.setLastname("Invitado");
         user.setEmail("guest@yahoo.com");

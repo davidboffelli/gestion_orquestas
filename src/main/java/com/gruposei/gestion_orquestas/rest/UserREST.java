@@ -5,6 +5,7 @@ import com.gruposei.gestion_orquestas.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
@@ -19,9 +20,14 @@ public class UserREST {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
     @PostMapping
     private ResponseEntity<Users> saveUser(@RequestBody Users p){
 
+        String encodedPassword = bCryptPasswordEncoder.encode(p.getPassword());
+        p.setPassword(encodedPassword);
         Users temporal = userService.create(p);
 
         try{
