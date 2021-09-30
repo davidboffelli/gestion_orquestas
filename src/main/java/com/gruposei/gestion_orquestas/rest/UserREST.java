@@ -53,15 +53,13 @@ public class UserREST {
         return ResponseEntity.ok().build();
     }
 
-//    @GetMapping (value = "{id}")
-//    private ResponseEntity<Optional<Users>> getbyIDUser(@PathVariable ("id") Long id){
-//
-//        return ResponseEntity.ok(userService.findById(id));
-//    }
+    @RequestMapping(params = "id")
+    public ResponseEntity<Optional<Users>> getByName(@RequestParam("id") Long id) {
+        return ResponseEntity.ok(userService.findById(id));
+    }
 
-    @GetMapping (value = "{username}")
-    private ResponseEntity<Optional<Users>> getbyUsername(@PathVariable ("username") String username){
-
+    @RequestMapping(params = "username")
+    public ResponseEntity<Optional<Users>> getByLastname(@RequestParam("username") String username) {
         return ResponseEntity.ok(userService.findByUsername(username));
     }
 }
