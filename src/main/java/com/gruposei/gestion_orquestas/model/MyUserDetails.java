@@ -1,11 +1,9 @@
 package com.gruposei.gestion_orquestas.model;
 
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -16,7 +14,7 @@ public class MyUserDetails implements UserDetails {
     private boolean enabled;
     private List<GrantedAuthority> authorities;
 
-    public MyUserDetails(Users user){
+    public MyUserDetails(User user){
         this.username = user.getUsername();
         this.password = user.getPassword();
         this.enabled = true;

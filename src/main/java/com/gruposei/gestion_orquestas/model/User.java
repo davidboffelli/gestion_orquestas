@@ -1,10 +1,14 @@
 package com.gruposei.gestion_orquestas.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
-public class Users {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,7 +21,10 @@ public class Users {
     private String address;
     private boolean enabled;
 
-    public Users() {
+//    @ManyToMany(mappedBy = "enrolledUsers")
+//    private Set<Role> roles = new HashSet<>();
+
+    public User() {
     }
 
     public String getUsername() {
@@ -52,7 +59,7 @@ public class Users {
         this.password = password;
     }
 
-    public Users(Long id, String username, String password, String name, String lastname, String email, String address) {
+    public User(Long id, String username, String password, String name, String lastname, String email, String address) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -93,4 +100,8 @@ public class Users {
     public void setAddress(String address) {
         this.address = address;
     }
+
+//    public Set<Role> getRoles() {
+//        return roles;
+//    }
 }

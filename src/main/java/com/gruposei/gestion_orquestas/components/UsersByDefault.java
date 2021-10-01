@@ -1,6 +1,6 @@
 package com.gruposei.gestion_orquestas.components;
 
-import com.gruposei.gestion_orquestas.model.Users;
+import com.gruposei.gestion_orquestas.model.User;
 import com.gruposei.gestion_orquestas.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -19,7 +19,7 @@ public class UsersByDefault implements CommandLineRunner{
     @Override
     public void run(String... args) throws Exception {
 
-        Users user = new Users();
+        User user = new User();
         user.setUsername("david");
         user.setPassword(bCryptPasswordEncoder.encode("123"));
         user.setName("David");
@@ -29,7 +29,7 @@ public class UsersByDefault implements CommandLineRunner{
         user.setEnabled(true);
         userRepository.save(user);
 
-        user = new Users();
+        user = new User();
         user.setUsername("admin");
         user.setPassword(bCryptPasswordEncoder.encode("admin"));
         user.setName("Admin");
@@ -39,7 +39,7 @@ public class UsersByDefault implements CommandLineRunner{
         user.setEnabled(true);
         userRepository.save(user);
 
-        user = new Users();
+        user = new User();
         user.setUsername("guest");
         user.setPassword(bCryptPasswordEncoder.encode("123"));
         user.setName("Guest");

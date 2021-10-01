@@ -1,6 +1,6 @@
 package com.gruposei.gestion_orquestas.service;
 
-import com.gruposei.gestion_orquestas.model.Users;
+import com.gruposei.gestion_orquestas.model.User;
 import com.gruposei.gestion_orquestas.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,27 +14,27 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public Users create(Users p){
+    public User create(User p){
 
         return userRepository.save(p);
     }
 
-    public List<Users> getAllUsers(){
+    public List<User> getAllUsers(){
 
         return userRepository.findAll();
     }
 
-    public void delete(Users p){
+    public void delete(User p){
 
         userRepository.delete(p);
     }
 
-    public Optional<Users> findById(Long id){
+    public Optional<User> findById(Long id){
 
         return userRepository.findById(id);
     }
 
-    public Optional<Users> findByUsername(String username){
+    public Optional<User> findByUsername(String username){
 
         return userRepository.findByUsername(username);
     }
