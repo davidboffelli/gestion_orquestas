@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @RestController
@@ -24,6 +25,10 @@ public class UserREST {
 
     @PostMapping
     private ResponseEntity<User> saveUser(@RequestBody User p){
+
+        Optional<User> user = userService.findByUsername(p.getUsername());
+        if(user.isPresent() && !Objects.equals(p.getId(), user.get().getId()))
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 
         String encodedPassword = bCryptPasswordEncoder.encode(p.getPassword());
         p.setPassword(encodedPassword);

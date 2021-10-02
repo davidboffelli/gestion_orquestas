@@ -3,9 +3,7 @@ package com.gruposei.gestion_orquestas.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "roles")
@@ -22,7 +20,8 @@ public class Role {
 //    @JoinTable(name="users_roles",
 //            joinColumns = @JoinColumn(name = "role_id"),
 //            inverseJoinColumns = @JoinColumn(name = "user_id"))
-//    private Set<Optional<User>> enrolledUsers = new HashSet<Optional<User>>();
+    @ManyToMany(mappedBy = "rolesUser")
+    private List<User> usersRole = new ArrayList<>();
 
     public Role() {
     }
@@ -51,6 +50,10 @@ public class Role {
         this.enabled = enabled;
     }
 
+    public void addUser(User user){
+
+        usersRole.add(user);
+    }
 //    public Set<Optional<User>> getEnrolledUsers() {
 //        return enrolledUsers;
 //    }
