@@ -48,10 +48,9 @@ public class RoleREST {
         return ResponseEntity.ok(roleService.getAll());
     }
 
-    @DeleteMapping
-    private ResponseEntity<Void> delete(@RequestBody Role p){
-
-        roleService.delete(p);
+    @DeleteMapping(params = "id")
+    public ResponseEntity<Void> deleteById(@RequestParam("id") Long id) {
+        roleService.deleteById(id);
         return ResponseEntity.ok().build();
     }
 

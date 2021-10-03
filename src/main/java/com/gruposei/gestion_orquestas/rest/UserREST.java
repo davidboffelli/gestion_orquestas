@@ -50,10 +50,9 @@ public class UserREST {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
-    @DeleteMapping
-    private ResponseEntity<Void> deleteUser(@RequestBody User p){
-
-        userService.delete(p);
+    @DeleteMapping(params = "id")
+    public ResponseEntity<Void> deleteById(@RequestParam("id") Long id) {
+        userService.deleteById(id);
         return ResponseEntity.ok().build();
     }
 
