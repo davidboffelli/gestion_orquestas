@@ -15,11 +15,6 @@ public class Role {
     private String name;
     private boolean enabled;
 
-//    @JsonIgnore
-//    @ManyToMany
-//    @JoinTable(name="users_roles",
-//            joinColumns = @JoinColumn(name = "role_id"),
-//            inverseJoinColumns = @JoinColumn(name = "user_id"))
     @ManyToMany(mappedBy = "rolesUser")
     private List<User> usersRole = new ArrayList<>();
 

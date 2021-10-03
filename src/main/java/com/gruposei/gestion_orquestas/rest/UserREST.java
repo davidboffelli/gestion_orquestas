@@ -26,8 +26,8 @@ public class UserREST {
     @PostMapping
     private ResponseEntity<User> saveUser(@RequestBody User p){
 
-        Optional<User> user = userService.findByUsername(p.getUsername());
-        if(user.isPresent() && !Objects.equals(p.getId(), user.get().getId()))
+        if(p.getId() == null &&
+                (userService.existsByUsername(p.getUsername()) || userService.existsByEmail(p.getEmail())))
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 
         String encodedPassword = bCryptPasswordEncoder.encode(p.getPassword());
