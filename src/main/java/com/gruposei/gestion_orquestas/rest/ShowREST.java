@@ -1,8 +1,9 @@
 package com.gruposei.gestion_orquestas.rest;
 
 import com.gruposei.gestion_orquestas.model.Role;
-import com.gruposei.gestion_orquestas.model.User;
+import com.gruposei.gestion_orquestas.model.Show;
 import com.gruposei.gestion_orquestas.service.RoleService;
+import com.gruposei.gestion_orquestas.service.ShowService;
 import com.gruposei.gestion_orquestas.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,26 +16,23 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/roles")
-public class RoleREST {
+@RequestMapping("/api/shows")
+public class ShowREST {
 
     @Autowired
-    private RoleService roleService;
-
-    @Autowired
-    private UserService userService;
+    private ShowService showService;
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @PostMapping
-    private ResponseEntity<Role> save(@RequestBody Role p){
+    private ResponseEntity<Show> save(@RequestBody Show p){
 
-        Role temporal = roleService.create(p);
+        Show temporal = showService.create(p);
 
         try{
 
-            return ResponseEntity.created((new URI("/api/roles" + temporal.getId()))).body(temporal);
+            return ResponseEntity.created((new URI("/api/shows" + temporal.getId()))).body(temporal);
         }
         catch(Exception e){
 
@@ -43,24 +41,19 @@ public class RoleREST {
     }
 
     @GetMapping
-    private ResponseEntity<List<Role>> getAll(){
+    private ResponseEntity<List<Show>> getAll(){
 
-        return ResponseEntity.ok(roleService.getAll());
+        return ResponseEntity.ok(showService.getAll());
     }
 
     @DeleteMapping(params = "id")
     public ResponseEntity<Void> deleteById(@RequestParam("id") Long id) {
-        roleService.deleteById(id);
+        showService.deleteById(id);
         return ResponseEntity.ok().build();
     }
 
     @RequestMapping(params = "id")
-    public ResponseEntity<Optional<Role>> getByName(@RequestParam("id") Long id) {
-        return ResponseEntity.ok(roleService.findById(id));
-    }
-
-    @RequestMapping(params = "name")
-    public ResponseEntity<Optional<Role>> getByLastname(@RequestParam("name") String name) {
-        return ResponseEntity.ok(roleService.findByName(name));
+    public ResponseEntity<Optional<Show>> getByName(@RequestParam("id") Long id) {
+        return ResponseEntity.ok(showService.findById(id));
     }
 }
