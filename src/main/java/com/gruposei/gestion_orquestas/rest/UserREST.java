@@ -1,6 +1,7 @@
 package com.gruposei.gestion_orquestas.rest;
 
 import com.gruposei.gestion_orquestas.model.User;
+import com.gruposei.gestion_orquestas.service.RoleService;
 import com.gruposei.gestion_orquestas.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,6 +24,9 @@ public class UserREST {
     private UserService userService;
 
     @Autowired
+    private RoleService roleService;
+
+    @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @PostMapping
@@ -32,6 +36,28 @@ public class UserREST {
                 (userService.existsByUsername(p.getUsername()) || userService.existsByEmail(p.getEmail())))
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 
+        String encodedPassword = bCryptPasswordEncoder.encode(p.getPassword());
+        p.setPassword(encodedPassword);
+        User temporal = userService.create(p);
+
+        try{
+
+            return ResponseEntity.created((new URI("/api/users" + temporal.getId()))).body(temporal);
+        }
+        catch(Exception e){
+
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+    }
+
+    @PostMapping(value = "/register")
+    private ResponseEntity<User> saveGuestUser(@RequestBody User p){
+
+        if(p.getId() == null &&
+                (userService.existsByUsername(p.getUsername()) || userService.existsByEmail(p.getEmail())))
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+
+        p.addRoles(roleService.findById(3L).get());
         String encodedPassword = bCryptPasswordEncoder.encode(p.getPassword());
         p.setPassword(encodedPassword);
         User temporal = userService.create(p);

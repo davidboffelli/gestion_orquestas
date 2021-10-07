@@ -69,7 +69,7 @@ public class UsersByDefault implements CommandLineRunner{
 
         Role role3 = new Role();
         //role1.setId(3L);
-        role3.setName("Fan");
+        role3.setName("Visitante");
         role3.setEnabled(false);
         roleRepository.save(role3);
 
