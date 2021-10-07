@@ -53,7 +53,7 @@ public class ShowREST {
     }
 
     @RequestMapping(params = "id")
-    public ResponseEntity<Optional<Show>> getByName(@RequestParam("id") Long id) {
+    public ResponseEntity<Optional<Show>> getById(@RequestParam("id") Long id) {
         return ResponseEntity.ok(showService.findById(id));
     }
 }
