@@ -48,14 +48,17 @@ public class SongsByDefault implements CommandLineRunner {
 
         MusicalResourceType typeMR1 = new MusicalResourceType();
         typeMR1.setName("Texto");
+        typeMR1.setSystemName("texto");
         musicalResourceTypeService.create(typeMR1);
 
         MusicalResourceType typeMR2 = new MusicalResourceType();
         typeMR2.setName("Imagen");
+        typeMR2.setSystemName("imagen");
         musicalResourceTypeService.create(typeMR2);
 
         MusicalResourceType typeMR3 = new MusicalResourceType();
         typeMR3.setName("Video");
+        typeMR3.setSystemName("video");
         musicalResourceTypeService.create(typeMR3);
 
         String cancion = "\"Ya es la hora, ya es la hora\\nYa es la hora de alentar\\nEstamos todos hasta las bolas\\nY venimo a ve a central";

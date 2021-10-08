@@ -38,4 +38,9 @@ public class MusicalResourceTypeService {
 
         return musicalResourceTypeRepository.findById(id);
     }
+
+    public Optional<MusicalResourceType> findBySystemName(String systemName){
+
+        return musicalResourceTypeRepository.findBySystemName(systemName);
+    }
 }

@@ -10,13 +10,15 @@ public class MusicalResourceType {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    private String systemName;
 
     public MusicalResourceType() {
     }
 
-    public MusicalResourceType(Long id, String name) {
+    public MusicalResourceType(Long id, String name, String systemName) {
         this.id = id;
         this.name = name;
+        this.systemName = systemName;
     }
 
     public Long getId() {
@@ -33,5 +35,13 @@ public class MusicalResourceType {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSystemName() {
+        return systemName;
+    }
+
+    public void setSystemName(String systemName) {
+        this.systemName = systemName;
     }
 }

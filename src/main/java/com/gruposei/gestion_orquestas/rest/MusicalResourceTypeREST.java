@@ -49,4 +49,9 @@ public class MusicalResourceTypeREST {
     public ResponseEntity<Optional<MusicalResourceType>> getById(@RequestParam("id") Long id) {
         return ResponseEntity.ok(musicalResourceTypeService.findById(id));
     }
+
+    @RequestMapping(params = "systemName")
+    public ResponseEntity<Optional<MusicalResourceType>> getById(@RequestParam("systemName") String systemName) {
+        return ResponseEntity.ok(musicalResourceTypeService.findBySystemName(systemName));
+    }
 }
