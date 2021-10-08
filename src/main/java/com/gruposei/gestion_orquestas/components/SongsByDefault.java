@@ -8,6 +8,7 @@ import com.gruposei.gestion_orquestas.service.SongService;
 import com.gruposei.gestion_orquestas.service.MusicalResourceTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.nio.file.Files;
@@ -15,6 +16,7 @@ import java.nio.file.Paths;
 import java.util.Base64;
 
 @Component
+@Order(1)
 public class SongsByDefault implements CommandLineRunner {
 
     @Autowired

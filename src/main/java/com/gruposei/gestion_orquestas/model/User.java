@@ -21,6 +21,7 @@ public class User {
     private String lastname;
     private String email;
     private String address;
+    @Column(nullable = false)
     private boolean enabled;
 
     @ManyToMany
@@ -105,10 +106,6 @@ public class User {
     public void setAddress(String address) {
         this.address = address;
     }
-
-//    public Set<Role> getRoles() {
-//        return roles;
-//    }
 
     public void addRoles(Role role){
 

@@ -8,12 +8,14 @@ import com.gruposei.gestion_orquestas.service.TicketService;
 import com.gruposei.gestion_orquestas.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
 @Component
+@Order(1)
 public class ShowsByDefault implements CommandLineRunner {
 
     @Autowired

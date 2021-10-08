@@ -7,10 +7,12 @@ import com.gruposei.gestion_orquestas.repositories.RoleRepository;
 import com.gruposei.gestion_orquestas.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
+@Order(1)
 public class UsersByDefault implements CommandLineRunner{
 
     @Autowired
@@ -62,13 +64,13 @@ public class UsersByDefault implements CommandLineRunner{
         roleRepository.save(role1);
 
         Role role2 = new Role();
-        //role1.setId(2L);
+        role1.setId(2L);
         role2.setName("Integrante de la Orquesta");
         role2.setEnabled(true);
         roleRepository.save(role2);
 
         Role role3 = new Role();
-        //role1.setId(3L);
+        role1.setId(3L);
         role3.setName("Visitante");
         role3.setEnabled(false);
         roleRepository.save(role3);
