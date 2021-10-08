@@ -1,8 +1,7 @@
 package com.gruposei.gestion_orquestas.rest;
 
-import com.gruposei.gestion_orquestas.model.Song;
-import com.gruposei.gestion_orquestas.model.TypeMusicalResource;
-import com.gruposei.gestion_orquestas.service.TypeMusicalResourceService;
+import com.gruposei.gestion_orquestas.model.MusicalResourceType;
+import com.gruposei.gestion_orquestas.service.MusicalResourceTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,15 +13,15 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/mr_types")
-public class TypeMusicalResourceREST {
+public class MusicalResourceTypeREST {
 
     @Autowired
-    private TypeMusicalResourceService typeMusicalResourceService;
+    private MusicalResourceTypeService musicalResourceTypeService;
 
     @PostMapping
-    private ResponseEntity<TypeMusicalResource> save(@RequestBody TypeMusicalResource p){
+    private ResponseEntity<MusicalResourceType> save(@RequestBody MusicalResourceType p){
 
-        TypeMusicalResource temporal = typeMusicalResourceService.create(p);
+        MusicalResourceType temporal = musicalResourceTypeService.create(p);
 
         try{
 
@@ -35,19 +34,19 @@ public class TypeMusicalResourceREST {
     }
 
     @GetMapping
-    private ResponseEntity<List<TypeMusicalResource>> getAll(){
+    private ResponseEntity<List<MusicalResourceType>> getAll(){
 
-        return ResponseEntity.ok(typeMusicalResourceService.getAll());
+        return ResponseEntity.ok(musicalResourceTypeService.getAll());
     }
 
     @DeleteMapping(params = "id")
     public ResponseEntity<Void> deleteById(@RequestParam("id") Long id) {
-        typeMusicalResourceService.deleteById(id);
+        musicalResourceTypeService.deleteById(id);
         return ResponseEntity.ok().build();
     }
 
     @RequestMapping(params = "id")
-    public ResponseEntity<Optional<TypeMusicalResource>> getById(@RequestParam("id") Long id) {
-        return ResponseEntity.ok(typeMusicalResourceService.findById(id));
+    public ResponseEntity<Optional<MusicalResourceType>> getById(@RequestParam("id") Long id) {
+        return ResponseEntity.ok(musicalResourceTypeService.findById(id));
     }
 }

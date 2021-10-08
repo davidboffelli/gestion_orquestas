@@ -23,18 +23,18 @@ public class MusicalResource {
     @ManyToOne(optional = false)
     @JoinColumn(name = "type_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private TypeMusicalResource typeMusicalResource;
+    private MusicalResourceType musicalResourceType;
 
     public MusicalResource() {
     }
 
-    public MusicalResource(Long id, String name, String description, String content, Song song, TypeMusicalResource typeMusicalResource) {
+    public MusicalResource(Long id, String name, String description, String content, Song song, MusicalResourceType typeMusicalResource) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.content = content;
         this.song = song;
-        this.typeMusicalResource = typeMusicalResource;
+        this.musicalResourceType = typeMusicalResource;
     }
 
     public Long getId() {
@@ -77,11 +77,11 @@ public class MusicalResource {
         this.song = song;
     }
 
-    public TypeMusicalResource getTypeMusicalResource() {
-        return typeMusicalResource;
+    public MusicalResourceType getTypeMusicalResource() {
+        return musicalResourceType;
     }
 
-    public void setTypeMusicalResource(TypeMusicalResource typeMusicalResource) {
-        this.typeMusicalResource = typeMusicalResource;
+    public void setTypeMusicalResource(MusicalResourceType typeMusicalResource) {
+        this.musicalResourceType = typeMusicalResource;
     }
 }

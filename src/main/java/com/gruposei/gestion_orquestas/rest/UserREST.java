@@ -57,7 +57,7 @@ public class UserREST {
                 (userService.existsByUsername(p.getUsername()) || userService.existsByEmail(p.getEmail())))
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 
-        p.addRoles(roleService.findById(3L).get());
+        //p.addRoles(roleService.findById(3L).get());
         String encodedPassword = bCryptPasswordEncoder.encode(p.getPassword());
         p.setPassword(encodedPassword);
         User temporal = userService.create(p);

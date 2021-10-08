@@ -4,17 +4,17 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "musical_resources_types")
-public class TypeMusicalResource {
+public class MusicalResourceType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
 
-    public TypeMusicalResource() {
+    public MusicalResourceType() {
     }
 
-    public TypeMusicalResource(Long id, String name) {
+    public MusicalResourceType(Long id, String name) {
         this.id = id;
         this.name = name;
     }
