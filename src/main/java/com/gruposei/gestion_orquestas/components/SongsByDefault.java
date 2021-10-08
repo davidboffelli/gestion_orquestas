@@ -2,10 +2,10 @@ package com.gruposei.gestion_orquestas.components;
 
 import com.gruposei.gestion_orquestas.model.MusicalResource;
 import com.gruposei.gestion_orquestas.model.Song;
-import com.gruposei.gestion_orquestas.model.TypeMusicalResource;
+import com.gruposei.gestion_orquestas.model.MusicalResourceType;
 import com.gruposei.gestion_orquestas.service.MusicalResourceService;
 import com.gruposei.gestion_orquestas.service.SongService;
-import com.gruposei.gestion_orquestas.service.TypeMusicalResourceService;
+import com.gruposei.gestion_orquestas.service.MusicalResourceTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -21,7 +21,7 @@ public class SongsByDefault implements CommandLineRunner {
     private SongService songService;
 
     @Autowired
-    private TypeMusicalResourceService typeMusicalResourceService;
+    private MusicalResourceTypeService musicalResourceTypeService;
 
     @Autowired
     private MusicalResourceService musicalResourceService;
@@ -44,17 +44,17 @@ public class SongsByDefault implements CommandLineRunner {
         song3.setAuthor("Fútbol o Muerte");
         songService.create(song3);
 
-        TypeMusicalResource typeMR1 = new TypeMusicalResource();
+        MusicalResourceType typeMR1 = new MusicalResourceType();
         typeMR1.setName("Texto");
-        typeMusicalResourceService.create(typeMR1);
+        musicalResourceTypeService.create(typeMR1);
 
-        TypeMusicalResource typeMR2 = new TypeMusicalResource();
+        MusicalResourceType typeMR2 = new MusicalResourceType();
         typeMR2.setName("Imagen");
-        typeMusicalResourceService.create(typeMR2);
+        musicalResourceTypeService.create(typeMR2);
 
-        TypeMusicalResource typeMR3 = new TypeMusicalResource();
+        MusicalResourceType typeMR3 = new MusicalResourceType();
         typeMR3.setName("Video");
-        typeMusicalResourceService.create(typeMR3);
+        musicalResourceTypeService.create(typeMR3);
 
         String cancion = "\"Ya es la hora, ya es la hora\\nYa es la hora de alentar\\nEstamos todos hasta las bolas\\nY venimo a ve a central";
         cancion += "\n\nY vamo vamo lakd\nñul boton\nY vamo vamo lakd\nñul boton\nY vamo vamo lakd\nñul boton";
@@ -68,7 +68,7 @@ public class SongsByDefault implements CommandLineRunner {
         musicalResource.setTypeMusicalResource(typeMR1);
         musicalResourceService.create(musicalResource);
 
-        byte[] bytes = Files.readAllBytes(Paths.get("d:/Descargas/losguerreros.jpg"));
+        byte[] bytes = Files.readAllBytes(Paths.get("images/losguerreros.jpg"));
         String img = Base64.getEncoder().encodeToString(bytes);
 
         MusicalResource musicalResource2 = new MusicalResource();
