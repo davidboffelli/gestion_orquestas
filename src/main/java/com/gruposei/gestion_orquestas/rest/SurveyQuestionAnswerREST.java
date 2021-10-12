@@ -1,6 +1,7 @@
 package com.gruposei.gestion_orquestas.rest;
 
 import com.gruposei.gestion_orquestas.model.SurveyQuestionAnswer;
+import com.gruposei.gestion_orquestas.model.SurveyQuestionAnswerKey;
 import com.gruposei.gestion_orquestas.service.SurveyQuestionAnswerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,14 +40,20 @@ public class SurveyQuestionAnswerREST {
         return ResponseEntity.ok(surveyQuestionAnswerService.getAll());
     }
 
-    @DeleteMapping(params = "id")
-    public ResponseEntity<Void> deleteById(@RequestParam("id") Long id) {
-        surveyQuestionAnswerService.deleteById(id);
+    @DeleteMapping(params = {"user_id","question_id"})
+    public ResponseEntity<Void> deleteById(@RequestParam("user_id") Long user_id,@RequestParam("question_id") Long question_id) {
+        SurveyQuestionAnswerKey sqaKey = new SurveyQuestionAnswerKey();
+        sqaKey.setQuestionId(question_id);
+        sqaKey.setUserId(user_id);
+        surveyQuestionAnswerService.deleteById(sqaKey);
         return ResponseEntity.ok().build();
     }
 
-    @RequestMapping(params = "id")
-    public ResponseEntity<Optional<SurveyQuestionAnswer>> getById(@RequestParam("id") Long id) {
-        return ResponseEntity.ok(surveyQuestionAnswerService.findById(id));
+    @RequestMapping(params = {"user_id","question_id"})
+    public ResponseEntity<Optional<SurveyQuestionAnswer>> getById(@RequestParam("user_id") Long user_id,@RequestParam("question_id") Long question_id) {
+        SurveyQuestionAnswerKey sqaKey = new SurveyQuestionAnswerKey();
+        sqaKey.setQuestionId(question_id);
+        sqaKey.setUserId(user_id);
+        return ResponseEntity.ok(surveyQuestionAnswerService.findById(sqaKey));
     }
 }

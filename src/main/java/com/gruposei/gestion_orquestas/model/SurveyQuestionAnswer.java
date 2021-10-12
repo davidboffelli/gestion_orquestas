@@ -9,20 +9,21 @@ import javax.persistence.*;
 @Table(name = "surveys_questions_answers")
 public class SurveyQuestionAnswer {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @EmbeddedId
+    private SurveyQuestionAnswerKey id = new SurveyQuestionAnswerKey();
+
     @ManyToOne(optional = false)
-    @JoinColumn(name = "question_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
+    @MapsId("questionId")
+    @JoinColumn(name = "question_id")
     private SurveyQuestion surveyQuestion;
     @ManyToOne(optional = false)
-    @JoinColumn(name = "user_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
+    @MapsId("userId")
+    @JoinColumn(name = "user_id")
     private User user;
     private String answer;
 
-    public SurveyQuestionAnswer(SurveyQuestion surveyQuestion, User user, String answer) {
+    public SurveyQuestionAnswer(SurveyQuestionAnswerKey id, SurveyQuestion surveyQuestion, User user, String answer) {
+        this.id = id;
         this.surveyQuestion = surveyQuestion;
         this.user = user;
         this.answer = answer;
@@ -31,16 +32,16 @@ public class SurveyQuestionAnswer {
     public SurveyQuestionAnswer() {
     }
 
-    public SurveyQuestion getSurveyQuestion() {
-        return surveyQuestion;
-    }
-
-    public Long getId() {
+    public SurveyQuestionAnswerKey getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(SurveyQuestionAnswerKey id) {
         this.id = id;
+    }
+
+    public SurveyQuestion getSurveyQuestion() {
+        return surveyQuestion;
     }
 
     public void setSurveyQuestion(SurveyQuestion surveyQuestion) {

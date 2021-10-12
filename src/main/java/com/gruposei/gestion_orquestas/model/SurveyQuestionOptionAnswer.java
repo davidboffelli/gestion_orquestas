@@ -9,24 +9,33 @@ import javax.persistence.*;
 @Table(name = "surveys_questions_options_answers")
 public class SurveyQuestionOptionAnswer {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @EmbeddedId
+    private SurveyQuestionOptionAnswerKey id = new SurveyQuestionOptionAnswerKey();
+
     @ManyToOne(optional = false)
-    @JoinColumn(name = "option_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
+    @MapsId("optionId")
+    @JoinColumn(name = "option_id")
     private SurveyQuestionOption surveyQuestionOption;
     @ManyToOne(optional = false)
-    @JoinColumn(name = "user_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
+    @MapsId("userId")
+    @JoinColumn(name = "user_id")
     private User user;
 
-    public SurveyQuestionOptionAnswer(SurveyQuestionOption surveyQuestionOption, User user) {
+    public SurveyQuestionOptionAnswer() {
+    }
+
+    public SurveyQuestionOptionAnswer(SurveyQuestionOptionAnswerKey id, SurveyQuestionOption surveyQuestionOption, User user) {
+        this.id = id;
         this.surveyQuestionOption = surveyQuestionOption;
         this.user = user;
     }
 
-    public SurveyQuestionOptionAnswer() {
+    public SurveyQuestionOptionAnswerKey getId() {
+        return id;
+    }
+
+    public void setId(SurveyQuestionOptionAnswerKey id) {
+        this.id = id;
     }
 
     public SurveyQuestionOption getSurveyQuestionOption() {
@@ -35,14 +44,6 @@ public class SurveyQuestionOptionAnswer {
 
     public void setSurveyQuestionOption(SurveyQuestionOption surveyQuestionOption) {
         this.surveyQuestionOption = surveyQuestionOption;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public User getUser() {

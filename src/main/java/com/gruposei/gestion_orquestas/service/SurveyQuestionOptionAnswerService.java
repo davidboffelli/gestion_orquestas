@@ -1,9 +1,12 @@
 package com.gruposei.gestion_orquestas.service;
 
 import com.gruposei.gestion_orquestas.model.SurveyQuestionOptionAnswer;
+import com.gruposei.gestion_orquestas.model.SurveyQuestionOptionAnswerKey;
 import com.gruposei.gestion_orquestas.repositories.SurveyQuestionOptionAnswerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -29,12 +32,13 @@ public class SurveyQuestionOptionAnswerService {
         surveyQuestionOptionAnswerRepository.delete(p);
     }
 
-    public void deleteById(Long id){
+    @Transactional
+    public void deleteById(SurveyQuestionOptionAnswerKey id){
 
         surveyQuestionOptionAnswerRepository.deleteById(id);
     }
 
-    public Optional<SurveyQuestionOptionAnswer> findById(Long id){
+    public Optional<SurveyQuestionOptionAnswer> findById(SurveyQuestionOptionAnswerKey id){
 
         return surveyQuestionOptionAnswerRepository.findById(id);
     }

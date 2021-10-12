@@ -18,12 +18,6 @@ public class Song {
     public Song() {
     }
 
-    public Song(Long id, String title, String author, Date createdDate) {
-        this.id = id;
-        this.title = title;
-        this.author = author;
-    }
-
     public Long getId() {
         return id;
     }
