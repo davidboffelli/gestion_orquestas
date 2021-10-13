@@ -15,6 +15,7 @@ public class Role {
     private String name;
     private boolean enabled;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "rolesUser")
     private List<User> usersRole = new ArrayList<>();
 

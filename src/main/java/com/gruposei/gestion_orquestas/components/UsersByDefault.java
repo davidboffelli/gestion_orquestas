@@ -1,15 +1,14 @@
 package com.gruposei.gestion_orquestas.components;
 
 import com.gruposei.gestion_orquestas.model.*;
-import com.gruposei.gestion_orquestas.service.ClothService;
-import com.gruposei.gestion_orquestas.service.RoleService;
-import com.gruposei.gestion_orquestas.service.UserClothService;
-import com.gruposei.gestion_orquestas.service.UserService;
+import com.gruposei.gestion_orquestas.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
+
+import java.util.Date;
 
 @Component
 @Order(1)
@@ -30,38 +29,41 @@ public class UsersByDefault implements CommandLineRunner{
     @Autowired
     private UserClothService userClothService;
 
+    @Autowired
+    private MeetingMinuteService meetingMinuteService;
+
     @Override
     public void run(String... args) throws Exception {
 
-        User user = new User();
-        user.setUsername("david");
-        user.setPassword(bCryptPasswordEncoder.encode("123"));
-        user.setName("David");
-        user.setLastname("Boffelli");
-        user.setEmail("davidboffelli@yahoo.com");
-        user.setAddress("Por acá");
-        user.setEnabled(true);
-        userService.create(user);
+        User user1 = new User();
+        user1.setUsername("david");
+        user1.setPassword(bCryptPasswordEncoder.encode("123"));
+        user1.setName("David");
+        user1.setLastname("Boffelli");
+        user1.setEmail("davidboffelli@yahoo.com");
+        user1.setAddress("Por acá");
+//        user.setEnabled(true);
+        userService.create(user1);
 
-        user = new User();
-        user.setUsername("guest");
-        user.setPassword(bCryptPasswordEncoder.encode("123"));
-        user.setName("Guest");
-        user.setLastname("Invitado");
-        user.setEmail("guest@yahoo.com");
-        user.setAddress("En tu mente");
-        user.setEnabled(true);
-        userService.create(user);
+        User user2 = new User();
+        user2.setUsername("guest");
+        user2.setPassword(bCryptPasswordEncoder.encode("123"));
+        user2.setName("Guest");
+        user2.setLastname("Invitado");
+        user2.setEmail("guest@yahoo.com");
+        user2.setAddress("En tu mente");
+//        user.setEnabled(true);
+        userService.create(user2);
 
-        user = new User();
-        user.setId(1L);
-        user.setUsername("admin");
-        user.setPassword(bCryptPasswordEncoder.encode("admin"));
-        user.setName("Admin");
-        user.setLastname("Admin");
-        user.setEmail("gruposei@yahoo.com");
-        user.setAddress("Donde vendan empanadas piolas");
-        user.setEnabled(true);
+        User user3 = new User();
+        user3.setId(1L);
+        user3.setUsername("admin");
+        user3.setPassword(bCryptPasswordEncoder.encode("admin"));
+        user3.setName("Admin");
+        user3.setLastname("Admin");
+        user3.setEmail("gruposei@yahoo.com");
+        user3.setAddress("Donde vendan empanadas piolas");
+//        user.setEnabled(true);
 
         Role role1 = new Role();
         role1.setId(1L);
@@ -81,10 +83,10 @@ public class UsersByDefault implements CommandLineRunner{
         role3.setEnabled(false);
         roleService.create(role3);
 
-        user.addRoles(role1);
-        user.addRoles(role2);
-        user.addRoles(role3);
-        userService.create(user);
+        user3.addRoles(role1);
+        user3.addRoles(role2);
+        user3.addRoles(role3);
+        userService.create(user3);
 
         Cloth cloth1 = new Cloth();
         cloth1.setName("Remera Shows");
@@ -122,5 +124,20 @@ public class UsersByDefault implements CommandLineRunner{
         userCloth3.setSize("L");
         userClothService.create(userCloth3);
 
+        MeetingMinute meetingMinute1 = new MeetingMinute();
+        meetingMinute1.setText("Aquí iría una minuta acerca de la última reunión de la orquesta, pero no tuve suficiente inspiración, por lo que solo escribo esto");
+        meetingMinute1.setAuthor("David");
+        meetingMinute1.setDate(new Date(System.currentTimeMillis()));
+        meetingMinute1.addUsers(user1);
+        meetingMinute1.addUsers(user2);
+        meetingMinute1.addUsers(user3);
+        meetingMinuteService.create(meetingMinute1);
+
+        MeetingMinute meetingMinute2 = new MeetingMinute();
+        meetingMinute2.setText("Nueva reunión donde se definieron cosas importante y se debió tomar nota");
+        meetingMinute2.setAuthor("Alguien");
+        meetingMinute2.setDate(new Date(System.currentTimeMillis()));
+        meetingMinute2.addUsers(user1);
+        meetingMinuteService.create(meetingMinute2);
     }
 }

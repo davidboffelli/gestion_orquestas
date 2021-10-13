@@ -13,7 +13,7 @@ import java.util.Set;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
     private String password;
@@ -22,13 +22,17 @@ public class User {
     private String email;
     private String address;
     @Column(nullable = false)
-    private boolean enabled;
+    private boolean enabled = true;
 
     @ManyToMany
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List<Role> rolesUser = new ArrayList<>();
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "usersMeeting")
+    private List<MeetingMinute> usersInMeeting = new ArrayList<>();
 
     public User() {
     }
@@ -114,5 +118,17 @@ public class User {
 
     public List<Role> getRolesUser() {
         return rolesUser;
+    }
+
+    public void setRolesUser(List<Role> rolesUser) {
+        this.rolesUser = rolesUser;
+    }
+
+    public List<MeetingMinute> getUsersInMeeting() {
+        return usersInMeeting;
+    }
+
+    public void setUsersInMeeting(List<MeetingMinute> usersInMeeting) {
+        this.usersInMeeting = usersInMeeting;
     }
 }
