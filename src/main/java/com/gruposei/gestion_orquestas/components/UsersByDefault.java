@@ -72,20 +72,18 @@ public class UsersByDefault implements CommandLineRunner{
         roleService.create(role1);
 
         Role role2 = new Role();
-        role1.setId(2L);
+        role2.setId(2L);
         role2.setName("Integrante de la Orquesta");
         role2.setEnabled(true);
         roleService.create(role2);
 
         Role role3 = new Role();
-        role1.setId(3L);
+        role3.setId(3L);
         role3.setName("Visitante");
         role3.setEnabled(false);
         roleService.create(role3);
 
         user3.addRoles(role1);
-        user3.addRoles(role2);
-        user3.addRoles(role3);
         userService.create(user3);
 
         Cloth cloth1 = new Cloth();
