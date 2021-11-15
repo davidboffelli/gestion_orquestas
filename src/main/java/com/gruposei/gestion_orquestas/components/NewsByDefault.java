@@ -6,6 +6,7 @@ import com.gruposei.gestion_orquestas.model.NewContentType;
 import com.gruposei.gestion_orquestas.service.NewContentService;
 import com.gruposei.gestion_orquestas.service.NewContentTypeService;
 import com.gruposei.gestion_orquestas.service.NewService;
+import com.gruposei.gestion_orquestas.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
@@ -29,6 +30,9 @@ public class NewsByDefault implements CommandLineRunner {
     @Autowired
     private NewContentService newContentService;
 
+    @Autowired
+    private UserService userService;
+
     @Override
     public void run(String... args) throws Exception {
 
@@ -51,7 +55,7 @@ public class NewsByDefault implements CommandLineRunner {
         n1.setTitle("Victoria Aplastante");
         n1.setBody("Argentina goleó a Uruguay 3 a 0. Ganó, gustó y goleó.");
         n1.setPublicDate(new Date(System.currentTimeMillis()));
-        n1.setAuthor("Hector Di Payaso");
+        n1.setAuthor(userService.findByUsername("admin").get());
         n1.setEnabled(true);
         newService.create(n1);
 
@@ -59,7 +63,7 @@ public class NewsByDefault implements CommandLineRunner {
         n2.setTitle("Empates");
         n2.setBody("Tanto el Banalla como el Bojo empataron en sus respectivos partidos contra los equipos de La Plata");
         n2.setPublicDate(new Date(System.currentTimeMillis()));
-        n2.setAuthor("El \"Feo\" Larramendi");
+        n2.setAuthor(userService.findByUsername("admin").get());
         n2.setEnabled(true);
         newService.create(n2);
 

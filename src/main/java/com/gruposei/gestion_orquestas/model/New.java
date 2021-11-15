@@ -1,5 +1,8 @@
 package com.gruposei.gestion_orquestas.model;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -12,7 +15,10 @@ public class New {
     private Long id;
     private String title;
     private String body;
-    private String author;
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private User author;
     private Date createdDate = new Date(System.currentTimeMillis());
     private Date publicDate;
     private boolean enabled;
@@ -36,11 +42,11 @@ public class New {
         this.title = title;
     }
 
-    public String getAuthor() {
+    public User getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(User author) {
         this.author = author;
     }
 
