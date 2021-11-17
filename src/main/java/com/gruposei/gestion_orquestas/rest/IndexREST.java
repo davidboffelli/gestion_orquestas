@@ -1,5 +1,6 @@
 package com.gruposei.gestion_orquestas.rest;
 
+import com.gruposei.gestion_orquestas.exceptions.ApiRequestException;
 import com.gruposei.gestion_orquestas.model.AuthenticationRequest;
 import com.gruposei.gestion_orquestas.model.AuthenticationResponse;
 import com.gruposei.gestion_orquestas.service.MyUserDetailsService;
@@ -43,7 +44,7 @@ public class IndexREST {
         }
         catch(BadCredentialsException e){
 
-            throw new Exception("Incorrect username or password",e);
+            throw new ApiRequestException("001");
         }
 
         final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());

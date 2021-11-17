@@ -1,5 +1,6 @@
 package com.gruposei.gestion_orquestas.rest;
 
+import com.gruposei.gestion_orquestas.exceptions.ApiRequestException;
 import com.gruposei.gestion_orquestas.model.New;
 import com.gruposei.gestion_orquestas.model.Role;
 import com.gruposei.gestion_orquestas.service.NewService;

@@ -1,7 +1,6 @@
 package com.gruposei.gestion_orquestas.service;
 
 import com.gruposei.gestion_orquestas.model.Cloth;
-import com.gruposei.gestion_orquestas.model.MusicalResource;
 import com.gruposei.gestion_orquestas.repositories.ClothRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
