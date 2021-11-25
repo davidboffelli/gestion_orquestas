@@ -1,4 +1,4 @@
-package com.gruposei.gestion_orquestas.exceptions;
+package com.gruposei.gestion_orquestas.responses;
 
 import com.gruposei.gestion_orquestas.model.MyError;
 import com.gruposei.gestion_orquestas.service.MyErrorService;
@@ -21,13 +21,16 @@ public class ApiExceptionHandler {
     @ExceptionHandler(value = {ApiRequestException.class})
     public ResponseEntity<Object> handleApiRequestException(ApiRequestException e){
 
-        Optional<MyError> myError = myErrorService.findById(e.getMessage());
+        MyError error = myErrorService.findById(e.getMessage()).get();
 
-        HttpStatus badRequest = myError.get().getHttpStatus();
-        String message = myError.get().getMessage();
-        ApiException apiException = new ApiException(message,
+        HttpStatus badRequest = error.getHttpStatus();
+        String message = error.getMessage();
+        ApiException apiException = new ApiException(
+                message,
                 badRequest,
-                ZonedDateTime.now(ZoneId.of("Z")));
+                badRequest.value(),
+                ZonedDateTime.now(ZoneId.of("Z")),
+                null);
 
         return new ResponseEntity<>(apiException, badRequest);
     }

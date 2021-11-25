@@ -1,8 +1,11 @@
 package com.gruposei.gestion_orquestas.rest;
 
 import com.gruposei.gestion_orquestas.model.User;
+import com.gruposei.gestion_orquestas.responses.ApiRequestException;
+import com.gruposei.gestion_orquestas.responses.ResponseHandler;
 import com.gruposei.gestion_orquestas.service.RoleService;
 import com.gruposei.gestion_orquestas.service.UserService;
+import com.gruposei.gestion_orquestas.utils.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,74 +32,140 @@ public class UserREST {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    @Autowired
+    private ResponseHandler responseHandler;
+
     @PostMapping
-    private ResponseEntity<User> saveUser(@RequestBody User p){
+    private ResponseEntity<Object> saveUser(@RequestBody User p){
 
-        if(p.getId() == null &&
-                (userService.existsByUsername(p.getUsername()) || userService.existsByEmail(p.getEmail())))
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        if(p.getId() == null){
 
-        String encodedPassword = bCryptPasswordEncoder.encode(p.getPassword());
-        p.setPassword(encodedPassword);
-        User temporal = userService.create(p);
+            if (userService.existsByUsername(p.getUsername())){
+
+                throw  new ApiRequestException("003");
+            }
+
+            if (userService.existsByEmail(p.getEmail())){
+
+                throw  new ApiRequestException("004");
+            }
+        }
+
+        if(!Util.validEmail(p.getEmail())){
+
+            throw  new ApiRequestException("006");
+        }
 
         try{
 
-            return ResponseEntity.created((new URI("/api/users" + temporal.getId()))).body(temporal);
+            String encodedPassword = bCryptPasswordEncoder.encode(p.getPassword());
+            p.setPassword(encodedPassword);
+            User temporal = userService.create(p);
+
+            return responseHandler.generateResponse("000",temporal);
         }
         catch(Exception e){
 
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            throw  new ApiRequestException("002");
         }
     }
 
     @PostMapping(value = "/register")
-    private ResponseEntity<User> saveGuestUser(@RequestBody User p){
+    private ResponseEntity<Object> saveGuestUser(@RequestBody User p){
 
-        if(p.getId() == null &&
-                (userService.existsByUsername(p.getUsername()) || userService.existsByEmail(p.getEmail())))
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        if(p.getId() == null){
 
-        //p.addRoles(roleService.findById(3L).get());
-        String encodedPassword = bCryptPasswordEncoder.encode(p.getPassword());
-        p.setPassword(encodedPassword);
-        User temporal = userService.create(p);
+            if (userService.existsByUsername(p.getUsername())){
+
+                throw  new ApiRequestException("003");
+            }
+
+            if (userService.existsByEmail(p.getEmail())){
+
+                throw  new ApiRequestException("004");
+            }
+        }
+
+        if(!Util.validEmail(p.getEmail())){
+
+            throw  new ApiRequestException("006");
+        }
 
         try{
 
-            return ResponseEntity.created((new URI("/api/users" + temporal.getId()))).body(temporal);
+            String encodedPassword = bCryptPasswordEncoder.encode(p.getPassword());
+            p.setPassword(encodedPassword);
+            User temporal = userService.create(p);
+
+            return responseHandler.generateResponse("000",temporal);
         }
         catch(Exception e){
 
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            throw  new ApiRequestException("002");
         }
     }
 
     @GetMapping
-    private ResponseEntity<List<User>> getAllUsers(){
+    private ResponseEntity<Object> getAllUsers(){
 
-        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication()
-                .getPrincipal();
-        String username = userDetails.getUsername();
+        try{
 
-        System.out.println(username);
+            List<User> users = userService.getAllUsers();
+            return responseHandler.generateResponse("000",users);
+        }
+        catch(Exception e){
 
-        return ResponseEntity.ok(userService.getAllUsers());
+            throw new ApiRequestException("002");
+        }
     }
 
     @DeleteMapping(params = "id")
-    public ResponseEntity<Void> deleteById(@RequestParam("id") Long id) {
-        userService.deleteById(id);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<Object> deleteById(@RequestParam("id") Long id) {
+
+        Optional<User> user= userService.findById(id);
+
+        if(!user.isPresent()){
+
+            throw new ApiRequestException("005");
+        }
+
+        try {
+
+            userService.deleteById(id);
+            user.get().setRolesUser(null);
+            return responseHandler.generateResponse("000",user);
+        }
+        catch (Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 
     @RequestMapping(params = "id")
-    public ResponseEntity<Optional<User>> getByName(@RequestParam("id") Long id) {
-        return ResponseEntity.ok(userService.findById(id));
+    public ResponseEntity<Object> getByName(@RequestParam("id") Long id) {
+
+        try {
+
+            Optional<User> user = userService.findById(id);
+            return responseHandler.generateResponse("000",user);
+        }
+        catch (Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 
     @RequestMapping(params = "username")
-    public ResponseEntity<Optional<User>> getByLastname(@RequestParam("username") String username) {
-        return ResponseEntity.ok(userService.findByUsername(username));
+    public ResponseEntity<Object> getByLastname(@RequestParam("username") String username) {
+        //return ResponseEntity.ok(userService.findByUsername(username));
+        try {
+
+            Optional<User> user = userService.findByUsername(username);
+            return responseHandler.generateResponse("000",user);
+        }
+        catch (Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 }

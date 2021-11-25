@@ -31,5 +31,35 @@ public class ErrorList implements CommandLineRunner {
         e.setHttpStatus(HttpStatus.FORBIDDEN);
         e.setEndpoint("LOGIN");
         myErrorService.create(e);
+
+        e.setId("002");
+        e.setMessage("Ocurrió un error inesperado. Consulte con el administrador del sistema");
+        e.setHttpStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+        e.setEndpoint("GENERAL");
+        myErrorService.create(e);
+
+        e.setId("003");
+        e.setMessage("Nombre de usuario en uso Intente con uno distinto");
+        e.setHttpStatus(HttpStatus.BAD_REQUEST);
+        e.setEndpoint("USER");
+        myErrorService.create(e);
+
+        e.setId("004");
+        e.setMessage("Mail en uso. Intente con uno distinto");
+        e.setHttpStatus(HttpStatus.BAD_REQUEST);
+        e.setEndpoint("USER");
+        myErrorService.create(e);
+
+        e.setId("005");
+        e.setMessage("No existe el usuario ingresado");
+        e.setHttpStatus(HttpStatus.BAD_REQUEST);
+        e.setEndpoint("GENERAL");
+        myErrorService.create(e);
+
+        e.setId("006");
+        e.setMessage("El email ingresado tiene un formato incorrecto");
+        e.setHttpStatus(HttpStatus.BAD_REQUEST);
+        e.setEndpoint("USER");
+        myErrorService.create(e);
     }
 }

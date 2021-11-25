@@ -1,8 +1,9 @@
 package com.gruposei.gestion_orquestas.rest;
 
-import com.gruposei.gestion_orquestas.exceptions.ApiRequestException;
+import com.gruposei.gestion_orquestas.responses.ApiRequestException;
 import com.gruposei.gestion_orquestas.model.AuthenticationRequest;
 import com.gruposei.gestion_orquestas.model.AuthenticationResponse;
+import com.gruposei.gestion_orquestas.responses.ResponseHandler;
 import com.gruposei.gestion_orquestas.service.MyUserDetailsService;
 import com.gruposei.gestion_orquestas.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +12,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class IndexREST {
@@ -27,6 +25,9 @@ public class IndexREST {
 
     @Autowired
     private JwtUtil jwtTokenUtil;
+
+    @Autowired
+    private ResponseHandler responseHandler;
 
     @RequestMapping("/")
     public String hello(){
@@ -50,7 +51,7 @@ public class IndexREST {
         final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
         final String jwt = jwtTokenUtil.generateToken(userDetails);
 
-        return ResponseEntity.ok(new AuthenticationResponse(jwt,authenticationRequest.getUsername()));
+        return responseHandler.generateResponse("000",new AuthenticationResponse(jwt,authenticationRequest.getUsername()));
+        //return ResponseEntity.ok(new AuthenticationResponse(jwt,authenticationRequest.getUsername()));
     }
-
 }

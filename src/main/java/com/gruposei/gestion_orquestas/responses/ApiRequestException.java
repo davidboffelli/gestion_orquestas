@@ -1,4 +1,4 @@
-package com.gruposei.gestion_orquestas.exceptions;
+package com.gruposei.gestion_orquestas.responses;
 
 public class ApiRequestException extends RuntimeException{
 

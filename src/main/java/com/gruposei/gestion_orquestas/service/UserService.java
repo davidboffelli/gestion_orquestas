@@ -35,6 +35,11 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
+    public void deleteByUsername(String username){
+
+        userRepository.deleteByUsername(username);
+    }
+
     public Optional<User> findById(Long id){
 
         return userRepository.findById(id);
@@ -58,5 +63,10 @@ public class UserService {
     public boolean existsByEmail(String email){
 
         return userRepository.existsByEmail(email);
+    }
+
+    public boolean existsById(Long id){
+
+        return userRepository.existsById(id);
     }
 }
