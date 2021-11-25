@@ -111,9 +111,22 @@ public class User {
         this.address = address;
     }
 
-    public void addRoles(Role role){
+    public void addRole(Role role){
 
         rolesUser.add(role);
+    }
+
+    public void addRoles(List<Role> role){
+
+        for (Role r:role) {
+
+            rolesUser.add(r);
+        }
+    }
+
+    public void setRoles(List<Role> role){
+
+            this.rolesUser= role;
     }
 
     public List<Role> getRolesUser() {

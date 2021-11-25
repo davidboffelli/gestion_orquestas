@@ -1,0 +1,118 @@
+2021-11-24 22:53:09.975  INFO 17136 --- [main] c.g.g.GestionOrquestasApplication        : Starting GestionOrquestasApplication using Java 1.8.0_302 on DESKTOP-VHDC6FE with PID 17136 (D:\Descargas\DP\gestion_orquestas\target\classes started by Dabeer in D:\Descargas\DP\gestion_orquestas)
+2021-11-24 22:53:09.979  INFO 17136 --- [main] c.g.g.GestionOrquestasApplication        : No active profile set, falling back to default profiles: default
+2021-11-24 22:53:10.791  INFO 17136 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-24 22:53:10.914  INFO 17136 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 20 JPA repository interfaces.
+2021-11-24 22:53:12.209  INFO 17136 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-24 22:53:12.224  INFO 17136 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-24 22:53:12.225  INFO 17136 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-11-24 22:53:12.373  INFO 17136 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-24 22:53:12.373  INFO 17136 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2291 ms
+2021-11-24 22:53:12.662  INFO 17136 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-24 22:53:12.745  INFO 17136 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-24 22:53:13.017  INFO 17136 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-24 22:53:13.154  INFO 17136 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-24 22:53:13.404  INFO 17136 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-24 22:53:13.429  INFO 17136 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-11-24 22:53:13.992  WARN 17136 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.UserClothKey
+2021-11-24 22:53:13.993  WARN 17136 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.UserClothKey
+2021-11-24 22:53:13.993  WARN 17136 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.SurveyQuestionAnswerKey
+2021-11-24 22:53:13.993  WARN 17136 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.SurveyQuestionAnswerKey
+2021-11-24 22:53:14.001  WARN 17136 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.SurveyQuestionOptionAnswerKey
+2021-11-24 22:53:14.002  WARN 17136 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.SurveyQuestionOptionAnswerKey
+2021-11-24 22:53:14.667  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.667  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «musical_resources», omitiendo
+2021-11-24 22:53:14.668  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.668  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «musical_resources», omitiendo
+2021-11-24 22:53:14.684  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.684  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «news», omitiendo
+2021-11-24 22:53:14.684  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.684  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «news_content», omitiendo
+2021-11-24 22:53:14.685  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.685  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «news_content», omitiendo
+2021-11-24 22:53:14.686  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.686  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys», omitiendo
+2021-11-24 22:53:14.686  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.687  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys», omitiendo
+2021-11-24 22:53:14.687  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.687  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions», omitiendo
+2021-11-24 22:53:14.688  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.688  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions», omitiendo
+2021-11-24 22:53:14.688  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.688  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_answers», omitiendo
+2021-11-24 22:53:14.689  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.689  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_answers», omitiendo
+2021-11-24 22:53:14.690  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.690  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_options», omitiendo
+2021-11-24 22:53:14.690  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.690  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_options_answers», omitiendo
+2021-11-24 22:53:14.691  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.691  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_options_answers», omitiendo
+2021-11-24 22:53:14.691  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.691  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «tickets», omitiendo
+2021-11-24 22:53:14.692  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.692  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «tickets», omitiendo
+2021-11-24 22:53:14.692  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.692  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_clothes», omitiendo
+2021-11-24 22:53:14.693  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.693  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_clothes», omitiendo
+2021-11-24 22:53:14.693  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.694  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_meeting_minutes», omitiendo
+2021-11-24 22:53:14.694  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.694  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_meeting_minutes», omitiendo
+2021-11-24 22:53:14.695  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.695  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_roles», omitiendo
+2021-11-24 22:53:14.695  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.695  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_roles», omitiendo
+2021-11-24 22:53:14.696  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.696  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «clothes» no existe, omitiendo
+2021-11-24 22:53:14.697  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.697  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «errors» no existe, omitiendo
+2021-11-24 22:53:14.697  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.697  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «meeting_minutes» no existe, omitiendo
+2021-11-24 22:53:14.698  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.698  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «musical_resources» no existe, omitiendo
+2021-11-24 22:53:14.698  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.698  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «musical_resources_types» no existe, omitiendo
+2021-11-24 22:53:14.699  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.699  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «news» no existe, omitiendo
+2021-11-24 22:53:14.699  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.699  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «news_content» no existe, omitiendo
+2021-11-24 22:53:14.700  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.700  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «news_content_types» no existe, omitiendo
+2021-11-24 22:53:14.700  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.700  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «roles» no existe, omitiendo
+2021-11-24 22:53:14.701  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.701  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «shows» no existe, omitiendo
+2021-11-24 22:53:14.701  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.701  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «songs» no existe, omitiendo
+2021-11-24 22:53:14.702  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.702  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys» no existe, omitiendo
+2021-11-24 22:53:14.702  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.702  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions» no existe, omitiendo
+2021-11-24 22:53:14.703  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.703  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions_answers» no existe, omitiendo
+2021-11-24 22:53:14.703  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.703  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions_options» no existe, omitiendo
+2021-11-24 22:53:14.703  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.703  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions_options_answers» no existe, omitiendo
+2021-11-24 22:53:14.704  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.704  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions_types» no existe, omitiendo
+2021-11-24 22:53:14.704  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.704  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «tickets» no existe, omitiendo
+2021-11-24 22:53:14.705  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.705  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «users» no existe, omitiendo
+2021-11-24 22:53:14.705  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.705  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «users_clothes» no existe, omitiendo
+2021-11-24 22:53:14.706  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.706  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «users_meeting_minutes» no existe, omitiendo
+2021-11-24 22:53:14.706  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.706  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «users_roles» no existe, omitiendo
+2021-11-24 22:53:14.707  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-11-24 22:53:14.707  WARN 17136 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la secuencia «hibernate_sequence» no existe, omitiendo
+2021-11-24 22:53:14.899  INFO 17136 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-24 22:53:14.914  INFO 17136 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-24 22:53:15.505  WARN 17136 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-24 22:53:16.418  INFO 17136 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1dd44289, org.springframework.security.web.context.SecurityContextPersistenceFilter@58ec8271, org.springframework.security.web.header.HeaderWriterFilter@762da62b, org.springframework.security.web.authentication.logout.LogoutFilter@4fafd27e, com.gruposei.gestion_orquestas.filters.JwtRequestFilters@63262071, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3ee258, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@40ac0a56, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6cc56b32, org.springframework.security.web.session.SessionManagementFilter@2c54c497, org.springframework.security.web.access.ExceptionTranslationFilter@7ee2423, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@58f50dd0]
+2021-11-24 22:53:17.048  INFO 17136 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-24 22:53:17.061  INFO 17136 --- [main] c.g.g.GestionOrquestasApplication        : Started GestionOrquestasApplication in 7.68 seconds (JVM running for 8.353)
+2021-11-24 22:53:18.573  INFO 17136 --- [main] javafx.application.Application           : Simple log statement with inputs 1, 2 and 3

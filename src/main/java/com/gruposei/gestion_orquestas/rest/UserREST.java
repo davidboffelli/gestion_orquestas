@@ -1,5 +1,6 @@
 package com.gruposei.gestion_orquestas.rest;
 
+import com.gruposei.gestion_orquestas.model.Role;
 import com.gruposei.gestion_orquestas.model.User;
 import com.gruposei.gestion_orquestas.responses.ApiRequestException;
 import com.gruposei.gestion_orquestas.responses.ResponseHandler;
@@ -123,6 +124,7 @@ public class UserREST {
     public ResponseEntity<Object> deleteById(@RequestParam("id") Long id) {
 
         Optional<User> user= userService.findById(id);
+        List<Role> roles = user.get().getRolesUser();
 
         if(!user.isPresent()){
 
