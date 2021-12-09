@@ -33,10 +33,9 @@ public class ShowREST {
     @PostMapping
     private ResponseEntity<Object> save(@RequestBody Show p){
 
-        Show temporal = showService.create(p);
-
         try{
 
+            Show temporal = showService.create(p);
             return responseHandler.generateResponse("000",temporal);
         }
         catch(Exception e){

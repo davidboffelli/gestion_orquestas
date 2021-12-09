@@ -28,10 +28,9 @@ public class UserClothREST {
     @PostMapping
     private ResponseEntity<Object> save(@RequestBody UserCloth p){
 
-        UserCloth temporal = userClothService.create(p);
-
         try{
 
+            UserCloth temporal = userClothService.create(p);
             return responseHandler.generateResponse("000",temporal);
         }
         catch(Exception e){

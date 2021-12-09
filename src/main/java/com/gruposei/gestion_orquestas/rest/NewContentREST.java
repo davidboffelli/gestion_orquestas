@@ -26,10 +26,9 @@ public class NewContentREST {
     @PostMapping
     private ResponseEntity<Object> save(@RequestBody NewContent p){
 
-        NewContent temporal = newContentService.create(p);
-
         try{
 
+            NewContent temporal = newContentService.create(p);
             return responseHandler.generateResponse("000",temporal);
         }
         catch(Exception e){

@@ -28,10 +28,9 @@ public class MusicalResourceREST {
     @PostMapping
     private ResponseEntity<Object> save(@RequestBody MusicalResource p){
 
-        MusicalResource temporal = musicalResourceService.create(p);
-
         try{
 
+            MusicalResource temporal = musicalResourceService.create(p);
             return responseHandler.generateResponse("000",temporal);
         }
         catch(Exception e){

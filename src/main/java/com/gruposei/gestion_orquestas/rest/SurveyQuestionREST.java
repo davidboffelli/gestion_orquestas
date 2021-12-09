@@ -26,10 +26,8 @@ public class SurveyQuestionREST {
     @PostMapping
     private ResponseEntity<Object> save(@RequestBody SurveyQuestion p){
 
-        SurveyQuestion temporal = surveyQuestionService.create(p);
-
         try{
-
+            SurveyQuestion temporal = surveyQuestionService.create(p);
             return responseHandler.generateResponse("000",temporal);
         }
         catch(Exception e){

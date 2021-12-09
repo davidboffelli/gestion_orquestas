@@ -35,10 +35,9 @@ public class RoleREST {
     @PostMapping
     private ResponseEntity<Object> save(@RequestBody Role p){
 
-        Role temporal = roleService.create(p);
-
         try{
 
+            Role temporal = roleService.create(p);
             return responseHandler.generateResponse("000",temporal);
         }
         catch(Exception e){

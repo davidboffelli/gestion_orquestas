@@ -27,10 +27,9 @@ public class MeetingMinuteREST {
     @PostMapping
     private ResponseEntity<Object> save(@RequestBody MeetingMinute p){
 
-        MeetingMinute temporal = meetingMinuteService.create(p);
-
         try{
 
+            MeetingMinute temporal = meetingMinuteService.create(p);
             return responseHandler.generateResponse("000",temporal);
         }
         catch(Exception e){

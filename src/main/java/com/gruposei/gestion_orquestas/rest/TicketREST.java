@@ -40,9 +40,9 @@ public class TicketREST {
     @PostMapping(params = {"user_id","show_id"})
     private ResponseEntity<Object> save(@RequestParam("user_id") Long user_id,@RequestParam("show_id") Long show_id){
 
-        Ticket temporal = ticketService.create(user_id,show_id);
         try{
 
+            Ticket temporal = ticketService.create(user_id,show_id);
             return responseHandler.generateResponse("000",temporal);
         }
         catch(Exception e){
