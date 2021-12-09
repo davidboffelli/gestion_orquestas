@@ -2,6 +2,8 @@ package com.gruposei.gestion_orquestas.rest;
 
 import com.gruposei.gestion_orquestas.model.Role;
 import com.gruposei.gestion_orquestas.model.User;
+import com.gruposei.gestion_orquestas.responses.ApiRequestException;
+import com.gruposei.gestion_orquestas.responses.ResponseHandler;
 import com.gruposei.gestion_orquestas.service.RoleService;
 import com.gruposei.gestion_orquestas.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,40 +29,90 @@ public class RoleREST {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    @Autowired
+    private ResponseHandler responseHandler;
+
     @PostMapping
-    private ResponseEntity<Role> save(@RequestBody Role p){
+    private ResponseEntity<Object> save(@RequestBody Role p){
 
         Role temporal = roleService.create(p);
 
         try{
 
-            return ResponseEntity.created((new URI("/api/roles" + temporal.getId()))).body(temporal);
+            return responseHandler.generateResponse("000",temporal);
         }
         catch(Exception e){
 
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            throw  new ApiRequestException("002");
         }
     }
 
     @GetMapping
-    private ResponseEntity<List<Role>> getAll(){
+    private ResponseEntity<Object> getAll(){
 
-        return ResponseEntity.ok(roleService.getAll());
+        try{
+
+            List<Role> cloths = roleService.getAll();
+            return responseHandler.generateResponse("000",cloths);
+        }
+        catch(Exception e){
+
+            throw new ApiRequestException("002");
+        }
     }
 
     @DeleteMapping(params = "id")
-    public ResponseEntity<Void> deleteById(@RequestParam("id") Long id) {
-        roleService.deleteById(id);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<Object> deleteById(@RequestParam("id") Long id) {
+        Optional<Role> cloth= roleService.findById(id);
+
+        if(!cloth.isPresent()){
+
+            throw new ApiRequestException("005");
+        }
+
+        try {
+            roleService.deleteById(id);
+            return responseHandler.generateResponse("000",cloth);
+        }
+        catch (Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 
     @RequestMapping(params = "id")
-    public ResponseEntity<Optional<Role>> getByName(@RequestParam("id") Long id) {
-        return ResponseEntity.ok(roleService.findById(id));
+    public ResponseEntity<Object> getByName(@RequestParam("id") Long id) {
+
+        Optional<Role> cloth = roleService.findById(id);
+        if(!cloth.isPresent()){
+
+            throw new ApiRequestException("005");
+        }
+        try {
+
+            return responseHandler.generateResponse("000",cloth);
+        }
+        catch (Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 
     @RequestMapping(params = "name")
-    public ResponseEntity<Optional<Role>> getByLastname(@RequestParam("name") String name) {
-        return ResponseEntity.ok(roleService.findByName(name));
+    public ResponseEntity<Object> getByLastname(@RequestParam("name") String name) {
+
+        Optional<Role> cloth = roleService.findByName(name);
+        if(!cloth.isPresent()){
+
+            throw new ApiRequestException("005");
+        }
+        try {
+
+            return responseHandler.generateResponse("000",cloth);
+        }
+        catch (Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 }

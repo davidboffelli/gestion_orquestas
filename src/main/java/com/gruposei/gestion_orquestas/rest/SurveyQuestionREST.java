@@ -1,6 +1,8 @@
 package com.gruposei.gestion_orquestas.rest;
 
 import com.gruposei.gestion_orquestas.model.SurveyQuestion;
+import com.gruposei.gestion_orquestas.responses.ApiRequestException;
+import com.gruposei.gestion_orquestas.responses.ResponseHandler;
 import com.gruposei.gestion_orquestas.service.SurveyQuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,35 +20,73 @@ public class SurveyQuestionREST {
     @Autowired
     private SurveyQuestionService surveyQuestionService;
 
+    @Autowired
+    private ResponseHandler responseHandler;
+
     @PostMapping
-    private ResponseEntity<SurveyQuestion> save(@RequestBody SurveyQuestion p){
+    private ResponseEntity<Object> save(@RequestBody SurveyQuestion p){
 
         SurveyQuestion temporal = surveyQuestionService.create(p);
 
         try{
 
-            return ResponseEntity.created((new URI("/api/surveys_questions" + temporal.getId()))).body(temporal);
+            return responseHandler.generateResponse("000",temporal);
         }
         catch(Exception e){
 
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            throw  new ApiRequestException("002");
         }
     }
 
     @GetMapping
-    private ResponseEntity<List<SurveyQuestion>> getAll(){
+    private ResponseEntity<Object> getAll(){
 
-        return ResponseEntity.ok(surveyQuestionService.getAll());
+        try{
+
+            List<SurveyQuestion> cloths = surveyQuestionService.getAll();
+            return responseHandler.generateResponse("000",cloths);
+        }
+        catch(Exception e){
+
+            throw new ApiRequestException("002");
+        }
     }
 
     @DeleteMapping(params = "id")
-    public ResponseEntity<Void> deleteById(@RequestParam("id") Long id) {
-        surveyQuestionService.deleteById(id);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<Object> deleteById(@RequestParam("id") Long id) {
+
+        Optional<SurveyQuestion> cloth= surveyQuestionService.findById(id);
+
+        if(!cloth.isPresent()){
+
+            throw new ApiRequestException("005");
+        }
+
+        try {
+            surveyQuestionService.deleteById(id);
+            return responseHandler.generateResponse("000",cloth);
+        }
+        catch (Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 
     @RequestMapping(params = "id")
-    public ResponseEntity<Optional<SurveyQuestion>> getById(@RequestParam("id") Long id) {
-        return ResponseEntity.ok(surveyQuestionService.findById(id));
+    public ResponseEntity<Object> getById(@RequestParam("id") Long id) {
+        Optional<SurveyQuestion> cloth= surveyQuestionService.findById(id);
+
+        if(!cloth.isPresent()){
+
+            throw new ApiRequestException("005");
+        }
+        try {
+
+            return responseHandler.generateResponse("000",cloth);
+        }
+        catch (Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 }

@@ -3,6 +3,8 @@ package com.gruposei.gestion_orquestas.rest;
 import com.gruposei.gestion_orquestas.model.Song;
 import com.gruposei.gestion_orquestas.model.UserCloth;
 import com.gruposei.gestion_orquestas.model.UserClothKey;
+import com.gruposei.gestion_orquestas.responses.ApiRequestException;
+import com.gruposei.gestion_orquestas.responses.ResponseHandler;
 import com.gruposei.gestion_orquestas.service.UserClothService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,41 +22,80 @@ public class UserClothREST {
     @Autowired
     private UserClothService userClothService;
 
+    @Autowired
+    private ResponseHandler responseHandler;
+
     @PostMapping
-    private ResponseEntity<UserCloth> save(@RequestBody UserCloth p){
+    private ResponseEntity<Object> save(@RequestBody UserCloth p){
 
         UserCloth temporal = userClothService.create(p);
 
         try{
 
-            return ResponseEntity.created((new URI("/api/users_clothes" + temporal.getId()))).body(temporal);
+            return responseHandler.generateResponse("000",temporal);
         }
         catch(Exception e){
 
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            throw  new ApiRequestException("002");
         }
     }
 
     @GetMapping
-    private ResponseEntity<List<UserCloth>> getAll(){
+    private ResponseEntity<Object> getAll(){
 
-        return ResponseEntity.ok(userClothService.getAll());
+        try{
+
+            List<UserCloth> cloths = userClothService.getAll();
+            return responseHandler.generateResponse("000",cloths);
+        }
+        catch(Exception e){
+
+            throw new ApiRequestException("002");
+        }
     }
 
     @DeleteMapping(params = {"user_id","cloth_id"})
-    public ResponseEntity<Void> deleteById(@RequestParam("user_id") Long user_id,@RequestParam("cloth_id") Long cloth_id) {
+    public ResponseEntity<Object> deleteById(@RequestParam("user_id") Long user_id,@RequestParam("cloth_id") Long cloth_id) {
         UserClothKey userClothKey = new UserClothKey();
         userClothKey.setUserId(user_id);
         userClothKey.setClothId(cloth_id);
-        userClothService.deleteById(userClothKey);
-        return ResponseEntity.ok().build();
+
+        Optional<UserCloth> cloth= userClothService.findById(userClothKey);
+
+        if(!cloth.isPresent()){
+
+            throw new ApiRequestException("005");
+        }
+
+        try {
+            userClothService.deleteById(userClothKey);
+            return responseHandler.generateResponse("000",cloth);
+        }
+        catch (Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 
     @RequestMapping(params = {"user_id","cloth_id"})
-    public ResponseEntity<Optional<UserCloth>> getById(@RequestParam("user_id") Long user_id,@RequestParam("cloth_id") Long cloth_id) {
+    public ResponseEntity<Object> getById(@RequestParam("user_id") Long user_id,@RequestParam("cloth_id") Long cloth_id) {
         UserClothKey userClothKey = new UserClothKey();
         userClothKey.setUserId(user_id);
         userClothKey.setClothId(cloth_id);
-        return ResponseEntity.ok(userClothService.findById(userClothKey));
+
+        Optional<UserCloth> cloth= userClothService.findById(userClothKey);
+
+        if(!cloth.isPresent()){
+
+            throw new ApiRequestException("005");
+        }
+        try {
+
+            return responseHandler.generateResponse("000",cloth);
+        }
+        catch (Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 }

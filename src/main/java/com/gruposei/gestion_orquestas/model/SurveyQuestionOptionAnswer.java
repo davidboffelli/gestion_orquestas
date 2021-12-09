@@ -15,6 +15,7 @@ public class SurveyQuestionOptionAnswer {
     @ManyToOne(optional = false)
     @MapsId("optionId")
     @JoinColumn(name = "option_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private SurveyQuestionOption surveyQuestionOption;
     @ManyToOne(optional = false)
     @MapsId("userId")

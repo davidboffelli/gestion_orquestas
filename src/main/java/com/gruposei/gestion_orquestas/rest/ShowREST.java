@@ -2,6 +2,8 @@ package com.gruposei.gestion_orquestas.rest;
 
 import com.gruposei.gestion_orquestas.model.Role;
 import com.gruposei.gestion_orquestas.model.Show;
+import com.gruposei.gestion_orquestas.responses.ApiRequestException;
+import com.gruposei.gestion_orquestas.responses.ResponseHandler;
 import com.gruposei.gestion_orquestas.service.RoleService;
 import com.gruposei.gestion_orquestas.service.ShowService;
 import com.gruposei.gestion_orquestas.service.UserService;
@@ -25,35 +27,74 @@ public class ShowREST {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    @Autowired
+    private ResponseHandler responseHandler;
+
     @PostMapping
-    private ResponseEntity<Show> save(@RequestBody Show p){
+    private ResponseEntity<Object> save(@RequestBody Show p){
 
         Show temporal = showService.create(p);
 
         try{
 
-            return ResponseEntity.created((new URI("/api/shows" + temporal.getId()))).body(temporal);
+            return responseHandler.generateResponse("000",temporal);
         }
         catch(Exception e){
 
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            throw  new ApiRequestException("002");
         }
     }
 
     @GetMapping
-    private ResponseEntity<List<Show>> getAll(){
+    private ResponseEntity<Object> getAll(){
 
-        return ResponseEntity.ok(showService.getAll());
+        try{
+
+            List<Show> cloths = showService.getAll();
+            return responseHandler.generateResponse("000",cloths);
+        }
+        catch(Exception e){
+
+            throw new ApiRequestException("002");
+        }
     }
 
     @DeleteMapping(params = "id")
-    public ResponseEntity<Void> deleteById(@RequestParam("id") Long id) {
-        showService.deleteById(id);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<Object> deleteById(@RequestParam("id") Long id) {
+
+        Optional<Show> cloth= showService.findById(id);
+
+        if(!cloth.isPresent()){
+
+            throw new ApiRequestException("005");
+        }
+
+        try {
+            showService.deleteById(id);
+            return responseHandler.generateResponse("000",cloth);
+        }
+        catch (Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 
     @RequestMapping(params = "id")
-    public ResponseEntity<Optional<Show>> getById(@RequestParam("id") Long id) {
-        return ResponseEntity.ok(showService.findById(id));
+    public ResponseEntity<Object> getById(@RequestParam("id") Long id) {
+
+        Optional<Show> cloth= showService.findById(id);
+
+        if(!cloth.isPresent()){
+
+            throw new ApiRequestException("005");
+        }
+        try {
+
+            return responseHandler.generateResponse("000",cloth);
+        }
+        catch (Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 }

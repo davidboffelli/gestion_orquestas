@@ -51,7 +51,7 @@ public class ErrorList implements CommandLineRunner {
         myErrorService.create(e);
 
         e.setId("005");
-        e.setMessage("No existe el usuario ingresado");
+        e.setMessage("No existe el valor ingresado");
         e.setHttpStatus(HttpStatus.BAD_REQUEST);
         e.setEndpoint("GENERAL");
         myErrorService.create(e);

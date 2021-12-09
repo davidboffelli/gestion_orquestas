@@ -2,6 +2,8 @@ package com.gruposei.gestion_orquestas.rest;
 
 import com.gruposei.gestion_orquestas.model.SurveyQuestionOptionAnswer;
 import com.gruposei.gestion_orquestas.model.SurveyQuestionOptionAnswerKey;
+import com.gruposei.gestion_orquestas.responses.ApiRequestException;
+import com.gruposei.gestion_orquestas.responses.ResponseHandler;
 import com.gruposei.gestion_orquestas.service.SurveyQuestionOptionAnswerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,41 +21,78 @@ public class SurveyQuestionOptionAnswerREST {
     @Autowired
     private SurveyQuestionOptionAnswerService surveyQuestionOptionAnswerService;
 
+    @Autowired
+    private ResponseHandler responseHandler;
+
     @PostMapping
-    private ResponseEntity<SurveyQuestionOptionAnswer> save(@RequestBody SurveyQuestionOptionAnswer p){
+    private ResponseEntity<Object> save(@RequestBody SurveyQuestionOptionAnswer p){
 
         SurveyQuestionOptionAnswer temporal = surveyQuestionOptionAnswerService.create(p);
 
         try{
 
-            return ResponseEntity.created((new URI("/api/sq_options/answers" + temporal.getId()))).body(temporal);
+            return responseHandler.generateResponse("000",temporal);
         }
         catch(Exception e){
 
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            throw  new ApiRequestException("002");
         }
     }
 
     @GetMapping
-    private ResponseEntity<List<SurveyQuestionOptionAnswer>> getAll(){
+    private ResponseEntity<Object> getAll(){
 
-        return ResponseEntity.ok(surveyQuestionOptionAnswerService.getAll());
+        try{
+
+            List<SurveyQuestionOptionAnswer> cloths = surveyQuestionOptionAnswerService.getAll();
+            return responseHandler.generateResponse("000",cloths);
+        }
+        catch(Exception e){
+
+            throw new ApiRequestException("002");
+        }
     }
 
     @DeleteMapping(params = {"user_id","option_id"})
-    public ResponseEntity<Void> deleteById(@RequestParam("user_id") Long user_id,@RequestParam("option_id") Long option_id) {
+    public ResponseEntity<Object> deleteById(@RequestParam("user_id") Long user_id,@RequestParam("option_id") Long option_id) {
         SurveyQuestionOptionAnswerKey sqoaKey = new SurveyQuestionOptionAnswerKey();
         sqoaKey.setUserId(user_id);
         sqoaKey.setOptionId(option_id);
-        surveyQuestionOptionAnswerService.deleteById(sqoaKey);
-        return ResponseEntity.ok().build();
+        Optional<SurveyQuestionOptionAnswer> cloth= surveyQuestionOptionAnswerService.findById(sqoaKey);
+
+        if(!cloth.isPresent()){
+
+            throw new ApiRequestException("005");
+        }
+
+        try {
+            surveyQuestionOptionAnswerService.deleteById(sqoaKey);
+            return responseHandler.generateResponse("000",cloth);
+        }
+        catch (Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 
     @RequestMapping(params = {"user_id","option_id"})
-    public ResponseEntity<Optional<SurveyQuestionOptionAnswer>> getById(@RequestParam("user_id") Long user_id,@RequestParam("option_id") Long option_id) {
+    public ResponseEntity<Object> getById(@RequestParam("user_id") Long user_id,@RequestParam("option_id") Long option_id) {
         SurveyQuestionOptionAnswerKey sqoaKey = new SurveyQuestionOptionAnswerKey();
         sqoaKey.setUserId(user_id);
         sqoaKey.setOptionId(option_id);
-        return ResponseEntity.ok(surveyQuestionOptionAnswerService.findById(sqoaKey));
+        Optional<SurveyQuestionOptionAnswer> cloth= surveyQuestionOptionAnswerService.findById(sqoaKey);
+
+        if(!cloth.isPresent()){
+
+            throw new ApiRequestException("005");
+        }
+        try {
+
+            return responseHandler.generateResponse("000",cloth);
+        }
+        catch (Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 }

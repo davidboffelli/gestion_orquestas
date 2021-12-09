@@ -1,6 +1,8 @@
 package com.gruposei.gestion_orquestas.rest;
 
 import com.gruposei.gestion_orquestas.model.NewContent;
+import com.gruposei.gestion_orquestas.responses.ApiRequestException;
+import com.gruposei.gestion_orquestas.responses.ResponseHandler;
 import com.gruposei.gestion_orquestas.service.NewContentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,35 +20,74 @@ public class NewContentREST {
     @Autowired
     private NewContentService newContentService;
 
+    @Autowired
+    private ResponseHandler responseHandler;
+
     @PostMapping
-    private ResponseEntity<NewContent> save(@RequestBody NewContent p){
+    private ResponseEntity<Object> save(@RequestBody NewContent p){
 
         NewContent temporal = newContentService.create(p);
 
         try{
 
-            return ResponseEntity.created((new URI("/api/news_content" + temporal.getId()))).body(temporal);
+            return responseHandler.generateResponse("000",temporal);
         }
         catch(Exception e){
 
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            throw  new ApiRequestException("002");
         }
     }
 
     @GetMapping
-    private ResponseEntity<List<NewContent>> getAll(){
+    private ResponseEntity<Object> getAll(){
 
-        return ResponseEntity.ok(newContentService.getAll());
+        try{
+
+            List<NewContent> cloths = newContentService.getAll();
+            return responseHandler.generateResponse("000",cloths);
+        }
+        catch(Exception e){
+
+            throw new ApiRequestException("002");
+        }
     }
 
     @DeleteMapping(params = "id")
-    public ResponseEntity<Void> deleteById(@RequestParam("id") Long id) {
-        newContentService.deleteById(id);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<Object> deleteById(@RequestParam("id") Long id) {
+
+        Optional<NewContent> cloth= newContentService.findById(id);
+
+        if(!cloth.isPresent()){
+
+            throw new ApiRequestException("005");
+        }
+
+        try {
+            newContentService.deleteById(id);
+            return responseHandler.generateResponse("000",cloth);
+        }
+        catch (Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 
     @RequestMapping(params = "id")
-    public ResponseEntity<Optional<NewContent>> getById(@RequestParam("id") Long id) {
-        return ResponseEntity.ok(newContentService.findById(id));
+    public ResponseEntity<Object> getById(@RequestParam("id") Long id) {
+
+        Optional<NewContent> cloth= newContentService.findById(id);
+
+        if(!cloth.isPresent()){
+
+            throw new ApiRequestException("005");
+        }
+        try {
+
+            return responseHandler.generateResponse("000",cloth);
+        }
+        catch (Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 }

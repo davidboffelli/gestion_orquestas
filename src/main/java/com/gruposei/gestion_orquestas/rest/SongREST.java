@@ -2,6 +2,8 @@ package com.gruposei.gestion_orquestas.rest;
 
 import com.gruposei.gestion_orquestas.model.Show;
 import com.gruposei.gestion_orquestas.model.Song;
+import com.gruposei.gestion_orquestas.responses.ApiRequestException;
+import com.gruposei.gestion_orquestas.responses.ResponseHandler;
 import com.gruposei.gestion_orquestas.service.ShowService;
 import com.gruposei.gestion_orquestas.service.SongService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,35 +22,74 @@ public class SongREST {
     @Autowired
     private SongService songService;
 
+    @Autowired
+    private ResponseHandler responseHandler;
+
     @PostMapping
-    private ResponseEntity<Song> save(@RequestBody Song p){
+    private ResponseEntity<Object> save(@RequestBody Song p){
 
         Song temporal = songService.create(p);
 
         try{
 
-            return ResponseEntity.created((new URI("/api/songs" + temporal.getId()))).body(temporal);
+            return responseHandler.generateResponse("000",temporal);
         }
         catch(Exception e){
 
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            throw  new ApiRequestException("002");
         }
     }
 
     @GetMapping
-    private ResponseEntity<List<Song>> getAll(){
+    private ResponseEntity<Object> getAll(){
 
-        return ResponseEntity.ok(songService.getAll());
+        try{
+
+            List<Song> cloths = songService.getAll();
+            return responseHandler.generateResponse("000",cloths);
+        }
+        catch(Exception e){
+
+            throw new ApiRequestException("002");
+        }
     }
 
     @DeleteMapping(params = "id")
-    public ResponseEntity<Void> deleteById(@RequestParam("id") Long id) {
-        songService.deleteById(id);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<Object> deleteById(@RequestParam("id") Long id) {
+
+        Optional<Song> cloth= songService.findById(id);
+
+        if(!cloth.isPresent()){
+
+            throw new ApiRequestException("005");
+        }
+
+        try {
+            songService.deleteById(id);
+            return responseHandler.generateResponse("000",cloth);
+        }
+        catch (Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 
     @RequestMapping(params = "id")
-    public ResponseEntity<Optional<Song>> getById(@RequestParam("id") Long id) {
-        return ResponseEntity.ok(songService.findById(id));
+    public ResponseEntity<Object> getById(@RequestParam("id") Long id) {
+
+        Optional<Song> cloth= songService.findById(id);
+
+        if(!cloth.isPresent()){
+
+            throw new ApiRequestException("005");
+        }
+        try {
+
+            return responseHandler.generateResponse("000",cloth);
+        }
+        catch (Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 }
