@@ -55,6 +55,11 @@
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+			<groupId> com.mercadopago </groupId>
+			<artifactId> sdk-java </artifactId>
+			<version> 1.11.0 </version>
+		</dependency>
 	</dependencies>
 
 	<build>
