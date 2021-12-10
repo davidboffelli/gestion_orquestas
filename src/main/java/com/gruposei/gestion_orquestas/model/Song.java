@@ -1,6 +1,8 @@
 package com.gruposei.gestion_orquestas.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -13,7 +15,10 @@ public class Song {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
-    private String author;
+    @ManyToOne
+    @JoinColumn(name = "composer_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Composer author;
 
     public Song() {
     }
@@ -34,11 +39,11 @@ public class Song {
         this.title = title;
     }
 
-    public String getAuthor() {
+    public Composer getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Composer author) {
         this.author = author;
     }
 }

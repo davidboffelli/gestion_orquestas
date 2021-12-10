@@ -1,8 +1,10 @@
 package com.gruposei.gestion_orquestas.components;
 
+import com.gruposei.gestion_orquestas.model.Composer;
 import com.gruposei.gestion_orquestas.model.MusicalResource;
 import com.gruposei.gestion_orquestas.model.Song;
 import com.gruposei.gestion_orquestas.model.MusicalResourceType;
+import com.gruposei.gestion_orquestas.service.ComposerService;
 import com.gruposei.gestion_orquestas.service.MusicalResourceService;
 import com.gruposei.gestion_orquestas.service.SongService;
 import com.gruposei.gestion_orquestas.service.MusicalResourceTypeService;
@@ -28,22 +30,37 @@ public class SongsByDefault implements CommandLineRunner {
     @Autowired
     private MusicalResourceService musicalResourceService;
 
+    @Autowired
+    private ComposerService composerService;
+
     @Override
     public void run(String... args) throws Exception {
 
+        Composer c1 = new Composer();
+        c1.setName("Los Guerreros");
+        composerService.create(c1);
+
+        Composer c2 = new Composer();
+        c2.setName("Lépoka");
+        composerService.create(c2);
+
+        Composer c3 = new Composer();
+        c3.setName("Fútbol o Muerte");
+        composerService.create(c3);
+
         Song song1 = new Song();
         song1.setTitle("Ya es la hora, ya es la hora");
-        song1.setAuthor("Los Guerreros");
+        song1.setAuthor(c1);
         songService.create(song1);
 
         Song song2 = new Song();
         song2.setTitle("Canción a María");
-        song2.setAuthor("Lépoka");
+        song2.setAuthor(c2);
         songService.create(song2);
 
         Song song3 = new Song();
         song3.setTitle("No me hableeee");
-        song3.setAuthor("Fútbol o Muerte");
+        song3.setAuthor(c3);
         songService.create(song3);
 
         MusicalResourceType typeMR1 = new MusicalResourceType();

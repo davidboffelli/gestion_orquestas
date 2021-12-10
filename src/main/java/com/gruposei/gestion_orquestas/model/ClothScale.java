@@ -4,22 +4,21 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
-@Table(name = "clothes")
-public class Cloth {
+@Table(name = "clothe_scales")
+public class ClothScale {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String description;
+    private String size;
     @ManyToOne
-    @JoinColumn(name = "cloth_scale_id")
+    @JoinColumn(name = "cloth_type_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private ClothType clothType;
 
-    public Cloth() {
+    public ClothScale() {
     }
 
     public Long getId() {
@@ -30,12 +29,12 @@ public class Cloth {
         this.id = id;
     }
 
-    public String getDescription() {
-        return description;
+    public String getSize() {
+        return size;
     }
 
-    public void setDescription(String version) {
-        this.description = version;
+    public void setSize(String size) {
+        this.size = size;
     }
 
     public ClothType getClothType() {

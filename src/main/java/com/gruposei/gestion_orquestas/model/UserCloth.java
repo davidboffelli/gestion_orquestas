@@ -1,5 +1,9 @@
 package com.gruposei.gestion_orquestas.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,6 +16,7 @@ public class UserCloth {
     @ManyToOne(optional = false)
     @MapsId("userId")
     @JoinColumn(name = "user_id")
+    @JsonIgnore
     private User user;
 
     @ManyToOne(optional = false)
@@ -19,7 +24,10 @@ public class UserCloth {
     @JoinColumn(name = "cloth_id")
     private Cloth cloth;
 
-    private String size;
+    @ManyToOne
+    @JoinColumn(name = "cloth_scale_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private ClothScale clothScale;
 
     public UserCloth() {
     }
@@ -48,11 +56,11 @@ public class UserCloth {
         this.cloth = cloth;
     }
 
-    public String getSize() {
-        return size;
+    public ClothScale getClothScale() {
+        return clothScale;
     }
 
-    public void setSize(String size) {
-        this.size = size;
+    public void setClothScale(ClothScale clothScale) {
+        this.clothScale = clothScale;
     }
 }

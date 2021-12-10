@@ -5,6 +5,7 @@ import com.gruposei.gestion_orquestas.service.MyUserDetailsService;
 import org.hibernate.bytecode.enhance.internal.tracker.NoopCollectionTracker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -36,9 +37,9 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
         http.csrf().disable().authorizeRequests()
                 .antMatchers("/api/login").permitAll()
                 .antMatchers("/api/users/register").permitAll()
+                .antMatchers(HttpMethod.GET,"/api/news").permitAll()
+                .antMatchers(HttpMethod.GET,"/api/shows").permitAll()
                 .anyRequest().authenticated().and().sessionManagement()
-                //.and().authorizeRequests().antMatchers("/api/users/register").permitAll()
-               // .anyRequest().authenticated().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }

@@ -34,6 +34,12 @@ public class User {
     @ManyToMany(mappedBy = "usersMeeting")
     private List<MeetingMinute> usersInMeeting = new ArrayList<>();
 
+    @OneToMany(mappedBy = "user")
+
+    private List<UserCloth> userCloths;
+
+
+
     public User() {
     }
 
@@ -143,5 +149,13 @@ public class User {
 
     public void setUsersInMeeting(List<MeetingMinute> usersInMeeting) {
         this.usersInMeeting = usersInMeeting;
+    }
+
+    public List<UserCloth> getUserCloths() {
+        return userCloths;
+    }
+
+    public void setUserCloths(List<UserCloth> userCloths) {
+        this.userCloths = userCloths;
     }
 }
