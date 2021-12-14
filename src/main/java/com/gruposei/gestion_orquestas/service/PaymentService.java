@@ -54,19 +54,19 @@ public class PaymentService {
                             .setStreetName("Insurgentes Sur"));
             preference.setPayer(payer);
             // Back urls and notification url
-            preference.setBackUrls(
-                    new BackUrls()
-                            .setFailure("https://mp-marco.herokuapp.com/payment")
-                            .setPending("https://mp-marco.herokuapp.com/payment")
-                            .setSuccess("https://mp-marco.herokuapp.com/payment")
-            );
+//            preference.setBackUrls(
+//                    new BackUrls()
+//                            .setFailure("https://mp-marco.herokuapp.com/payment")
+//                            .setPending("https://mp-marco.herokuapp.com/payment")
+//                            .setSuccess("https://mp-marco.herokuapp.com/payment")
+//            );
             preference.setNotificationUrl("https://mp-marco.herokuapp.com/api/payments/notifications");
             preference.setExternalReference("manriqueacham@gmail.com");
             // Payment Methods
             PaymentMethods paymentMethods = new PaymentMethods();
             paymentMethods.setExcludedPaymentMethods("diners");
             paymentMethods.setExcludedPaymentTypes("atm");
-            paymentMethods.setInstallments(6);
+//            paymentMethods.setInstallments(6);
             preference.setPaymentMethods(paymentMethods);
             preference.setAutoReturn(Preference.AutoReturn.approved);
             // Saving and returning
