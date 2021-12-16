@@ -3,6 +3,7 @@ package com.gruposei.gestion_orquestas.rest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.gruposei.gestion_orquestas.model.MercadopagoResource;
 import com.gruposei.gestion_orquestas.model.Payment;
 import com.gruposei.gestion_orquestas.model.Show;
 import com.gruposei.gestion_orquestas.model.User;
@@ -96,8 +97,13 @@ public class MercadopagoREST {
         payment.setPreferenceID(preference.getId());
         paymentService.create(payment);
 
+        MercadopagoResource mercadopagoResource = new MercadopagoResource();
+        mercadopagoResource.setPreferenceID(preference.getId());
+        mercadopagoResource.setExternalReference(preference.getExternalReference());
+        mercadopagoResource.setInitPoint(preference.getInitPoint());
+        mercadopagoResource.setSandboxInitPoint(preference.getSandboxInitPoint());
         System.out.println("SandboxInitPoint: " + preference.getSandboxInitPoint());
-        return responseHandler.generateResponse("000", preference.getId());
+        return responseHandler.generateResponse("000", mercadopagoResource);
     }
 
 //    @CrossOrigin("/**")

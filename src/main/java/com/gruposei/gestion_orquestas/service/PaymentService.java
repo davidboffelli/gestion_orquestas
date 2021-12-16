@@ -77,10 +77,10 @@ public class PaymentService {
 
             // Resource (DTO)
             MercadopagoResource resource = new MercadopagoResource();
-            resource.setId(preference.getId());
+//            resource.setId(preference.getId());
             resource.setInitPoint(preference.getInitPoint());
             resource.setSandboxInitPoint(preference.getSandboxInitPoint());
-            resource.setItems(preference.getItems());
+//            resource.setItems(preference.getItems());
             resource.setExternalReference(preference.getExternalReference());
             return resource;
 

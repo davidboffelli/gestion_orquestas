@@ -8,29 +8,23 @@ import java.util.List;
 //@Data
 public class MercadopagoResource {
 
-    private String id;
+    //private String id;
+    private String preferenceID;
     private String initPoint;
     private String sandboxInitPoint;
     private String externalReference;
-    private List<Item> items;
+    //private List<Item> items;
 
-    public MercadopagoResource(String id, String initPoint, String sandboxInitPoint, String externalReference, List<Item> items) {
-        this.id = id;
-        this.initPoint = initPoint;
-        this.sandboxInitPoint = sandboxInitPoint;
-        this.externalReference = externalReference;
-        this.items = items;
-    }
 
     public MercadopagoResource() {
     }
 
-    public String getId() {
-        return id;
+    public String getPreferenceID() {
+        return preferenceID;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setPreferenceID(String preferenceID) {
+        this.preferenceID = preferenceID;
     }
 
     public String getInitPoint() {
@@ -55,13 +49,5 @@ public class MercadopagoResource {
 
     public void setExternalReference(String externalReference) {
         this.externalReference = externalReference;
-    }
-
-    public List<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(List<Item> items) {
-        this.items = items;
     }
 }
