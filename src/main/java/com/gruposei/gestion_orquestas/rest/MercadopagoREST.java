@@ -71,7 +71,7 @@ public class MercadopagoREST {
         MercadoPago.SDK.setIntegratorId("2338012267335051");
         Preference preference = new Preference();
         preference.setExternalReference("eaea123");
-        preference.setNotificationUrl("http://localhost:8080/api/mercadopago/notifications");
+ //       preference.setNotificationUrl("http://localhost:8080/api/mercadopago/notifications");
 //        String er = payment.getExternalReference();
 //        System.out.println("String: " + er);
 //        preference.setExternalReference(er);
