@@ -104,7 +104,20 @@ public class MercadopagoREST {
     @PostMapping("/notifications")
     private ResponseEntity<Object> pagado(){
 
+        Show show = new Show();
+        show.setName("eaea");
+        show.setPlace("aaa");
+        show.setTickets(999);
+        showService.create(show);
         System.out.println("Entra");
         return responseHandler.generateResponse("000", "Entra");
     }
 }
+
+//{
+//        "name": "eaeae",
+//        "place": "Allá",
+//        "date": "2021-12-30",
+//        "price": 3000.0,
+//        "tickets": 20
+//        }
