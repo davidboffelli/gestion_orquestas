@@ -9,14 +9,16 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String parameters;
-    private String body;
-
-    public Payment(Long id, String parameters, String body) {
-        this.id = id;
-        this.parameters = parameters;
-        this.body = body;
-    }
+    @OneToOne
+    @JoinColumn(name = "show_id")
+    private Show show;
+    private int quantity;
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+    private boolean paid = false;
+    private String externalReference;
+    private String preferenceID;
 
     public Payment() {
     }
@@ -29,19 +31,51 @@ public class Payment {
         this.id = id;
     }
 
-    public String getParameters() {
-        return parameters;
+    public Show getShow() {
+        return show;
     }
 
-    public void setParameters(String parameters) {
-        this.parameters = parameters;
+    public void setShow(Show show) {
+        this.show = show;
     }
 
-    public String getBody() {
-        return body;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public boolean isPaid() {
+        return paid;
+    }
+
+    public void setPaid(boolean paid) {
+        this.paid = paid;
+    }
+
+    public String getExternalReference() {
+        return externalReference;
+    }
+
+    public void setExternalReference(String externalReference) {
+        this.externalReference = externalReference;
+    }
+
+    public String getPreferenceID() {
+        return preferenceID;
+    }
+
+    public void setPreferenceID(String preferenceID) {
+        this.preferenceID = preferenceID;
     }
 }

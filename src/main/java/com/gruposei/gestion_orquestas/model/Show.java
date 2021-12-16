@@ -14,17 +14,19 @@ public class Show {
     private String place;
     private Date date;
     private Date publicDate;
+    private double price;
     private int tickets;
 
     public Show() {
     }
 
-    public Show(Long id, String name, String place, Date date, Date publicDate, int tickets) {
+    public Show(Long id, String name, String place, Date date, Date publicDate, double price, int tickets) {
         this.id = id;
         this.name = name;
         this.place = place;
         this.date = date;
         this.publicDate = publicDate;
+        this.price = price;
         this.tickets = tickets;
     }
 
@@ -66,6 +68,14 @@ public class Show {
 
     public void setPublicDate(Date publicDate) {
         this.publicDate = publicDate;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public int getTickets() {

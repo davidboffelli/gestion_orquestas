@@ -1,6 +1,7 @@
 package com.gruposei.gestion_orquestas.service;
 
 import com.google.gson.Gson;
+import com.gruposei.gestion_orquestas.model.Cloth;
 import com.gruposei.gestion_orquestas.model.MercadopagoResource;
 import com.gruposei.gestion_orquestas.model.Payment;
 import com.gruposei.gestion_orquestas.repositories.PaymentRepository;
@@ -16,8 +17,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
-//@AllArgsConstructor
 public class PaymentService {
 
     @Autowired
@@ -85,18 +88,30 @@ public class PaymentService {
             throw  new ApiRequestException("002");
         }
     }
-    public void paymentNotification(String parameters, String body){
-        Payment payment = new Payment();
-        payment.setParameters(parameters);
-        payment.setBody(body);
-        paymentRepository.save(payment);
-    }
-    public Page<Payment> getAllPayments(Pageable pageable){
-        return paymentRepository.findAll(pageable);
+
+    public List<Payment> getAll(){
+
+        return paymentRepository.findAll();
     }
 
-    public ResponseEntity deleteAllPayments(){
-        paymentRepository.deleteAll();
-        return ResponseEntity.ok().build();
+    public void delete(Payment p){
+
+        paymentRepository.delete(p);
+    }
+
+    public Optional<Payment> findById(Long id){
+
+        return paymentRepository.findById(id);
+    }
+
+    public Payment create(Payment p){
+
+        if(p.getId() == null){
+
+            p = paymentRepository.save(p);
+            p.setExternalReference(p.getId().toString() + p.getShow().getId().toString() + p.getQuantity() + p.getUser().getUsername());
+        }
+
+        return paymentRepository.save(p);
     }
 }
