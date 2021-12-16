@@ -40,7 +40,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
         http.csrf().disable().authorizeRequests()
                 .antMatchers("/api/login").permitAll()
                 .antMatchers("/api/users/register").permitAll()
-                .antMatchers("/api/mercadopago").permitAll()
+                .antMatchers("api/mercadopago/notifications").permitAll()
                 .antMatchers(HttpMethod.GET,"/api/news").permitAll()
                 .antMatchers(HttpMethod.GET,"/api/shows").permitAll()
                 .anyRequest().authenticated().and().sessionManagement()
