@@ -286,3 +286,173 @@
 2021-12-16 00:11:58.311  INFO 12600 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2021-12-16 00:11:58.311  INFO 12600 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2021-12-16 00:11:58.315  INFO 12600 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2021-12-16 00:22:39.414  INFO 12600 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-16 00:22:39.415  INFO 12600 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-12-16 00:22:39.540  INFO 12600 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-16 00:22:39.547  INFO 12600 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-16 00:22:44.763  INFO 11012 --- [main] c.g.g.GestionOrquestasApplication        : Starting GestionOrquestasApplication using Java 1.8.0_302 on DESKTOP-VHDC6FE with PID 11012 (D:\Descargas\DP\gestion_orquestas\target\classes started by Dabeer in D:\Descargas\DP\gestion_orquestas)
+2021-12-16 00:22:44.767  INFO 11012 --- [main] c.g.g.GestionOrquestasApplication        : No active profile set, falling back to default profiles: default
+2021-12-16 00:22:45.605  INFO 11012 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-16 00:22:45.742  INFO 11012 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 127 ms. Found 24 JPA repository interfaces.
+2021-12-16 00:22:46.433  INFO 11012 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@54da32dc' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-16 00:22:46.440  INFO 11012 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-16 00:22:47.119  INFO 11012 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-16 00:22:47.136  INFO 11012 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-16 00:22:47.136  INFO 11012 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-12-16 00:22:47.307  INFO 11012 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-16 00:22:47.307  INFO 11012 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2452 ms
+2021-12-16 00:22:47.590  INFO 11012 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-16 00:22:47.664  INFO 11012 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-16 00:22:47.960  INFO 11012 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-16 00:22:48.103  INFO 11012 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-16 00:22:50.526  INFO 11012 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-16 00:22:50.553  INFO 11012 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-12-16 00:23:17.448  WARN 11012 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.UserClothKey
+2021-12-16 00:23:17.448  WARN 11012 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.UserClothKey
+2021-12-16 00:23:17.449  WARN 11012 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.SurveyQuestionAnswerKey
+2021-12-16 00:23:17.449  WARN 11012 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.SurveyQuestionAnswerKey
+2021-12-16 00:23:17.456  WARN 11012 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.SurveyQuestionOptionAnswerKey
+2021-12-16 00:23:17.456  WARN 11012 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.SurveyQuestionOptionAnswerKey
+2021-12-16 00:23:18.562  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:18.562  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "clothe_scales" does not exist, skipping
+2021-12-16 00:23:18.754  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:18.755  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "clothes" does not exist, skipping
+2021-12-16 00:23:18.948  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:18.948  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "musical_resources" does not exist, skipping
+2021-12-16 00:23:19.144  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:19.145  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "musical_resources" does not exist, skipping
+2021-12-16 00:23:19.336  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:19.337  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "news" does not exist, skipping
+2021-12-16 00:23:19.529  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:19.530  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "news_content" does not exist, skipping
+2021-12-16 00:23:19.723  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:19.723  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "news_content" does not exist, skipping
+2021-12-16 00:23:19.914  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:19.915  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "payments" does not exist, skipping
+2021-12-16 00:23:20.111  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:20.111  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "payments" does not exist, skipping
+2021-12-16 00:23:20.314  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:20.315  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "songs" does not exist, skipping
+2021-12-16 00:23:20.506  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:20.506  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "surveys" does not exist, skipping
+2021-12-16 00:23:20.700  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:20.701  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "surveys" does not exist, skipping
+2021-12-16 00:23:20.896  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:20.896  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "surveys_questions" does not exist, skipping
+2021-12-16 00:23:21.090  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:21.090  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "surveys_questions" does not exist, skipping
+2021-12-16 00:23:21.297  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:21.297  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "surveys_questions_answers" does not exist, skipping
+2021-12-16 00:23:21.489  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:21.489  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "surveys_questions_answers" does not exist, skipping
+2021-12-16 00:23:21.679  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:21.680  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "surveys_questions_options" does not exist, skipping
+2021-12-16 00:23:21.873  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:21.874  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "surveys_questions_options_answers" does not exist, skipping
+2021-12-16 00:23:22.066  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:22.066  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "surveys_questions_options_answers" does not exist, skipping
+2021-12-16 00:23:22.263  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:22.264  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "tickets" does not exist, skipping
+2021-12-16 00:23:22.458  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:22.458  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "tickets" does not exist, skipping
+2021-12-16 00:23:22.652  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:22.652  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_clothes" does not exist, skipping
+2021-12-16 00:23:22.843  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:22.844  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_clothes" does not exist, skipping
+2021-12-16 00:23:23.037  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:23.037  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_clothes" does not exist, skipping
+2021-12-16 00:23:23.228  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:23.228  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_meeting_minutes" does not exist, skipping
+2021-12-16 00:23:23.420  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:23.421  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_meeting_minutes" does not exist, skipping
+2021-12-16 00:23:23.615  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:23.615  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_roles" does not exist, skipping
+2021-12-16 00:23:23.812  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:23.813  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_roles" does not exist, skipping
+2021-12-16 00:23:24.003  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:24.003  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "clothe_scales" does not exist, skipping
+2021-12-16 00:23:24.198  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:24.199  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "clothe_types" does not exist, skipping
+2021-12-16 00:23:24.390  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:24.391  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "clothes" does not exist, skipping
+2021-12-16 00:23:24.584  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:24.585  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "composers" does not exist, skipping
+2021-12-16 00:23:24.782  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:24.782  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "errors" does not exist, skipping
+2021-12-16 00:23:24.975  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:24.975  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "meeting_minutes" does not exist, skipping
+2021-12-16 00:23:25.172  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:25.173  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "musical_resources" does not exist, skipping
+2021-12-16 00:23:25.364  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:25.364  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "musical_resources_types" does not exist, skipping
+2021-12-16 00:23:25.561  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:25.561  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "news" does not exist, skipping
+2021-12-16 00:23:25.756  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:25.756  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "news_content" does not exist, skipping
+2021-12-16 00:23:25.950  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:25.950  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "news_content_types" does not exist, skipping
+2021-12-16 00:23:26.142  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:26.142  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "payments" does not exist, skipping
+2021-12-16 00:23:26.334  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:26.334  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "roles" does not exist, skipping
+2021-12-16 00:23:26.529  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:26.529  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "shows" does not exist, skipping
+2021-12-16 00:23:26.722  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:26.723  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "songs" does not exist, skipping
+2021-12-16 00:23:26.913  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:26.913  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "surveys" does not exist, skipping
+2021-12-16 00:23:27.107  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:27.107  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "surveys_questions" does not exist, skipping
+2021-12-16 00:23:27.298  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:27.298  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "surveys_questions_answers" does not exist, skipping
+2021-12-16 00:23:27.489  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:27.490  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "surveys_questions_options" does not exist, skipping
+2021-12-16 00:23:27.678  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:27.679  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "surveys_questions_options_answers" does not exist, skipping
+2021-12-16 00:23:27.872  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:27.872  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "surveys_questions_types" does not exist, skipping
+2021-12-16 00:23:28.064  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:28.064  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "tickets" does not exist, skipping
+2021-12-16 00:23:28.259  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:28.260  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
+2021-12-16 00:23:28.455  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:28.456  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users_clothes" does not exist, skipping
+2021-12-16 00:23:28.648  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:28.649  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users_meeting_minutes" does not exist, skipping
+2021-12-16 00:23:28.840  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:28.841  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users_roles" does not exist, skipping
+2021-12-16 00:23:29.032  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-16 00:23:29.033  WARN 11012 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "hibernate_sequence" does not exist, skipping
+2021-12-16 00:23:39.984  INFO 11012 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-16 00:23:40.015  INFO 11012 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-16 00:23:40.657  WARN 11012 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-16 00:23:41.872  INFO 11012 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69d58731, org.springframework.security.web.context.SecurityContextPersistenceFilter@31443680, org.springframework.security.web.header.HeaderWriterFilter@3dc2f14, org.springframework.security.web.authentication.logout.LogoutFilter@c2e33, com.gruposei.gestion_orquestas.filters.JwtRequestFilters@7bce9ce4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@93fb44, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2d4a0671, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3275a47f, org.springframework.security.web.session.SessionManagementFilter@18d22ecf, org.springframework.security.web.access.ExceptionTranslationFilter@5615f82d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7c048b30]
+2021-12-16 00:23:42.398  INFO 11012 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-16 00:23:42.409  INFO 11012 --- [main] c.g.g.GestionOrquestasApplication        : Started GestionOrquestasApplication in 58.234 seconds (JVM running for 59.037)
+2021-12-16 00:39:14.581  INFO 16016 --- [main] c.g.g.GestionOrquestasApplicationTests   : Starting GestionOrquestasApplicationTests using Java 1.8.0_302 on DESKTOP-VHDC6FE with PID 16016 (started by Dabeer in D:\Descargas\DP\gestion_orquestas)
+2021-12-16 00:39:14.584  INFO 16016 --- [main] c.g.g.GestionOrquestasApplicationTests   : No active profile set, falling back to default profiles: default
+2021-12-16 00:39:16.037  INFO 16016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-16 00:39:16.214  INFO 16016 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 166 ms. Found 24 JPA repository interfaces.
+2021-12-16 00:39:16.967  INFO 16016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@756b58a7' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-16 00:39:16.983  INFO 16016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-16 00:39:17.332  INFO 16016 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-16 00:39:17.411  INFO 16016 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-16 00:39:17.704  INFO 16016 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-16 00:39:18.198  INFO 16016 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-16 00:39:20.468  INFO 16016 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-16 00:39:20.513  INFO 16016 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-12-16 00:39:50.133  WARN 16016 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.UserClothKey
+2021-12-16 00:39:50.133  WARN 16016 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.UserClothKey
+2021-12-16 00:39:50.134  WARN 16016 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.SurveyQuestionAnswerKey
+2021-12-16 00:39:50.134  WARN 16016 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.SurveyQuestionAnswerKey
+2021-12-16 00:39:50.142  WARN 16016 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.SurveyQuestionOptionAnswerKey
+2021-12-16 00:39:50.142  WARN 16016 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.SurveyQuestionOptionAnswerKey
+2021-12-16 00:40:11.307  INFO 16016 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-16 00:40:11.319  INFO 16016 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-16 00:40:11.416  WARN 16016 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-16 00:40:13.529  INFO 16016 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5ac0bf84, org.springframework.security.web.context.SecurityContextPersistenceFilter@6d842877, org.springframework.security.web.header.HeaderWriterFilter@39f68aec, org.springframework.security.web.authentication.logout.LogoutFilter@99223ac, com.gruposei.gestion_orquestas.filters.JwtRequestFilters@350342e0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3835d3fd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@73aae7a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6fefc5ea, org.springframework.security.web.session.SessionManagementFilter@5dba3fdc, org.springframework.security.web.access.ExceptionTranslationFilter@103478b8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@10e8c7a2]
+2021-12-16 00:40:14.812  INFO 16016 --- [main] c.g.g.GestionOrquestasApplicationTests   : Started GestionOrquestasApplicationTests in 60.595 seconds (JVM running for 61.972)
+2021-12-16 00:41:23.634  INFO 16016 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-16 00:41:23.635  INFO 16016 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-12-16 00:41:33.713  INFO 16016 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-16 00:41:41.547  INFO 16016 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
