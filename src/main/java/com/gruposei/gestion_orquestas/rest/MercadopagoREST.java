@@ -3,23 +3,23 @@ package com.gruposei.gestion_orquestas.rest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gruposei.gestion_orquestas.model.MercadopagoResource;
-import com.gruposei.gestion_orquestas.model.Payment;
-import com.gruposei.gestion_orquestas.model.Show;
-import com.gruposei.gestion_orquestas.model.User;
+import com.google.gson.JsonObject;
+import com.gruposei.gestion_orquestas.model.*;
 import com.gruposei.gestion_orquestas.responses.ApiRequestException;
 import com.gruposei.gestion_orquestas.responses.ResponseHandler;
-import com.gruposei.gestion_orquestas.service.PaymentService;
-import com.gruposei.gestion_orquestas.service.ShowService;
-import com.gruposei.gestion_orquestas.service.UserService;
+import com.gruposei.gestion_orquestas.service.*;
 import com.mercadopago.*;
+import com.mercadopago.exceptions.MPConfException;
 import com.mercadopago.exceptions.MPException;
 import com.mercadopago.resources.Preference;
 import com.mercadopago.resources.datastructures.preference.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.util.ArrayList;
 import java.util.Optional;
 
 @CrossOrigin(origins = "**")
@@ -37,9 +37,14 @@ public class MercadopagoREST {
     private UserService userService;
 
     @Autowired
-    private PaymentService paymentService;
+    private PaymentRequestService paymentRequestService;
 
-//    @CrossOrigin("/**")
+    @Autowired
+    private MercadopagoNotificationService mercadopagoNotificationService;
+
+    @Autowired
+    private MercadopagoBackurlsService mercadopagoBackurlsService;
+
     @PostMapping
     private ResponseEntity<Object> save(@RequestBody JsonNode p) throws JsonProcessingException, MPException {
 
@@ -62,11 +67,11 @@ public class MercadopagoREST {
             throw new ApiRequestException("007");
         }
 
-        Payment payment = new Payment();
-        payment.setShow(show.get());
-        payment.setQuantity(quantity);
-        payment.setUser(user.get());
-        payment = paymentService.create(payment);
+        PaymentRequest paymentRequest = new PaymentRequest();
+        paymentRequest.setShow(show.get());
+        paymentRequest.setQuantity(quantity);
+        paymentRequest.setUser(user.get());
+        paymentRequest = paymentRequestService.create(paymentRequest);
 
         MercadoPago.SDK.setAccessToken("TEST-2338012267335051-121003-6aa56ef59f4244b1cd4c0ed4d1b1a5af-105584808");
         MercadoPago.SDK.setIntegratorId("2338012267335051");
@@ -85,17 +90,17 @@ public class MercadopagoREST {
                 .setQuantity(quantity)
                 .setDescription("Lugar: " + show.get().getPlace())
                 .setUnitPrice((float) show.get().getPrice());
-//        preference.setBackUrls(
-//                new BackUrls()
-//                        .setFailure("https://mp-marco.herokuapp.com/payment")
-//                        .setPending("https://mp-marco.herokuapp.com/payment")
-//                        .setSuccess("https://mp-marco.herokuapp.com/payment")
-//        );
+        preference.setBackUrls(
+                new BackUrls()
+                        .setFailure("https://2338-190-17-108-95.ngrok.io/api/mercadopago/backurls")
+                        .setPending("https://2338-190-17-108-95.ngrok.io/api/mercadopago/backurls")
+                        .setSuccess("https://2338-190-17-108-95.ngrok.io/api/mercadopago/backurls")
+        );
         preference.appendItem(item);
         preference = preference.save();
 
-        payment.setPreferenceID(preference.getId());
-        paymentService.create(payment);
+        paymentRequest.setPreferenceID(preference.getId());
+        paymentRequestService.create(paymentRequest);
 
         MercadopagoResource mercadopagoResource = new MercadopagoResource();
         mercadopagoResource.setPreferenceID(preference.getId());
@@ -106,24 +111,37 @@ public class MercadopagoREST {
         return responseHandler.generateResponse("000", mercadopagoResource);
     }
 
-//    @CrossOrigin("/**")
     @PostMapping("/notifications")
-    private ResponseEntity<Object> pagado(){
+    private void pagado(@RequestBody JsonNode jsonNode) throws MPConfException, JSONException, JsonProcessingException {
 
-        Show show = new Show();
-        show.setName("eaea");
-        show.setPlace("aaa");
-        show.setTickets(999);
-        showService.create(show);
-        System.out.println("Entra");
-        return responseHandler.generateResponse("000", "Entra");
+        ObjectMapper mapper = new ObjectMapper();
+        JSONObject p;
+
+        p=new JSONObject(mapper.writeValueAsString(jsonNode));
+
+        String id = (p.isNull("id") ? null : p.getString("id"));
+        String action = (p.isNull("action") ? null : p.getString("action"));
+        String api_version = (p.isNull("api_version") ? null : p.getString("api_version"));
+        String application_id = (p.isNull("application_id") ? null : p.getString("application_id"));
+        String date_created = (p.isNull("date_created") ? null : p.getString("date_created"));
+        String live_mode = (p.isNull("live_mode") ? null : p.getString("live_mode"));
+        String type = (p.isNull("type") ? null : p.getString("type"));
+        String user_id = (p.isNull("user_id") ? null : p.getString("user_id"));
+        String version = (p.isNull("version") ? null : p.getString("version"));
+        String data_id = (p.getJSONObject("data").isNull("id") ? null : p.getJSONObject("data").getString("id"));
+
+        MercadopagoNotification mercadopagoNotification = new MercadopagoNotification();
+        mercadopagoNotification.setId(id);
+        mercadopagoNotification.setAction(action);
+        mercadopagoNotification.setApi_version(api_version);
+        mercadopagoNotification.setApplication_id(application_id);
+        mercadopagoNotification.setDate_created(date_created);
+        mercadopagoNotification.setLive_mode(live_mode);
+        mercadopagoNotification.setType(type);
+        mercadopagoNotification.setUser_id(user_id);
+        mercadopagoNotification.setVersion(version);
+        mercadopagoNotification.setData(data_id);
+        mercadopagoNotificationService.create(mercadopagoNotification);
+
     }
 }
-
-//{
-//        "name": "eaeae",
-//        "place": "Allá",
-//        "date": "2021-12-30",
-//        "price": 3000.0,
-//        "tickets": 20
-//        }

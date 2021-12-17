@@ -1,20 +1,15 @@
 package com.gruposei.gestion_orquestas.rest;
 
-import com.gruposei.gestion_orquestas.model.Show;
-import com.gruposei.gestion_orquestas.model.Ticket;
-import com.gruposei.gestion_orquestas.model.User;
+import com.gruposei.gestion_orquestas.model.*;
 import com.gruposei.gestion_orquestas.responses.ApiRequestException;
 import com.gruposei.gestion_orquestas.responses.ResponseHandler;
-import com.gruposei.gestion_orquestas.service.ShowService;
-import com.gruposei.gestion_orquestas.service.TicketService;
-import com.gruposei.gestion_orquestas.service.UserService;
+import com.gruposei.gestion_orquestas.service.*;
+import com.mercadopago.exceptions.MPConfException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,19 +32,51 @@ public class TicketREST {
     @Autowired
     private ResponseHandler responseHandler;
 
-    @PostMapping(params = {"user_id","show_id"})
-    private ResponseEntity<Object> save(@RequestParam("user_id") Long user_id,@RequestParam("show_id") Long show_id){
+    @Autowired
+    private MercadopagoBackurlsService mercadopagoBackurlsService;
+
+    @Autowired
+    private PaymentRequestService paymentRequestService;
+
+    @PostMapping
+    private ResponseEntity<Object> pagado(@RequestBody MercadopagoBackurls p) throws MPConfException {
+
+        MercadopagoBackurls temporal = mercadopagoBackurlsService.create(p);
+
+        Optional<PaymentRequest> paymentRequest = paymentRequestService.findByExternalReference(p.getExternal_reference());
+
+        if(!paymentRequest.isPresent())
+            throw  new ApiRequestException("009");
 
         try{
 
-            Ticket temporal = ticketService.create(user_id,show_id);
-            return responseHandler.generateResponse("000",temporal);
+            paymentRequest.get().setPaid(true);
+            paymentRequestService.create(paymentRequest.get());
+
+            List<Ticket> tickets = ticketService.create(paymentRequest.get().getUser(),paymentRequest.get().getShow(),paymentRequest.get().getQuantity());
+            return responseHandler.generateResponse("000",tickets);
         }
         catch(Exception e){
 
             throw  new ApiRequestException("002");
         }
+
+
     }
+
+//    @PostMapping(params = {"user_id","show_id"})
+//    private ResponseEntity<Object> save(@RequestParam("user_id") User user,@RequestParam("show_id") Show show){
+//
+//        try{
+//
+//            Ticket temporal = ticketService.create(user,show);
+//            return responseHandler.generateResponse("000",temporal);
+//        }
+//        catch(Exception e){
+//
+//            throw  new ApiRequestException("002");
+//        }
+//    }
 
     @PostMapping(value = "/checkin",params = "code")
     private ResponseEntity<Object> setAsUsed(@RequestParam("code") String code){

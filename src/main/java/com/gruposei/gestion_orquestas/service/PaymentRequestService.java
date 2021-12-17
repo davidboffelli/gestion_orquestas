@@ -3,8 +3,8 @@ package com.gruposei.gestion_orquestas.service;
 import com.google.gson.Gson;
 import com.gruposei.gestion_orquestas.model.Cloth;
 import com.gruposei.gestion_orquestas.model.MercadopagoResource;
-import com.gruposei.gestion_orquestas.model.Payment;
-import com.gruposei.gestion_orquestas.repositories.PaymentRepository;
+import com.gruposei.gestion_orquestas.model.PaymentRequest;
+import com.gruposei.gestion_orquestas.repositories.PaymentRequestRepository;
 import com.gruposei.gestion_orquestas.responses.ApiRequestException;
 import com.mercadopago.MercadoPago;
 import com.mercadopago.exceptions.MPException;
@@ -21,10 +21,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class PaymentService {
+public class PaymentRequestService {
 
     @Autowired
-    private PaymentRepository paymentRepository;
+    private PaymentRequestRepository paymentRequestRepository;
 
     public MercadopagoResource generatePreference(){
         try{
@@ -89,29 +89,39 @@ public class PaymentService {
         }
     }
 
-    public List<Payment> getAll(){
+    public List<PaymentRequest> getAll(){
 
-        return paymentRepository.findAll();
+        return paymentRequestRepository.findAll();
     }
 
-    public void delete(Payment p){
+    public void delete(PaymentRequest p){
 
-        paymentRepository.delete(p);
+        paymentRequestRepository.delete(p);
     }
 
-    public Optional<Payment> findById(Long id){
+    public Optional<PaymentRequest> findById(Long id){
 
-        return paymentRepository.findById(id);
+        return paymentRequestRepository.findById(id);
     }
 
-    public Payment create(Payment p){
+    public Optional<PaymentRequest> findByExternalReference(String er){
+
+        return paymentRequestRepository.findByExternalReference(er);
+    }
+
+    public boolean existsByExternalReference(String er){
+
+        return paymentRequestRepository.existsByExternalReference(er);
+    }
+
+    public PaymentRequest create(PaymentRequest p){
 
         if(p.getId() == null){
 
-            p = paymentRepository.save(p);
+            p = paymentRequestRepository.save(p);
             p.setExternalReference(p.getId().toString() + p.getShow().getId().toString() + p.getQuantity() + p.getUser().getUsername());
         }
 
-        return paymentRepository.save(p);
+        return paymentRequestRepository.save(p);
     }
 }

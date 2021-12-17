@@ -56,13 +56,6 @@ public class Ticket {
         this.code = code;
     }
 
-    public void buildCode(){
-        String user_id = this.user.getId().toString();
-        String show_id = this.show.getId().toString();
-
-        this.code = user_id + show_id + "ENTRADA";
-    }
-
     public User getUser() {
         return user;
     }

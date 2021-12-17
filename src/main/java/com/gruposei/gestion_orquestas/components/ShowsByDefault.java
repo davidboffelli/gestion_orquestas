@@ -48,7 +48,7 @@ public class ShowsByDefault implements CommandLineRunner {
         show2.setPlace("Por acá nomás");
         show2.setTickets(200);
         show2.setPublicDate(new Date(System.currentTimeMillis()));
-        show1.setPrice(2000.0);
+        show2.setPrice(2000.0);
         showService.create(show2);
 
         Show show3 = new Show();
@@ -57,7 +57,7 @@ public class ShowsByDefault implements CommandLineRunner {
         show3.setPlace("Acá a la vuelta");
         show3.setTickets(150);
         show3.setPublicDate(new Date(System.currentTimeMillis()));
-        show1.setPrice(3000.0);
+        show3.setPrice(3000.0);
         showService.create(show3);
 
         User user1 = new User();
@@ -77,11 +77,6 @@ public class ShowsByDefault implements CommandLineRunner {
         Ticket ticket = new Ticket();
         ticket.setShow(show1);
         ticket.setUser(user1);
-        ticketService.create(user1.getId(),show1.getId());
-
-        ticket = new Ticket();
-        ticket.setShow(show3);
-        ticket.setUser(user2);
-        ticketService.create(user2.getId(),show3.getId());
+        ticketService.create(user1,show1,5);
     }
 }

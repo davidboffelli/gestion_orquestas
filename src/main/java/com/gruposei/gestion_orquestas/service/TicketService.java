@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -27,21 +28,45 @@ public class TicketService {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    public Ticket create(Long user_id, Long show_id){
-
-        Optional<User> user = userService.findById(user_id);
-        Optional<Show> show = showService.findById(show_id);
+    public Ticket create(User user, Show show){
 
         Ticket ticket = new Ticket();
-        ticket.setUser(user.get());
-        ticket.setShow(show.get());
-        ticket.buildCode();
-        String encodedCode = bCryptPasswordEncoder.encode(ticket.getCode());
+        ticket.setUser(user);
+        ticket.setShow(show);
+        ticket = ticketRepository.save(ticket);
+        String encodedCode = bCryptPasswordEncoder.encode(buildCode(ticket.getId(),user,show));
         ticket.setCode(encodedCode);
         ticket.setUsed(false);
         ticket.setPurchaseDate(new Date(System.currentTimeMillis()));
 
         return ticketRepository.save(ticket);
+    }
+
+    public List<Ticket> create(User user, Show show,int quantity){
+
+        List<Ticket> tickets = new ArrayList<Ticket>();
+        for(int i=0;i<quantity;i++){
+
+            Ticket ticket = new Ticket();
+            ticket.setUser(user);
+            ticket.setShow(show);
+            ticket.setUsed(false);
+            ticket.setPurchaseDate(new Date(System.currentTimeMillis()));
+            ticket =ticketRepository.save(ticket);
+            String encodedCode = bCryptPasswordEncoder.encode(buildCode(ticket.getId(),user,show));
+            ticket.setCode(encodedCode);
+            ticket =ticketRepository.save(ticket);
+            tickets.add(ticket);
+        }
+
+        return tickets;
+    }
+
+    public String buildCode(Long id, User user,Show show){
+        String username = user.getUsername();
+        String show_id = show.getId().toString();
+
+        return id.toString() +  username + show_id + "ENTRADA";
     }
 
     public Ticket update(Ticket ticket){

@@ -3,8 +3,8 @@ package com.gruposei.gestion_orquestas.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "payments")
-public class Payment {
+@Table(name = "payment_requests")
+public class PaymentRequest {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +20,7 @@ public class Payment {
     private String externalReference;
     private String preferenceID;
 
-    public Payment() {
+    public PaymentRequest() {
     }
 
     public Long getId() {

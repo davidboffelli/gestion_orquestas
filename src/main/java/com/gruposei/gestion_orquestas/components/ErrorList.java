@@ -73,5 +73,11 @@ public class ErrorList implements CommandLineRunner {
         e.setHttpStatus(HttpStatus.BAD_REQUEST);
         e.setEndpoint("SHOW");
         myErrorService.create(e);
+
+        e.setId("009");
+        e.setMessage("No se encontró requerimiento de pago con ese External Reference");
+        e.setHttpStatus(HttpStatus.BAD_REQUEST);
+        e.setEndpoint("TICKET");
+        myErrorService.create(e);
     }
 }
