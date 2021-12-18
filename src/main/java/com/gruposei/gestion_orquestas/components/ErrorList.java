@@ -79,5 +79,17 @@ public class ErrorList implements CommandLineRunner {
         e.setHttpStatus(HttpStatus.BAD_REQUEST);
         e.setEndpoint("TICKET");
         myErrorService.create(e);
+
+        e.setId("010");
+        e.setMessage("imagen no válida");
+        e.setHttpStatus(HttpStatus.BAD_REQUEST);
+        e.setEndpoint("IMAGE");
+        myErrorService.create(e);
+
+        e.setId("011");
+        e.setMessage("La imagen no existe");
+        e.setHttpStatus(HttpStatus.BAD_REQUEST);
+        e.setEndpoint("IMAGE");
+        myErrorService.create(e);
     }
 }

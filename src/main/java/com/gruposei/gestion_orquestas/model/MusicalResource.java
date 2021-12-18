@@ -24,6 +24,10 @@ public class MusicalResource {
     @JoinColumn(name = "type_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private MusicalResourceType musicalResourceType;
+    @ManyToOne
+    @JoinColumn(name = "imagen_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Imagen imagen;
 
     public MusicalResource() {
     }
@@ -83,5 +87,13 @@ public class MusicalResource {
 
     public void setTypeMusicalResource(MusicalResourceType typeMusicalResource) {
         this.musicalResourceType = typeMusicalResource;
+    }
+
+    public Imagen getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(Imagen imagen) {
+        this.imagen = imagen;
     }
 }

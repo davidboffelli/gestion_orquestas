@@ -1,5 +1,8 @@
 package com.gruposei.gestion_orquestas.model;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -16,6 +19,10 @@ public class Show {
     private Date publicDate;
     private double price;
     private int tickets;
+    @ManyToOne
+    @JoinColumn(name = "imagen_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Imagen imagen;
 
     public Show() {
     }
@@ -84,5 +91,13 @@ public class Show {
 
     public void setTickets(int tickets) {
         this.tickets = tickets;
+    }
+
+    public Imagen getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(Imagen imagen) {
+        this.imagen = imagen;
     }
 }

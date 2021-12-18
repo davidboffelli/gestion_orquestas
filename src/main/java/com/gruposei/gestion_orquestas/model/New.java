@@ -22,6 +22,10 @@ public class New {
     private Date createdDate = new Date(System.currentTimeMillis());
     private Date publicDate;
     private boolean enabled;
+    @ManyToOne
+    @JoinColumn(name = "imagen_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Imagen imagen;
 
     public New() {
     }
@@ -76,5 +80,13 @@ public class New {
 
     public Date getCreatedDate() {
         return createdDate;
+    }
+
+    public Imagen getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(Imagen imagen) {
+        this.imagen = imagen;
     }
 }
