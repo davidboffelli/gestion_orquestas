@@ -41,6 +41,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/login").permitAll()
                 .antMatchers("/api/users/register").permitAll()
                 .antMatchers("/api/mercadopago/notifications").permitAll()
+                .antMatchers("/").permitAll()
                 .antMatchers(HttpMethod.GET,"/api/news").permitAll()
                 .antMatchers(HttpMethod.GET,"/api/shows").permitAll()
                 .anyRequest().authenticated().and().sessionManagement()

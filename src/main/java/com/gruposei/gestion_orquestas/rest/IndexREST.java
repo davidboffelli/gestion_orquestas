@@ -32,7 +32,7 @@ public class IndexREST {
     @RequestMapping("/")
     public String hello(){
 
-        return "Hello World";
+        return "index";
     }
 
     @RequestMapping(value = "/api/login", method = RequestMethod.POST)
