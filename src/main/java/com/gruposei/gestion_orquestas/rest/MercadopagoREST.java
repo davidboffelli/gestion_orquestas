@@ -22,7 +22,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Optional;
 
-@CrossOrigin(origins = "**")
+//@CrossOrigin(origins = "**")
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 @RestController
 @RequestMapping("/api/mercadopago")
 public class MercadopagoREST {
