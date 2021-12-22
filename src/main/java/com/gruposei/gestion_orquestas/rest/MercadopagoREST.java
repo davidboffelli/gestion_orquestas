@@ -128,7 +128,7 @@ public class MercadopagoREST {
         String type = (p.isNull("type") ? null : p.getString("type"));
         String user_id = (p.isNull("user_id") ? null : p.getString("user_id"));
         String version = (p.isNull("version") ? null : p.getString("version"));
-        String data_id = (p.getJSONObject("data").isNull("id") ? null : p.getJSONObject("data").getString("id"));
+  //      String data_id = (p.getJSONObject("data").isNull("id") ? null : p.getJSONObject("data").getString("id"));
 
         MercadopagoNotification mercadopagoNotification = new MercadopagoNotification();
         mercadopagoNotification.setId(id);
@@ -140,7 +140,7 @@ public class MercadopagoREST {
         mercadopagoNotification.setType(type);
         mercadopagoNotification.setUser_id(user_id);
         mercadopagoNotification.setVersion(version);
-        mercadopagoNotification.setData(data_id);
+ //       mercadopagoNotification.setData(data_id);
         mercadopagoNotificationService.create(mercadopagoNotification);
 
     }
