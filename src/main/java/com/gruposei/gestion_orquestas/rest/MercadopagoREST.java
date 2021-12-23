@@ -11,6 +11,7 @@ import com.gruposei.gestion_orquestas.service.*;
 import com.mercadopago.*;
 import com.mercadopago.exceptions.MPConfException;
 import com.mercadopago.exceptions.MPException;
+import com.mercadopago.resources.Payment;
 import com.mercadopago.resources.Preference;
 import com.mercadopago.resources.datastructures.preference.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -113,7 +114,7 @@ public class MercadopagoREST {
     }
 
     @PostMapping("/notifications")
-    private void pagado(@RequestBody JsonNode jsonNode) throws MPConfException, JSONException, JsonProcessingException {
+    private void pagado(@RequestBody JsonNode jsonNode) throws MPException, JSONException, JsonProcessingException {
 
         ObjectMapper mapper = new ObjectMapper();
         JSONObject p;
@@ -129,7 +130,14 @@ public class MercadopagoREST {
         String type = (p.isNull("type") ? null : p.getString("type"));
         String user_id = (p.isNull("user_id") ? null : p.getString("user_id"));
         String version = (p.isNull("version") ? null : p.getString("version"));
-  //      String data_id = (p.getJSONObject("data").isNull("id") ? null : p.getJSONObject("data").getString("id"));
+        String data_id = (p.getJSONObject("data").isNull("id") ? null : p.getJSONObject("data").getString("id"));
+
+        String externalReferenceId = Payment.findById(data_id).getExternalReference();
+        Optional<PaymentRequest> pr = paymentRequestService.findByExternalReference(externalReferenceId);
+
+        if (!pr.isPresent()) {
+            throw new Exception();
+        }
 
         MercadopagoNotification mercadopagoNotification = new MercadopagoNotification();
         mercadopagoNotification.setId(id);
