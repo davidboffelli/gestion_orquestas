@@ -1,6 +1,5 @@
 package com.gruposei.gestion_orquestas;
 
-import javafx.application.Application;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.gruposei.gestion_orquestas.repositories.UserRepository;

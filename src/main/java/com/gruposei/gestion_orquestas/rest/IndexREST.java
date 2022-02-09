@@ -12,9 +12,10 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 public class IndexREST {
 
     @Autowired
@@ -30,9 +31,9 @@ public class IndexREST {
     private ResponseHandler responseHandler;
 
     @RequestMapping("/")
-    public String hello(){
+    public String index(){
 
-        return "Hello World";
+        return "index";
     }
 
     @RequestMapping(value = "/api/login", method = RequestMethod.POST)
