@@ -37,10 +37,10 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeRequests()
-                .antMatchers(HttpMethod.GET,"/api/**")
-                .authenticated().and().sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+//        http.csrf().disable().authorizeRequests()
+//                .antMatchers(HttpMethod.GET,"/api/**")
+//                .authenticated().and().sessionManagement()
+//                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.csrf().disable().authorizeRequests().antMatchers("/api/login").permitAll()
                 .antMatchers("/api/users/register").permitAll()
                 .antMatchers("/api/mercadopago/notifications").permitAll()
