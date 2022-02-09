@@ -1403,3 +1403,380 @@ Caused by: java.lang.NullPointerException: null
 2021-12-17 23:22:58.579  INFO 692 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 2021-12-17 23:22:58.715  INFO 692 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-12-17 23:22:58.723  INFO 692 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-20 18:55:50.335  INFO 3252 --- [main] c.g.g.GestionOrquestasApplication        : Starting GestionOrquestasApplication using Java 1.8.0_302 on DESKTOP-0MNSHH6 with PID 3252 (D:\Descargas\gestion_orquestas\target\classes started by arakn in D:\Descargas\gestion_orquestas)
+2021-12-20 18:55:50.343  INFO 3252 --- [main] c.g.g.GestionOrquestasApplication        : No active profile set, falling back to default profiles: default
+2021-12-20 18:55:52.373  INFO 3252 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-20 18:55:52.689  INFO 3252 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 296 ms. Found 27 JPA repository interfaces.
+2021-12-20 18:55:54.011  INFO 3252 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@13a37e2a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-20 18:55:54.027  INFO 3252 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-20 18:55:55.394  INFO 3252 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-20 18:55:55.411  INFO 3252 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-20 18:55:55.412  INFO 3252 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-12-20 18:55:55.606  INFO 3252 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-20 18:55:55.606  INFO 3252 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5061 ms
+2021-12-20 18:55:56.091  INFO 3252 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-20 18:55:56.227  INFO 3252 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-20 18:55:56.651  INFO 3252 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-20 18:55:56.843  INFO 3252 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-20 18:55:57.569  INFO 3252 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-20 18:55:57.593  INFO 3252 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-12-20 18:55:58.773  WARN 3252 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.UserClothKey
+2021-12-20 18:55:58.773  WARN 3252 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.UserClothKey
+2021-12-20 18:55:58.773  WARN 3252 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.SurveyQuestionAnswerKey
+2021-12-20 18:55:58.774  WARN 3252 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.SurveyQuestionAnswerKey
+2021-12-20 18:55:58.780  WARN 3252 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.SurveyQuestionOptionAnswerKey
+2021-12-20 18:55:58.781  WARN 3252 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.SurveyQuestionOptionAnswerKey
+2021-12-20 18:55:59.748  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.748  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «clothe_scales», omitiendo
+2021-12-20 18:55:59.749  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.749  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «clothes», omitiendo
+2021-12-20 18:55:59.750  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.750  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «musical_resources», omitiendo
+2021-12-20 18:55:59.751  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.751  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «musical_resources», omitiendo
+2021-12-20 18:55:59.752  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.752  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «musical_resources», omitiendo
+2021-12-20 18:55:59.752  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.752  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «news», omitiendo
+2021-12-20 18:55:59.753  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.753  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «news», omitiendo
+2021-12-20 18:55:59.754  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.754  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «news_content», omitiendo
+2021-12-20 18:55:59.755  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.755  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «news_content», omitiendo
+2021-12-20 18:55:59.756  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.756  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «payment_requests», omitiendo
+2021-12-20 18:55:59.756  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.757  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «payment_requests», omitiendo
+2021-12-20 18:55:59.757  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.757  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «shows», omitiendo
+2021-12-20 18:55:59.758  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.758  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «songs», omitiendo
+2021-12-20 18:55:59.759  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.759  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «songs», omitiendo
+2021-12-20 18:55:59.760  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.760  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys», omitiendo
+2021-12-20 18:55:59.760  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.760  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys», omitiendo
+2021-12-20 18:55:59.761  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.761  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions», omitiendo
+2021-12-20 18:55:59.762  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.762  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions», omitiendo
+2021-12-20 18:55:59.762  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.762  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_answers», omitiendo
+2021-12-20 18:55:59.763  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.763  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_answers», omitiendo
+2021-12-20 18:55:59.764  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.764  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_options», omitiendo
+2021-12-20 18:55:59.765  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.765  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_options_answers», omitiendo
+2021-12-20 18:55:59.765  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.765  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_options_answers», omitiendo
+2021-12-20 18:55:59.766  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.766  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «tickets», omitiendo
+2021-12-20 18:55:59.767  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.767  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «tickets», omitiendo
+2021-12-20 18:55:59.768  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.768  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_clothes», omitiendo
+2021-12-20 18:55:59.769  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.769  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_clothes», omitiendo
+2021-12-20 18:55:59.770  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.770  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_clothes», omitiendo
+2021-12-20 18:55:59.771  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.771  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_meeting_minutes», omitiendo
+2021-12-20 18:55:59.771  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.771  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_meeting_minutes», omitiendo
+2021-12-20 18:55:59.772  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.772  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_roles», omitiendo
+2021-12-20 18:55:59.773  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.773  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_roles», omitiendo
+2021-12-20 18:55:59.776  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.776  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «clothe_scales» no existe, omitiendo
+2021-12-20 18:55:59.777  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.777  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «clothe_types» no existe, omitiendo
+2021-12-20 18:55:59.777  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.777  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «clothes» no existe, omitiendo
+2021-12-20 18:55:59.778  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.778  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «composers» no existe, omitiendo
+2021-12-20 18:55:59.778  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.779  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «errors» no existe, omitiendo
+2021-12-20 18:55:59.779  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.779  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «imagen» no existe, omitiendo
+2021-12-20 18:55:59.780  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.780  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «meeting_minutes» no existe, omitiendo
+2021-12-20 18:55:59.780  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.780  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «mercadopago_backurls» no existe, omitiendo
+2021-12-20 18:55:59.781  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.781  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «mercadopago_notifications» no existe, omitiendo
+2021-12-20 18:55:59.782  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.782  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «musical_resources» no existe, omitiendo
+2021-12-20 18:55:59.782  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.782  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «musical_resources_types» no existe, omitiendo
+2021-12-20 18:55:59.783  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.783  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «news» no existe, omitiendo
+2021-12-20 18:55:59.784  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.784  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «news_content» no existe, omitiendo
+2021-12-20 18:55:59.784  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.784  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «news_content_types» no existe, omitiendo
+2021-12-20 18:55:59.785  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.785  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «payment_requests» no existe, omitiendo
+2021-12-20 18:55:59.785  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.785  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «roles» no existe, omitiendo
+2021-12-20 18:55:59.786  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.786  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «shows» no existe, omitiendo
+2021-12-20 18:55:59.786  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.786  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «songs» no existe, omitiendo
+2021-12-20 18:55:59.787  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.787  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys» no existe, omitiendo
+2021-12-20 18:55:59.787  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.788  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions» no existe, omitiendo
+2021-12-20 18:55:59.788  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.788  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions_answers» no existe, omitiendo
+2021-12-20 18:55:59.789  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.789  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions_options» no existe, omitiendo
+2021-12-20 18:55:59.790  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.790  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions_options_answers» no existe, omitiendo
+2021-12-20 18:55:59.790  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.790  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions_types» no existe, omitiendo
+2021-12-20 18:55:59.791  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.791  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «tickets» no existe, omitiendo
+2021-12-20 18:55:59.792  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.792  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «users» no existe, omitiendo
+2021-12-20 18:55:59.792  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.792  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «users_clothes» no existe, omitiendo
+2021-12-20 18:55:59.793  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.793  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «users_meeting_minutes» no existe, omitiendo
+2021-12-20 18:55:59.793  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.793  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «users_roles» no existe, omitiendo
+2021-12-20 18:55:59.795  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 18:55:59.795  WARN 3252 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la secuencia «hibernate_sequence» no existe, omitiendo
+2021-12-20 18:56:02.205  INFO 3252 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-20 18:56:02.216  INFO 3252 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-20 18:56:02.805  WARN 3252 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-20 18:56:04.376  INFO 3252 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4efe014f, org.springframework.security.web.context.SecurityContextPersistenceFilter@72585e83, org.springframework.security.web.header.HeaderWriterFilter@351e86b2, org.springframework.security.web.authentication.logout.LogoutFilter@3155f190, com.gruposei.gestion_orquestas.filters.JwtRequestFilters@7b8b07ae, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1d5bb5c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2133b712, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@22ff11ef, org.springframework.security.web.session.SessionManagementFilter@4552f905, org.springframework.security.web.access.ExceptionTranslationFilter@2792c28, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@499c4d61]
+2021-12-20 18:56:05.198  INFO 3252 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-20 18:56:05.209  INFO 3252 --- [main] c.g.g.GestionOrquestasApplication        : Started GestionOrquestasApplication in 15.781 seconds (JVM running for 16.82)
+2021-12-20 19:02:49.465  INFO 3252 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-20 19:02:49.465  INFO 3252 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-12-20 19:02:49.798  INFO 3252 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-20 19:02:49.803  INFO 3252 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-20 19:02:54.830  INFO 16968 --- [main] c.g.g.GestionOrquestasApplication        : Starting GestionOrquestasApplication using Java 1.8.0_302 on DESKTOP-0MNSHH6 with PID 16968 (D:\Descargas\gestion_orquestas\target\classes started by arakn in D:\Descargas\gestion_orquestas)
+2021-12-20 19:02:54.834  INFO 16968 --- [main] c.g.g.GestionOrquestasApplication        : No active profile set, falling back to default profiles: default
+2021-12-20 19:02:55.732  INFO 16968 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-20 19:02:55.882  INFO 16968 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 136 ms. Found 27 JPA repository interfaces.
+2021-12-20 19:02:56.744  INFO 16968 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6edaa77a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-20 19:02:56.750  INFO 16968 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-20 19:02:58.014  INFO 16968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-20 19:02:58.029  INFO 16968 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-20 19:02:58.029  INFO 16968 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-12-20 19:02:58.187  INFO 16968 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-20 19:02:58.187  INFO 16968 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3254 ms
+2021-12-20 19:02:58.502  INFO 16968 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-20 19:02:58.571  INFO 16968 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-20 19:02:58.812  INFO 16968 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-20 19:02:58.928  INFO 16968 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-20 19:02:59.137  INFO 16968 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-20 19:02:59.159  INFO 16968 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-12-20 19:02:59.897  WARN 16968 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.UserClothKey
+2021-12-20 19:02:59.897  WARN 16968 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.UserClothKey
+2021-12-20 19:02:59.898  WARN 16968 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.SurveyQuestionAnswerKey
+2021-12-20 19:02:59.898  WARN 16968 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.SurveyQuestionAnswerKey
+2021-12-20 19:02:59.906  WARN 16968 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.SurveyQuestionOptionAnswerKey
+2021-12-20 19:02:59.906  WARN 16968 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.SurveyQuestionOptionAnswerKey
+2021-12-20 19:03:00.836  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.837  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «clothe_scales», omitiendo
+2021-12-20 19:03:00.838  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.838  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «clothes», omitiendo
+2021-12-20 19:03:00.838  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.839  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «musical_resources», omitiendo
+2021-12-20 19:03:00.839  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.840  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «musical_resources», omitiendo
+2021-12-20 19:03:00.840  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.840  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «musical_resources», omitiendo
+2021-12-20 19:03:00.841  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.841  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «news», omitiendo
+2021-12-20 19:03:00.841  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.842  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «news», omitiendo
+2021-12-20 19:03:00.842  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.842  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «news_content», omitiendo
+2021-12-20 19:03:00.843  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.843  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «news_content», omitiendo
+2021-12-20 19:03:00.844  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.844  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «payment_requests», omitiendo
+2021-12-20 19:03:00.844  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.845  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «payment_requests», omitiendo
+2021-12-20 19:03:00.845  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.845  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «shows», omitiendo
+2021-12-20 19:03:00.846  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.846  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «songs», omitiendo
+2021-12-20 19:03:00.847  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.847  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «songs», omitiendo
+2021-12-20 19:03:00.848  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.848  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys», omitiendo
+2021-12-20 19:03:00.849  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.849  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys», omitiendo
+2021-12-20 19:03:00.850  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.850  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions», omitiendo
+2021-12-20 19:03:00.851  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.851  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions», omitiendo
+2021-12-20 19:03:00.852  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.852  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_answers», omitiendo
+2021-12-20 19:03:00.853  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.853  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_answers», omitiendo
+2021-12-20 19:03:00.854  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.854  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_options», omitiendo
+2021-12-20 19:03:00.855  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.855  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_options_answers», omitiendo
+2021-12-20 19:03:00.856  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.856  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_options_answers», omitiendo
+2021-12-20 19:03:00.857  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.857  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «tickets», omitiendo
+2021-12-20 19:03:00.858  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.858  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «tickets», omitiendo
+2021-12-20 19:03:00.859  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.859  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_clothes», omitiendo
+2021-12-20 19:03:00.860  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.860  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_clothes», omitiendo
+2021-12-20 19:03:00.861  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.861  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_clothes», omitiendo
+2021-12-20 19:03:00.862  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.862  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_meeting_minutes», omitiendo
+2021-12-20 19:03:00.863  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.863  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_meeting_minutes», omitiendo
+2021-12-20 19:03:00.864  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.864  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_roles», omitiendo
+2021-12-20 19:03:00.865  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.865  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_roles», omitiendo
+2021-12-20 19:03:00.867  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.868  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «clothe_scales» no existe, omitiendo
+2021-12-20 19:03:00.869  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.869  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «clothe_types» no existe, omitiendo
+2021-12-20 19:03:00.869  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.870  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «clothes» no existe, omitiendo
+2021-12-20 19:03:00.870  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.871  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «composers» no existe, omitiendo
+2021-12-20 19:03:00.871  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.872  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «errors» no existe, omitiendo
+2021-12-20 19:03:00.872  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.872  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «imagen» no existe, omitiendo
+2021-12-20 19:03:00.873  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.873  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «meeting_minutes» no existe, omitiendo
+2021-12-20 19:03:00.874  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.874  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «mercadopago_backurls» no existe, omitiendo
+2021-12-20 19:03:00.875  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.875  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «mercadopago_notifications» no existe, omitiendo
+2021-12-20 19:03:00.876  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.876  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «musical_resources» no existe, omitiendo
+2021-12-20 19:03:00.876  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.876  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «musical_resources_types» no existe, omitiendo
+2021-12-20 19:03:00.877  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.877  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «news» no existe, omitiendo
+2021-12-20 19:03:00.878  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.878  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «news_content» no existe, omitiendo
+2021-12-20 19:03:00.879  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.879  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «news_content_types» no existe, omitiendo
+2021-12-20 19:03:00.880  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.880  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «payment_requests» no existe, omitiendo
+2021-12-20 19:03:00.881  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.882  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «roles» no existe, omitiendo
+2021-12-20 19:03:00.883  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.883  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «shows» no existe, omitiendo
+2021-12-20 19:03:00.884  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.884  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «songs» no existe, omitiendo
+2021-12-20 19:03:00.885  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.885  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys» no existe, omitiendo
+2021-12-20 19:03:00.885  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.886  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions» no existe, omitiendo
+2021-12-20 19:03:00.886  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.886  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions_answers» no existe, omitiendo
+2021-12-20 19:03:00.887  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.887  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions_options» no existe, omitiendo
+2021-12-20 19:03:00.888  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.888  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions_options_answers» no existe, omitiendo
+2021-12-20 19:03:00.889  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.889  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions_types» no existe, omitiendo
+2021-12-20 19:03:00.890  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.890  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «tickets» no existe, omitiendo
+2021-12-20 19:03:00.891  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.891  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «users» no existe, omitiendo
+2021-12-20 19:03:00.891  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.891  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «users_clothes» no existe, omitiendo
+2021-12-20 19:03:00.892  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.892  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «users_meeting_minutes» no existe, omitiendo
+2021-12-20 19:03:00.893  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.893  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «users_roles» no existe, omitiendo
+2021-12-20 19:03:00.895  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-20 19:03:00.895  WARN 16968 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la secuencia «hibernate_sequence» no existe, omitiendo
+2021-12-20 19:03:02.932  INFO 16968 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-20 19:03:02.944  INFO 16968 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-20 19:03:03.738  WARN 16968 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-20 19:03:05.473  INFO 16968 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3c62be3c, org.springframework.security.web.context.SecurityContextPersistenceFilter@52d59507, org.springframework.security.web.header.HeaderWriterFilter@35ff072c, org.springframework.security.web.authentication.logout.LogoutFilter@388e4c25, com.gruposei.gestion_orquestas.filters.JwtRequestFilters@4e2824b1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3265995e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@424a152f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@c6c84fa, org.springframework.security.web.session.SessionManagementFilter@55e5415d, org.springframework.security.web.access.ExceptionTranslationFilter@3c3cd7a5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@35d4035f]
+2021-12-20 19:03:06.810  INFO 16968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-20 19:03:06.856  INFO 16968 --- [main] c.g.g.GestionOrquestasApplication        : Started GestionOrquestasApplication in 12.581 seconds (JVM running for 13.579)
+2021-12-20 19:04:08.683  INFO 16968 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-20 19:04:08.683  INFO 16968 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-20 19:04:08.685  INFO 16968 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-12-20 19:04:08.793 ERROR 16968 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+io.jsonwebtoken.ExpiredJwtException: JWT expired at 2021-10-09T00:25:05Z. Current time: 2021-12-20T19:04:08Z, a difference of 6287943785 milliseconds.  Allowed clock skew: 0 milliseconds.
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:385) ~[jjwt-0.9.1.jar:0.9.1]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:481) ~[jjwt-0.9.1.jar:0.9.1]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:541) ~[jjwt-0.9.1.jar:0.9.1]
+	at com.gruposei.gestion_orquestas.utils.JwtUtil.extractAllClaims(JwtUtil.java:34) ~[classes/:na]
+	at com.gruposei.gestion_orquestas.utils.JwtUtil.extractClaim(JwtUtil.java:29) ~[classes/:na]
+	at com.gruposei.gestion_orquestas.utils.JwtUtil.extractUsername(JwtUtil.java:21) ~[classes/:na]
+	at com.gruposei.gestion_orquestas.filters.JwtRequestFilters.doFilterInternal(JwtRequestFilters.java:39) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.5.2.jar:5.5.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.10.jar:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.53.jar:9.0.53]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_302]
+
+2021-12-20 19:09:16.249  INFO 16968 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-20 19:09:16.250  INFO 16968 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-12-20 19:09:16.365  INFO 16968 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-20 19:09:16.371  INFO 16968 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
