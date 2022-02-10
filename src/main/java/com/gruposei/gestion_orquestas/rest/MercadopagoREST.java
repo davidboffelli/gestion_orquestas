@@ -3,13 +3,11 @@ package com.gruposei.gestion_orquestas.rest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.JsonObject;
 import com.gruposei.gestion_orquestas.model.*;
 import com.gruposei.gestion_orquestas.responses.ApiRequestException;
 import com.gruposei.gestion_orquestas.responses.ResponseHandler;
 import com.gruposei.gestion_orquestas.service.*;
 import com.mercadopago.*;
-import com.mercadopago.exceptions.MPConfException;
 import com.mercadopago.exceptions.MPException;
 import com.mercadopago.resources.Payment;
 import com.mercadopago.resources.Preference;
@@ -17,10 +15,10 @@ import com.mercadopago.resources.datastructures.preference.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import java.util.ArrayList;
+
+import java.util.List;
 import java.util.Optional;
 
 //@CrossOrigin(origins = "**")
@@ -46,6 +44,9 @@ public class MercadopagoREST {
 
     @Autowired
     private MercadopagoBackurlsService mercadopagoBackurlsService;
+
+    @Autowired
+    private TicketService ticketService;
 
     @PostMapping
     private ResponseEntity<Object> save(@RequestBody JsonNode p) throws JsonProcessingException, MPException {
@@ -74,17 +75,14 @@ public class MercadopagoREST {
         paymentRequest.setQuantity(quantity);
         paymentRequest.setUser(user.get());
         paymentRequest = paymentRequestService.create(paymentRequest);
+        String externalReference = user.get().getUsername() + quantity + show.get().getName() + paymentRequest.getId();
+        paymentRequest.setExternalReference(externalReference);
+        paymentRequest = paymentRequestService.create(paymentRequest);
 
         MercadoPago.SDK.setAccessToken("TEST-2338012267335051-121003-6aa56ef59f4244b1cd4c0ed4d1b1a5af-105584808");
         MercadoPago.SDK.setIntegratorId("2338012267335051");
         Preference preference = new Preference();
-        preference.setExternalReference("eaea123");
- //       preference.setNotificationUrl("http://localhost:8080/api/mercadopago/notifications");
-//        String er = payment.getExternalReference();
-//        System.out.println("String: " + er);
-//        preference.setExternalReference(er);
-//        System.out.println("Preference: " + preference.getExternalReference());
-        // Crea un ítem en la preferencia
+        preference.setExternalReference(externalReference);
         Item item = new Item()
                 .setId("1234")
                 .setTitle("Entrada " + show.get().getName())
@@ -114,11 +112,10 @@ public class MercadopagoREST {
     }
 
     @PostMapping("/notifications")
-    private void pagado(@RequestBody JsonNode jsonNode) throws MPException, JSONException, JsonProcessingException {
+    private ResponseEntity<Object> pagado(@RequestBody JsonNode jsonNode) throws MPException, JSONException, JsonProcessingException {
 
         ObjectMapper mapper = new ObjectMapper();
         JSONObject p;
-
         p=new JSONObject(mapper.writeValueAsString(jsonNode));
 
         String id = (p.isNull("id") ? null : p.getString("id"));
@@ -132,13 +129,6 @@ public class MercadopagoREST {
         String version = (p.isNull("version") ? null : p.getString("version"));
         String data_id = (p.getJSONObject("data").isNull("id") ? null : p.getJSONObject("data").getString("id"));
 
-        String externalReferenceId = Payment.findById(data_id).getExternalReference();
-        Optional<PaymentRequest> pr = paymentRequestService.findByExternalReference(externalReferenceId);
-
-        if (!pr.isPresent()) {
-            throw new Exception();
-        }
-
         MercadopagoNotification mercadopagoNotification = new MercadopagoNotification();
         mercadopagoNotification.setId(id);
         mercadopagoNotification.setAction(action);
@@ -149,8 +139,32 @@ public class MercadopagoREST {
         mercadopagoNotification.setType(type);
         mercadopagoNotification.setUser_id(user_id);
         mercadopagoNotification.setVersion(version);
- //       mercadopagoNotification.setData(data_id);
+        mercadopagoNotification.setData(data_id);
         mercadopagoNotificationService.create(mercadopagoNotification);
 
+        if(!action.equalsIgnoreCase("payment.created")){
+
+            throw new ApiRequestException("012");
+        }
+
+        String externalReferenceId = Payment.findById(data_id).getExternalReference();
+        Optional<PaymentRequest> pr = paymentRequestService.findByExternalReference(externalReferenceId);
+
+        if (!pr.isPresent()) {
+            throw new ApiRequestException("009");
+        }
+
+        try{
+
+            pr.get().setPaid(true);
+            paymentRequestService.create(pr.get());
+
+            List<Ticket> tickets = ticketService.create(pr.get().getUser(),pr.get().getShow(),pr.get().getQuantity());
+            return responseHandler.generateResponse("000",tickets);
+        }
+        catch(Exception e){
+
+            throw  new ApiRequestException("002");
+        }
     }
 }

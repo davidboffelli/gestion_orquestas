@@ -91,5 +91,11 @@ public class ErrorList implements CommandLineRunner {
         e.setHttpStatus(HttpStatus.BAD_REQUEST);
         e.setEndpoint("IMAGE");
         myErrorService.create(e);
+
+        e.setId("012");
+        e.setMessage("El pago todavía no fue efectuado");
+        e.setHttpStatus(HttpStatus.BAD_REQUEST);
+        e.setEndpoint("TICKET");
+        myErrorService.create(e);
     }
 }

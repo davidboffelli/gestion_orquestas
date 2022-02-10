@@ -77,6 +77,6 @@ public class ShowsByDefault implements CommandLineRunner {
         Ticket ticket = new Ticket();
         ticket.setShow(show1);
         ticket.setUser(user1);
-        ticketService.create(user1,show1,5);
+        ticketService.create(user1,show3,1);
     }
 }
