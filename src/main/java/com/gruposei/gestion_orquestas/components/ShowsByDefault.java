@@ -74,9 +74,9 @@ public class ShowsByDefault implements CommandLineRunner {
         user2.setPassword(bCryptPasswordEncoder.encode("9"));
         userService.create(user2);
 
-        Ticket ticket = new Ticket();
-        ticket.setShow(show1);
-        ticket.setUser(user1);
-        ticketService.create(user1,show3,1);
+//        Ticket ticket = new Ticket();
+//        ticket.setShow(show1);
+//        ticket.setUser(user1);
+//        ticketService.create(user1,show3,1);
     }
 }

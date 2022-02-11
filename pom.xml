@@ -87,8 +87,48 @@
 			<artifactId>cloudinary-http44</artifactId>
 			<version>1.29.0</version>
 		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.github.kenglxn.qrgen</groupId>-->
+<!--			<artifactId>javase</artifactId>-->
+<!--			<version>2.6.0</version>-->
+<!--		</dependency>-->
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>core</artifactId>
+			<version>3.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>javase</artifactId>
+			<version>3.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.itextpdf</groupId>
+			<artifactId>itextpdf</artifactId>
+			<version>5.5.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>2.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>5.2.8.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+			<version>2.5.6</version>
+		</dependency>
 	</dependencies>
-
+<!--	<repositories>-->
+<!--		<repository>-->
+<!--			<id>jitpack.io</id>-->
+<!--			<url>https://jitpack.io</url>-->
+<!--		</repository>-->
+<!--	</repositories>-->
 	<build>
 		<plugins>
 			<plugin>

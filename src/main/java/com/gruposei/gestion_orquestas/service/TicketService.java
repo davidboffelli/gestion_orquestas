@@ -1,13 +1,22 @@
 package com.gruposei.gestion_orquestas.service;
 
+import com.google.zxing.WriterException;
 import com.gruposei.gestion_orquestas.model.Show;
 import com.gruposei.gestion_orquestas.model.Ticket;
 import com.gruposei.gestion_orquestas.model.User;
 import com.gruposei.gestion_orquestas.repositories.TicketRepository;
+import com.gruposei.gestion_orquestas.utils.MailSender;
+import com.gruposei.gestion_orquestas.utils.PDFGenerator;
+import com.itextpdf.text.DocumentException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.mail.MessagingException;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -42,7 +51,7 @@ public class TicketService {
         return ticketRepository.save(ticket);
     }
 
-    public List<Ticket> create(User user, Show show,int quantity){
+    public List<Ticket> create(User user, Show show,int quantity) throws DocumentException, IOException, WriterException, MessagingException {
 
         List<Ticket> tickets = new ArrayList<Ticket>();
         for(int i=0;i<quantity;i++){
@@ -57,6 +66,15 @@ public class TicketService {
             ticket.setCode(encodedCode);
             ticket =ticketRepository.save(ticket);
             tickets.add(ticket);
+
+            PDFGenerator pdf = new PDFGenerator();
+            ByteArrayOutputStream bos = pdf.generatePDF(encodedCode,show.getName(),show.getDate());
+
+            byte[] bytes = bos.toByteArray();
+            InputStream inputStream = new ByteArrayInputStream(bytes);
+
+            MailSender ms = new MailSender();
+            ms.sendMessageWithAttachment(user.getEmail(),"Entrada comprada","Usted a comprado exitosamente una entrada\nSe adjunta el PDF con el código QR", inputStream);
         }
 
         return tickets;
@@ -117,5 +135,13 @@ public class TicketService {
     public Optional<Ticket> findByCode(String code){
 
         return ticketRepository.findByCode(code);
+    }
+
+    public boolean ticketExist(Ticket ticket){
+
+        String rawCode = buildCode(ticket.getId(),ticket.getUser(),ticket.getShow());
+        boolean match = bCryptPasswordEncoder.matches(rawCode,ticket.getCode());
+
+        return match;
     }
 }
