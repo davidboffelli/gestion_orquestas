@@ -62,6 +62,7 @@ public class TicketService {
             ticket.setUsed(false);
             ticket.setPurchaseDate(new Date(System.currentTimeMillis()));
             ticket =ticketRepository.save(ticket);
+//            String encodedCode="12345";
             String encodedCode = bCryptPasswordEncoder.encode(buildCode(ticket.getId(),user,show));
             ticket.setCode(encodedCode);
             ticket =ticketRepository.save(ticket);

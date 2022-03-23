@@ -51,6 +51,16 @@ public class UsersByDefault implements CommandLineRunner{
 //        user.setEnabled(true);
         userService.create(user1);
 
+        User user4 = new User();
+        user4.setUsername("damian");
+        user4.setPassword(bCryptPasswordEncoder.encode("123"));
+        user4.setName("Damian");
+        user4.setLastname("Ciancio");
+        user4.setEmail("damianciancio7@gmail.com");
+        user4.setAddress("Riobamba y Paraguay");
+//        user.setEnabled(true);
+        userService.create(user1);
+
         User user2 = new User();
         user2.setUsername("guest");
         user2.setPassword(bCryptPasswordEncoder.encode("123"));
@@ -91,6 +101,9 @@ public class UsersByDefault implements CommandLineRunner{
 
         user3.addRole(role1);
         userService.create(user3);
+
+        user4.addRole(role3);
+        userService.create(user4);
 
         ClothType clothType1 = new ClothType();
         clothType1.setName("Pantalón");

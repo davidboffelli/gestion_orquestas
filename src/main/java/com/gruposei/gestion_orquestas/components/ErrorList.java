@@ -97,5 +97,11 @@ public class ErrorList implements CommandLineRunner {
         e.setHttpStatus(HttpStatus.BAD_REQUEST);
         e.setEndpoint("TICKET");
         myErrorService.create(e);
+
+        e.setId("013");
+        e.setMessage("Ticket ya usado o inexistente");
+        e.setHttpStatus(HttpStatus.FORBIDDEN);
+        e.setEndpoint("TICKET");
+        myErrorService.create(e);
     }
 }

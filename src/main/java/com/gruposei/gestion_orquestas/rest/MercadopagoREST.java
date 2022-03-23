@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -144,27 +145,31 @@ public class MercadopagoREST {
 
         if(!action.equalsIgnoreCase("payment.created")){
 
-            throw new ApiRequestException("012");
+            return responseHandler.generateResponse("000","No es aviso de pago generado.");
         }
 
         String externalReferenceId = Payment.findById(data_id).getExternalReference();
         Optional<PaymentRequest> pr = paymentRequestService.findByExternalReference(externalReferenceId);
 
         if (!pr.isPresent()) {
-            throw new ApiRequestException("009");
+            return responseHandler.generateResponse("000","Solicitud de pago no registrada.");
+        }
+
+        if (pr.get().isPaid()){
+            return responseHandler.generateResponse("000","Pago ya realizado con anterioridad.");
         }
 
         try{
-
             pr.get().setPaid(true);
             paymentRequestService.create(pr.get());
 
             List<Ticket> tickets = ticketService.create(pr.get().getUser(),pr.get().getShow(),pr.get().getQuantity());
+
             return responseHandler.generateResponse("000",tickets);
         }
         catch(Exception e){
 
-            throw  new ApiRequestException("002");
+            return responseHandler.generateResponse("000","Error generando tickets.");
         }
     }
 }

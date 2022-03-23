@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.zxing.WriterException;
 import com.gruposei.gestion_orquestas.model.MyError;
 import com.gruposei.gestion_orquestas.model.Role;
+import com.gruposei.gestion_orquestas.model.Ticket;
 import com.gruposei.gestion_orquestas.model.User;
 import com.gruposei.gestion_orquestas.service.MyErrorService;
 import com.itextpdf.text.DocumentException;
@@ -31,6 +32,6 @@ public class testingThings {
         InputStream inputStream = new ByteArrayInputStream(bytes);
 
         MailSender ms = new MailSender();
-        ms.sendMessageWithAttachment("davidboffelli@yahoo.com","Entrada comprada","Usted a comprado exitosamente una entrada\nSe adjunta el PDF con el código QR", inputStream);
+        ms.sendMessageWithAttachment("davidboffelli@gmail.com","Entrada comprada","Usted a comprado exitosamente una entrada\nSe adjunta el PDF con el código QR", inputStream);
     }
 }

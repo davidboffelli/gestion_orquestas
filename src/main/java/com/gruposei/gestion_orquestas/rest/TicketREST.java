@@ -38,31 +38,31 @@ public class TicketREST {
     @Autowired
     private PaymentRequestService paymentRequestService;
 
-    @PostMapping
-    private ResponseEntity<Object> pagado(@RequestBody MercadopagoBackurls p) throws MPConfException {
-
-        MercadopagoBackurls temporal = mercadopagoBackurlsService.create(p);
-
-        Optional<PaymentRequest> paymentRequest = paymentRequestService.findByExternalReference(p.getExternal_reference());
-
-        if(!paymentRequest.isPresent())
-            throw  new ApiRequestException("009");
-
-        try{
-
-            paymentRequest.get().setPaid(true);
-            paymentRequestService.create(paymentRequest.get());
-
-            List<Ticket> tickets = ticketService.create(paymentRequest.get().getUser(),paymentRequest.get().getShow(),paymentRequest.get().getQuantity());
-            return responseHandler.generateResponse("000",tickets);
-        }
-        catch(Exception e){
-
-            throw  new ApiRequestException("002");
-        }
-
-
-    }
+//    @PostMapping
+//    private ResponseEntity<Object> pagado(@RequestBody MercadopagoBackurls p) throws MPConfException {
+//
+//        MercadopagoBackurls temporal = mercadopagoBackurlsService.create(p);
+//
+//        Optional<PaymentRequest> paymentRequest = paymentRequestService.findByExternalReference(p.getExternal_reference());
+//
+//        if(!paymentRequest.isPresent())
+//            throw  new ApiRequestException("009");
+//
+//        try{
+//
+//            paymentRequest.get().setPaid(true);
+//            paymentRequestService.create(paymentRequest.get());
+//
+//            List<Ticket> tickets = ticketService.create(paymentRequest.get().getUser(),paymentRequest.get().getShow(),paymentRequest.get().getQuantity());
+//            return responseHandler.generateResponse("000",tickets);
+//        }
+//        catch(Exception e){
+//
+//            throw  new ApiRequestException("002");
+//        }
+//
+//
+//    }
 
 //    @PostMapping(params = {"user_id","show_id"})
 //    private ResponseEntity<Object> save(@RequestParam("user_id") User user,@RequestParam("show_id") Show show){
@@ -78,12 +78,12 @@ public class TicketREST {
 //        }
 //    }
 
-    @PostMapping(value = "/checkin",params = "code")
+    @PostMapping(value = "/checkin", params = "code")
     private ResponseEntity<Object> setAsUsed(@RequestParam("code") String code){
 
         Optional<Ticket> ticket = ticketService.findByCode(code);
 
-        if(ticket.isPresent()){
+        if(ticket.isPresent() && !ticket.get().isUsed()){
 
             ticket.get().setUsed(true);
             Ticket temporal = ticketService.update(ticket.get());
@@ -98,7 +98,7 @@ public class TicketREST {
         }
         else{
 
-            throw  new ApiRequestException("002");
+            throw  new ApiRequestException("013");
         }
     }
 
