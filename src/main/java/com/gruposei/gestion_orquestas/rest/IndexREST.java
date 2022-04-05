@@ -35,7 +35,13 @@ public class IndexREST {
 
         return "index";
     }
-
+    // Forwards all routes to FrontEnd except: '/', '/index.html', '/api', '/api/**'
+    // Required because of 'mode: history' usage in frontend routing, see README for further details
+    @RequestMapping(value = "{_:^(?!index\\.html|api).$}")
+    public String redirectApi() {
+        System.out.println("URL entered directly into the Browser, so we need to redirect...");
+        return "forward:/";
+    }
     @RequestMapping(value = "/api/login", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception{
 
