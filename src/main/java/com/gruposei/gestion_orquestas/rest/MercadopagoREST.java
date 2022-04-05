@@ -93,9 +93,9 @@ public class MercadopagoREST {
                 .setUnitPrice((float) show.get().getPrice());
         preference.setBackUrls(
                 new BackUrls()
-                        .setFailure("https://2338-190-17-108-95.ngrok.io/api/mercadopago/backurls")
-                        .setPending("https://2338-190-17-108-95.ngrok.io/api/mercadopago/backurls")
-                        .setSuccess("https://2338-190-17-108-95.ngrok.io/api/mercadopago/backurls")
+                        .setFailure("http://7edc-190-2-106-33.ngrok.io/#/payment/buy/failed")
+//                        .setPending("http://7edc-190-2-106-33.ngrok.io/#/")
+                        .setSuccess("http://7edc-190-2-106-33.ngrok.io/#/payment/buy/success")
         );
         preference.appendItem(item);
         preference = preference.save();
