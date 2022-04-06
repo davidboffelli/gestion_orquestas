@@ -93,9 +93,9 @@ public class MercadopagoREST {
                 .setUnitPrice((float) show.get().getPrice());
         preference.setBackUrls(
                 new BackUrls()
-                        .setFailure("https://gestionorquestas.herokuapp.com/payment/buy/failed")
+ //                       .setFailure("https://gestionorquestas.herokuapp.com/payment/buy/failed")
 //                        .setPending("http://7edc-190-2-106-33.ngrok.io/#/")
-                        .setSuccess("https://gestionorquestas.herokuapp.com/payment/buy/success")
+//                        .setSuccess("https://gestionorquestas.herokuapp.com/payment/buy/success")
         );
         preference.appendItem(item);
         preference = preference.save();
