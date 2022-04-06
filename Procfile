@@ -1,1 +1,0 @@
-web: $JAVA_OPTS java com.gruposei.gestion_orquestas -Dserver.port=$PORT -jar
