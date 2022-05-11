@@ -49,7 +49,7 @@ public class ShowsByDefault implements CommandLineRunner {
         show2.setName("Charaguense Tour 2022 - Córdoba");
         show2.setPlace("Teatro Provincial");
         show2.setTickets(200);
-        show2.setPublicDate(df.parse("06/06/2022"));
+        show2.setPublicDate(df.parse("05/06/2022"));
         show2.setPrice(2000.0);
         showService.create(show2);
 
