@@ -58,7 +58,7 @@ public class ShowsByDefault implements CommandLineRunner {
         show3.setName("Charaguense Tour 2022 - Mar del Plata");
         show3.setPlace("Abbey Road");
         show3.setTickets(150);
-        show3.setPublicDate(df.parse("09/06/2022"));
+        show3.setPublicDate(df.parse("10/06/2022"));
         show3.setPrice(3000.0);
         showService.create(show3);
 
