@@ -12,6 +12,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Component
@@ -33,30 +34,31 @@ public class ShowsByDefault implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         Show show1 = new Show();
         show1.setDate(new Date(System.currentTimeMillis()));
-        show1.setName("Apechugando Tour");
-        show1.setPlace("El bar de la esquina");
+        show1.setName("Charaguense Tour 2022 - Rosario");
+        show1.setPlace("Teatro Astengo");
         show1.setTickets(150);
-        show1.setPublicDate(new Date(System.currentTimeMillis()));
+        show1.setPublicDate(df.parse("31/05/2022"));
         show1.setPrice(1000.0);
         showService.create(show1);
 
         Show show2 = new Show();
         show2.setDate(new Date(System.currentTimeMillis()));
-        show2.setName("Agaiate que vienen curvas Tour!");
-        show2.setPlace("Por acá nomás");
+        show2.setName("Charaguense Tour 2022 - Córdoba");
+        show2.setPlace("Teatro Provincial");
         show2.setTickets(200);
-        show2.setPublicDate(new Date(System.currentTimeMillis()));
+        show2.setPublicDate(df.parse("06/06/2022"));
         show2.setPrice(2000.0);
         showService.create(show2);
 
         Show show3 = new Show();
         show3.setDate(new Date(System.currentTimeMillis()));
-        show3.setName("Al abordaje Tour!");
-        show3.setPlace("Acá a la vuelta");
+        show3.setName("Charaguense Tour 2022 - Mar del Plata");
+        show3.setPlace("Abbey Road");
         show3.setTickets(150);
-        show3.setPublicDate(new Date(System.currentTimeMillis()));
+        show3.setPublicDate(df.parse("10/06/2022"));
         show3.setPrice(3000.0);
         showService.create(show3);
 

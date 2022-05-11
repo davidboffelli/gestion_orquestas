@@ -25,13 +25,18 @@ public class testingThings {
 
     public static void main(String[] args) throws IOException, WriterException, DocumentException, MessagingException {
 
-        PDFGenerator pdf = new PDFGenerator();
-        ByteArrayOutputStream bos = pdf.generatePDF("123abc","El show de allá",new Date());
+        boolean result = isNull(1);
+        System.out.println(result);
+ }
+    public static boolean isNull (Object obj) {
 
-        byte[] bytes = bos.toByteArray();
-        InputStream inputStream = new ByteArrayInputStream(bytes);
+            if(obj == null) {
 
-        MailSender ms = new MailSender();
-        ms.sendMessageWithAttachment("davidboffelli@gmail.com","Entrada comprada","Usted a comprado exitosamente una entrada\nSe adjunta el PDF con el código QR", inputStream);
-    }
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
 }

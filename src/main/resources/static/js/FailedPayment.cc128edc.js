@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["FailedPayment"],{a953:function(e,n,r){"use strict";r.r(n);var a=function(){var e=this,n=e.$createElement,r=e._self._c||n;return r("div",[r("p",[e._v(" Hubo un error al procesar el pago ")]),r("router-link",{attrs:{to:{name:"Home"}}},[e._v("Volver al Inicio")])],1)},o=[],t={},l=t,u=r("2877"),i=Object(u["a"])(l,a,o,!1,null,null,null);n["default"]=i.exports}}]);
-//# sourceMappingURL=FailedPayment.cc128edc.js.map

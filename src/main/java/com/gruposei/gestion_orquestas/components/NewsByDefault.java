@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
 import java.util.Base64;
 import java.util.Date;
 
@@ -51,21 +52,38 @@ public class NewsByDefault implements CommandLineRunner {
         newContentType3.setSystemName("texto");
         newContentTypeService.create(newContentType3);
 
+        String body;
+
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         New n1 = new New();
-        n1.setTitle("Victoria Aplastante");
-        n1.setBody("Argentina goleó a Uruguay 3 a 0. Ganó, gustó y goleó.");
-        n1.setPublicDate(new Date(System.currentTimeMillis()));
+        n1.setTitle("Gracias totales!");
+        body = "Nuestro director de orquesta ha decidido desvincularse de nuestro equipo. Estamos eternamente agradecidos " +
+                "por el esfuerzo y el trabajo realizado. Le deseamos los mayores éxitos en su nuevo proyecto. A la brevedad " +
+                "informaremos cual será el último concierto en el que participará. Esten atentos! A despedirlo de la mejor manera";
+        n1.setBody(body);
+        n1.setPublicDate(df.parse("01/05/2022"));
         n1.setAuthor(userService.findByUsername("admin").get());
         n1.setEnabled(true);
         newService.create(n1);
 
         New n2 = new New();
-        n2.setTitle("Empates");
-        n2.setBody("Tanto el Banalla como el Bojo empataron en sus respectivos partidos contra los equipos de La Plata");
-        n2.setPublicDate(new Date(System.currentTimeMillis()));
+        n2.setTitle("Gran despedida");
+        body = "Informamos que el show del próximo 31 de mayo en el teatro Astengo será el de despedida de nuestro director de orquesta.";
+        n2.setBody(body);
+        n2.setPublicDate(df.parse("10/05/2022"));
         n2.setAuthor(userService.findByUsername("admin").get());
         n2.setEnabled(true);
         newService.create(n2);
+
+        New n3 = new New();
+        n3.setTitle("Gira invierno 2022 confirmada!");
+        body = "Confirmamos una nueva gira invernal que nos llevará a los lugares más recónditos del país, " +
+                "entre los que están El Chaltén, Ushuaia, El Bolsón, Fiambalá y La Quiaca! Más adelante informaremos los detalles.";
+        n3.setBody(body);
+        n3.setPublicDate(df.parse("25/05/2022"));
+        n3.setAuthor(userService.findByUsername("admin").get());
+        n3.setEnabled(true);
+        newService.create(n3);
 
         byte[] bytes = Files.readAllBytes(Paths.get("images/fressi.jpg"));
         String img = Base64.getEncoder().encodeToString(bytes);
