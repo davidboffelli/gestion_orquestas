@@ -60,7 +60,7 @@ public class NewsByDefault implements CommandLineRunner {
         body = "Nuestro director de orquesta ha decidido desvincularse de nuestro equipo. Estamos eternamente agradecidos " +
                 "por el esfuerzo y el trabajo realizado. Le deseamos los mayores éxitos en su nuevo proyecto. A la brevedad " +
                 "informaremos cual será el último concierto en el que participará. Esten atentos! A despedirlo de la mejor manera";
-        body = "asdasd";
+        //body = "asdasd";
         n1.setBody(body);
         n1.setPublicDate(df.parse("01/05/2022"));
         n1.setAuthor(userService.findByUsername("admin").get());
@@ -80,7 +80,7 @@ public class NewsByDefault implements CommandLineRunner {
         n3.setTitle("Gira invierno 2022 confirmada!");
         body = "Confirmamos una nueva gira invernal que nos llevará a los lugares más recónditos del país, " +
                "entre los que están El Chaltén, Ushuaia, El Bolsón, Fiambalá y La Quiaca! Más adelante informaremos los detalles.";
-        body = "asdkkkkasd";
+        //body = "asdkkkkasd";
         n3.setBody(body);
         n3.setPublicDate(df.parse("25/05/2022"));
         n3.setAuthor(userService.findByUsername("admin").get());
