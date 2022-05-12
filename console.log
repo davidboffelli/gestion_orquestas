@@ -3931,3 +3931,164 @@ com.gruposei.gestion_orquestas.responses.ApiRequestException: 002
 2022-05-11 22:21:33.532  INFO 19916 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 2022-05-11 22:21:33.756  INFO 19916 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-05-11 22:21:33.763  INFO 19916 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-05-11 22:42:30.032  INFO 13840 --- [main] c.g.g.GestionOrquestasApplication        : Starting GestionOrquestasApplication using Java 1.8.0_302 on DESKTOP-0MNSHH6 with PID 13840 (D:\Descargas\gestion_orquestas\target\classes started by arakn in D:\Descargas\gestion_orquestas)
+2022-05-11 22:42:30.036  INFO 13840 --- [main] c.g.g.GestionOrquestasApplication        : No active profile set, falling back to default profiles: default
+2022-05-11 22:42:30.963  INFO 13840 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-11 22:42:31.110  INFO 13840 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 137 ms. Found 27 JPA repository interfaces.
+2022-05-11 22:42:31.830  INFO 13840 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1763992e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-11 22:42:31.835  INFO 13840 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-11 22:42:32.820  INFO 13840 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-05-11 22:42:32.833  INFO 13840 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-11 22:42:32.833  INFO 13840 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2022-05-11 22:42:32.987  INFO 13840 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-11 22:42:32.987  INFO 13840 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2851 ms
+2022-05-11 22:42:33.305  INFO 13840 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-11 22:42:33.473  INFO 13840 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-05-11 22:42:33.619  INFO 13840 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-11 22:42:33.733  INFO 13840 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-11 22:42:35.921  INFO 13840 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-11 22:42:35.941  INFO 13840 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-05-11 22:43:01.878  WARN 13840 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.UserClothKey
+2022-05-11 22:43:01.878  WARN 13840 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.UserClothKey
+2022-05-11 22:43:01.879  WARN 13840 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.SurveyQuestionAnswerKey
+2022-05-11 22:43:01.879  WARN 13840 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.SurveyQuestionAnswerKey
+2022-05-11 22:43:01.885  WARN 13840 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.SurveyQuestionOptionAnswerKey
+2022-05-11 22:43:01.886  WARN 13840 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.SurveyQuestionOptionAnswerKey
+2022-05-11 22:43:02.880  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:02.881  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "clothe_scales" does not exist, skipping
+2022-05-11 22:43:03.066  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:03.067  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "clothes" does not exist, skipping
+2022-05-11 22:43:03.259  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:03.260  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "musical_resources" does not exist, skipping
+2022-05-11 22:43:03.460  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:03.461  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "musical_resources" does not exist, skipping
+2022-05-11 22:43:03.645  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:03.646  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "musical_resources" does not exist, skipping
+2022-05-11 22:43:03.828  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:03.828  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "news" does not exist, skipping
+2022-05-11 22:43:04.009  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:04.010  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "news" does not exist, skipping
+2022-05-11 22:43:04.193  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:04.193  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "news_content" does not exist, skipping
+2022-05-11 22:43:04.384  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:04.385  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "news_content" does not exist, skipping
+2022-05-11 22:43:04.567  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:04.568  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "payment_requests" does not exist, skipping
+2022-05-11 22:43:04.749  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:04.750  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "payment_requests" does not exist, skipping
+2022-05-11 22:43:04.931  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:04.933  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "shows" does not exist, skipping
+2022-05-11 22:43:05.114  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:05.115  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "songs" does not exist, skipping
+2022-05-11 22:43:05.306  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:05.307  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "songs" does not exist, skipping
+2022-05-11 22:43:05.489  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:05.490  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "surveys" does not exist, skipping
+2022-05-11 22:43:05.673  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:05.673  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "surveys" does not exist, skipping
+2022-05-11 22:43:05.911  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:05.913  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "surveys_questions" does not exist, skipping
+2022-05-11 22:43:06.094  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:06.095  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "surveys_questions" does not exist, skipping
+2022-05-11 22:43:06.276  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:06.276  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "surveys_questions_answers" does not exist, skipping
+2022-05-11 22:43:06.465  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:06.465  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "surveys_questions_answers" does not exist, skipping
+2022-05-11 22:43:06.651  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:06.653  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "surveys_questions_options" does not exist, skipping
+2022-05-11 22:43:06.843  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:06.843  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "surveys_questions_options_answers" does not exist, skipping
+2022-05-11 22:43:07.032  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:07.032  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "surveys_questions_options_answers" does not exist, skipping
+2022-05-11 22:43:07.215  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:07.216  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "tickets" does not exist, skipping
+2022-05-11 22:43:07.397  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:07.398  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "tickets" does not exist, skipping
+2022-05-11 22:43:07.593  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:07.594  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_clothes" does not exist, skipping
+2022-05-11 22:43:07.784  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:07.785  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_clothes" does not exist, skipping
+2022-05-11 22:43:07.964  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:07.964  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_clothes" does not exist, skipping
+2022-05-11 22:43:08.145  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:08.145  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_meeting_minutes" does not exist, skipping
+2022-05-11 22:43:08.330  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:08.331  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_meeting_minutes" does not exist, skipping
+2022-05-11 22:43:08.535  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:08.535  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_roles" does not exist, skipping
+2022-05-11 22:43:08.713  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:08.714  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_roles" does not exist, skipping
+2022-05-11 22:43:08.895  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:08.896  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "clothe_scales" does not exist, skipping
+2022-05-11 22:43:09.084  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:09.084  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "clothe_types" does not exist, skipping
+2022-05-11 22:43:09.275  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:09.276  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "clothes" does not exist, skipping
+2022-05-11 22:43:09.460  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:09.461  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "composers" does not exist, skipping
+2022-05-11 22:43:09.647  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:09.648  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "errors" does not exist, skipping
+2022-05-11 22:43:09.825  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:09.825  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "imagen" does not exist, skipping
+2022-05-11 22:43:10.009  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:10.010  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "meeting_minutes" does not exist, skipping
+2022-05-11 22:43:10.216  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:10.216  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "mercadopago_backurls" does not exist, skipping
+2022-05-11 22:43:10.398  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:10.399  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "mercadopago_notifications" does not exist, skipping
+2022-05-11 22:43:10.584  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:10.585  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "musical_resources" does not exist, skipping
+2022-05-11 22:43:10.767  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:10.767  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "musical_resources_types" does not exist, skipping
+2022-05-11 22:43:10.952  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:10.953  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "news" does not exist, skipping
+2022-05-11 22:43:11.149  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:11.150  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "news_content" does not exist, skipping
+2022-05-11 22:43:11.328  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:11.329  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "news_content_types" does not exist, skipping
+2022-05-11 22:43:11.513  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:11.513  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "payment_requests" does not exist, skipping
+2022-05-11 22:43:11.689  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:11.691  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "roles" does not exist, skipping
+2022-05-11 22:43:11.870  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:11.870  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "shows" does not exist, skipping
+2022-05-11 22:43:12.057  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:12.058  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "songs" does not exist, skipping
+2022-05-11 22:43:12.247  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:12.249  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "surveys" does not exist, skipping
+2022-05-11 22:43:12.436  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:12.437  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "surveys_questions" does not exist, skipping
+2022-05-11 22:43:12.620  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:12.621  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "surveys_questions_answers" does not exist, skipping
+2022-05-11 22:43:12.802  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:12.803  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "surveys_questions_options" does not exist, skipping
+2022-05-11 22:43:12.985  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:12.986  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "surveys_questions_options_answers" does not exist, skipping
+2022-05-11 22:43:13.168  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:13.168  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "surveys_questions_types" does not exist, skipping
+2022-05-11 22:43:13.354  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:13.355  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "tickets" does not exist, skipping
+2022-05-11 22:43:13.537  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:13.537  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
+2022-05-11 22:43:13.725  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:13.726  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users_clothes" does not exist, skipping
+2022-05-11 22:43:13.908  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:13.908  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users_meeting_minutes" does not exist, skipping
+2022-05-11 22:43:14.089  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:14.089  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users_roles" does not exist, skipping
+2022-05-11 22:43:14.272  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 22:43:14.272  WARN 13840 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "hibernate_sequence" does not exist, skipping
+2022-05-11 22:43:26.214  INFO 13840 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-11 22:43:26.237  INFO 13840 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-11 22:43:26.787  WARN 13840 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-11 22:43:28.018  INFO 13840 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@642c5bb3, org.springframework.security.web.context.SecurityContextPersistenceFilter@2dd2ff87, org.springframework.security.web.header.HeaderWriterFilter@7e8c58fd, org.springframework.security.web.authentication.logout.LogoutFilter@756200d1, com.gruposei.gestion_orquestas.filters.JwtRequestFilters@3e4f2300, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@28cf179c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5d3f8661, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e79c25, org.springframework.security.web.session.SessionManagementFilter@7dd7ec56, org.springframework.security.web.access.ExceptionTranslationFilter@3dd591b9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7337bd2e]
+2022-05-11 22:43:28.305  INFO 13840 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-11 22:43:28.552  INFO 13840 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-11 22:43:28.566  INFO 13840 --- [main] c.g.g.GestionOrquestasApplication        : Started GestionOrquestasApplication in 59.096 seconds (JVM running for 59.758)
+2022-05-11 22:44:29.125  INFO 13840 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-11 22:44:29.126  INFO 13840 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-11 22:44:29.127  INFO 13840 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-11 22:44:42.937  INFO 13840 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-11 22:44:42.938  INFO 13840 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-05-11 22:44:54.778  INFO 13840 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-05-11 22:44:54.790  INFO 13840 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
