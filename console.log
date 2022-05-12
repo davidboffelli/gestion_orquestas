@@ -4103,3 +4103,177 @@ com.gruposei.gestion_orquestas.responses.ApiRequestException: 002
 2022-05-11 23:03:56.063  INFO 9840 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
 2022-05-11 23:03:56.244  INFO 9840 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
 2022-05-11 23:03:56.442  INFO 9840 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-11 23:56:36.093  INFO 17556 --- [main] c.g.g.GestionOrquestasApplication        : Starting GestionOrquestasApplication using Java 1.8.0_302 on DESKTOP-0MNSHH6 with PID 17556 (D:\Descargas\gestion_orquestas\target\classes started by arakn in D:\Descargas\gestion_orquestas)
+2022-05-11 23:56:36.098  INFO 17556 --- [main] c.g.g.GestionOrquestasApplication        : No active profile set, falling back to default profiles: default
+2022-05-11 23:56:40.405  INFO 17556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-11 23:56:40.582  INFO 17556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 166 ms. Found 27 JPA repository interfaces.
+2022-05-11 23:56:41.372  INFO 17556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@614aeccc' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-11 23:56:41.381  INFO 17556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-11 23:56:42.489  INFO 17556 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-05-11 23:56:42.503  INFO 17556 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-11 23:56:42.503  INFO 17556 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2022-05-11 23:56:42.643  INFO 17556 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-11 23:56:42.643  INFO 17556 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5939 ms
+2022-05-11 23:56:42.970  INFO 17556 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-11 23:56:43.182  INFO 17556 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-05-11 23:56:43.389  INFO 17556 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-11 23:56:43.590  INFO 17556 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-11 23:56:45.885  INFO 17556 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-11 23:56:45.915  INFO 17556 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-05-11 23:57:18.200  INFO 10692 --- [main] c.g.g.GestionOrquestasApplication        : Starting GestionOrquestasApplication using Java 1.8.0_302 on DESKTOP-0MNSHH6 with PID 10692 (D:\Descargas\gestion_orquestas\target\classes started by arakn in D:\Descargas\gestion_orquestas)
+2022-05-11 23:57:18.208  INFO 10692 --- [main] c.g.g.GestionOrquestasApplication        : No active profile set, falling back to default profiles: default
+2022-05-11 23:57:19.099  INFO 10692 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-11 23:57:19.245  INFO 10692 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 137 ms. Found 27 JPA repository interfaces.
+2022-05-11 23:57:20.113  INFO 10692 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5116ac09' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-11 23:57:20.119  INFO 10692 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-11 23:57:21.067  INFO 10692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-05-11 23:57:21.080  INFO 10692 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-11 23:57:21.081  INFO 10692 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2022-05-11 23:57:21.236  INFO 10692 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-11 23:57:21.237  INFO 10692 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2929 ms
+2022-05-11 23:57:21.553  INFO 10692 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-11 23:57:21.730  INFO 10692 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2022-05-11 23:57:21.924  INFO 10692 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-11 23:57:22.054  INFO 10692 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-11 23:57:22.565  INFO 10692 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-11 23:57:22.586  INFO 10692 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2022-05-11 23:57:23.305  WARN 10692 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.UserClothKey
+2022-05-11 23:57:23.306  WARN 10692 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.UserClothKey
+2022-05-11 23:57:23.306  WARN 10692 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.SurveyQuestionAnswerKey
+2022-05-11 23:57:23.306  WARN 10692 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.SurveyQuestionAnswerKey
+2022-05-11 23:57:23.312  WARN 10692 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.gruposei.gestion_orquestas.model.SurveyQuestionOptionAnswerKey
+2022-05-11 23:57:23.312  WARN 10692 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.gruposei.gestion_orquestas.model.SurveyQuestionOptionAnswerKey
+2022-05-11 23:57:23.970  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.970  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «clothe_scales», omitiendo
+2022-05-11 23:57:23.971  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.971  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «clothes», omitiendo
+2022-05-11 23:57:23.971  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.972  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «musical_resources», omitiendo
+2022-05-11 23:57:23.972  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.972  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «musical_resources», omitiendo
+2022-05-11 23:57:23.973  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.973  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «musical_resources», omitiendo
+2022-05-11 23:57:23.974  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.974  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «news», omitiendo
+2022-05-11 23:57:23.974  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.974  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «news», omitiendo
+2022-05-11 23:57:23.975  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.975  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «news_content», omitiendo
+2022-05-11 23:57:23.975  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.975  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «news_content», omitiendo
+2022-05-11 23:57:23.976  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.976  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «payment_requests», omitiendo
+2022-05-11 23:57:23.977  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.977  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «payment_requests», omitiendo
+2022-05-11 23:57:23.978  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.978  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «shows», omitiendo
+2022-05-11 23:57:23.978  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.978  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «songs», omitiendo
+2022-05-11 23:57:23.979  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.979  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «songs», omitiendo
+2022-05-11 23:57:23.980  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.980  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys», omitiendo
+2022-05-11 23:57:23.981  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.981  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys», omitiendo
+2022-05-11 23:57:23.982  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.982  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions», omitiendo
+2022-05-11 23:57:23.982  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.983  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions», omitiendo
+2022-05-11 23:57:23.983  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.984  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_answers», omitiendo
+2022-05-11 23:57:23.984  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.984  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_answers», omitiendo
+2022-05-11 23:57:23.985  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.985  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_options», omitiendo
+2022-05-11 23:57:23.986  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.986  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_options_answers», omitiendo
+2022-05-11 23:57:23.987  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.987  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «surveys_questions_options_answers», omitiendo
+2022-05-11 23:57:23.987  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.987  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «tickets», omitiendo
+2022-05-11 23:57:23.988  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.988  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «tickets», omitiendo
+2022-05-11 23:57:23.989  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.989  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_clothes», omitiendo
+2022-05-11 23:57:23.989  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.990  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_clothes», omitiendo
+2022-05-11 23:57:23.990  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.990  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_clothes», omitiendo
+2022-05-11 23:57:23.991  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.991  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_meeting_minutes», omitiendo
+2022-05-11 23:57:23.992  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.992  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_meeting_minutes», omitiendo
+2022-05-11 23:57:23.992  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.993  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_roles», omitiendo
+2022-05-11 23:57:23.993  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.993  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : no existe la relación «users_roles», omitiendo
+2022-05-11 23:57:23.996  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.996  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «clothe_scales» no existe, omitiendo
+2022-05-11 23:57:23.997  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.997  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «clothe_types» no existe, omitiendo
+2022-05-11 23:57:23.997  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.997  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «clothes» no existe, omitiendo
+2022-05-11 23:57:23.998  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.998  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «composers» no existe, omitiendo
+2022-05-11 23:57:23.999  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.999  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «errors» no existe, omitiendo
+2022-05-11 23:57:23.999  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:23.999  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «imagen» no existe, omitiendo
+2022-05-11 23:57:24.000  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.000  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «meeting_minutes» no existe, omitiendo
+2022-05-11 23:57:24.001  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.001  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «mercadopago_backurls» no existe, omitiendo
+2022-05-11 23:57:24.001  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.001  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «mercadopago_notifications» no existe, omitiendo
+2022-05-11 23:57:24.002  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.002  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «musical_resources» no existe, omitiendo
+2022-05-11 23:57:24.002  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.002  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «musical_resources_types» no existe, omitiendo
+2022-05-11 23:57:24.003  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.003  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «news» no existe, omitiendo
+2022-05-11 23:57:24.004  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.004  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «news_content» no existe, omitiendo
+2022-05-11 23:57:24.004  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.004  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «news_content_types» no existe, omitiendo
+2022-05-11 23:57:24.005  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.005  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «payment_requests» no existe, omitiendo
+2022-05-11 23:57:24.005  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.006  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «roles» no existe, omitiendo
+2022-05-11 23:57:24.006  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.006  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «shows» no existe, omitiendo
+2022-05-11 23:57:24.007  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.007  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «songs» no existe, omitiendo
+2022-05-11 23:57:24.007  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.008  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys» no existe, omitiendo
+2022-05-11 23:57:24.008  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.008  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions» no existe, omitiendo
+2022-05-11 23:57:24.009  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.009  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions_answers» no existe, omitiendo
+2022-05-11 23:57:24.010  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.010  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions_options» no existe, omitiendo
+2022-05-11 23:57:24.010  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.010  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions_options_answers» no existe, omitiendo
+2022-05-11 23:57:24.011  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.011  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «surveys_questions_types» no existe, omitiendo
+2022-05-11 23:57:24.011  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.011  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «tickets» no existe, omitiendo
+2022-05-11 23:57:24.012  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.012  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «users» no existe, omitiendo
+2022-05-11 23:57:24.013  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.013  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «users_clothes» no existe, omitiendo
+2022-05-11 23:57:24.013  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.013  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «users_meeting_minutes» no existe, omitiendo
+2022-05-11 23:57:24.014  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.014  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la tabla «users_roles» no existe, omitiendo
+2022-05-11 23:57:24.015  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-05-11 23:57:24.015  WARN 10692 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : la secuencia «hibernate_sequence» no existe, omitiendo
+2022-05-11 23:57:26.532  INFO 10692 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-11 23:57:26.544  INFO 10692 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-11 23:57:27.157  WARN 10692 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-11 23:57:28.138  INFO 10692 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d02ff64, org.springframework.security.web.context.SecurityContextPersistenceFilter@69ab2d6a, org.springframework.security.web.header.HeaderWriterFilter@399c408c, org.springframework.security.web.authentication.logout.LogoutFilter@2ca132ad, com.gruposei.gestion_orquestas.filters.JwtRequestFilters@7d685f4e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@57afe44b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4cacccbf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f17dd06, org.springframework.security.web.session.SessionManagementFilter@45f8415b, org.springframework.security.web.access.ExceptionTranslationFilter@4bf10fe1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@68360fb9]
+2022-05-11 23:57:28.577  INFO 10692 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-05-11 23:57:28.844  INFO 10692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-11 23:57:28.853  INFO 10692 --- [main] c.g.g.GestionOrquestasApplication        : Started GestionOrquestasApplication in 11.202 seconds (JVM running for 11.852)
+2022-05-11 23:58:10.956  INFO 10692 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-11 23:58:10.956  INFO 10692 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-11 23:58:10.957  INFO 10692 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
