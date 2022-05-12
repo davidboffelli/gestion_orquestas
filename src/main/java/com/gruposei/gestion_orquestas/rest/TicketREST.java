@@ -170,7 +170,7 @@ public class TicketREST {
         if(cloths.isEmpty()){
 
             //throw new ApiRequestException("005");
-            return responseHandler.generateResponse("000","");
+            return responseHandler.generateResponse("000","No hay entradas compradas");
         }
 
         try{
