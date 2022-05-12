@@ -41,8 +41,8 @@ public class IndexREST {
     public String redirectApi() {
         System.out.println("URL entered directly into the Browser, so we need to redirect...");
 //        return "forward:/";
-        return "forward:/index.html";
-        //return "index";
+//        return "forward:/index.html";
+        return "index";
     }
     @RequestMapping(value = "/api/login", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception{
