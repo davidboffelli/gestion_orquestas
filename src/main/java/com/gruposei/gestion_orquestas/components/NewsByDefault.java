@@ -78,7 +78,7 @@ public class NewsByDefault implements CommandLineRunner {
 
         New n3 = new New();
         n3.setTitle("Gira invierno 2022 confirmada!");
-        body = "Confirmaaaamos una nueva gira invernal que nos llevará a los lugares más recónditos del país, " +
+        body = "Confirmamos una nueva gira invernal que nos llevará a los lugares más recónditos del país, " +
                "entre los que están El Chaltén, Ushuaia, El Bolsón, Fiambalá y La Quiaca! Más adelante informaremos los detalles.";
         //body = "asdkkkkasd";
         n3.setBody(body);

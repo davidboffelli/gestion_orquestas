@@ -40,8 +40,8 @@ public class IndexREST {
     @RequestMapping(value = "{_:^(?!index\\.html|api).$}")
     public String redirectApi() {
         System.out.println("URL entered directly into the Browser, so we need to redirect...");
-        return "forward:/";
-        //return "forward:/index.html";
+//        return "forward:/";
+        return "forward:/index.html";
         //return "index";
     }
     @RequestMapping(value = "/api/login", method = RequestMethod.POST)
