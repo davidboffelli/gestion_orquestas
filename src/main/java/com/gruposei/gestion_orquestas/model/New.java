@@ -14,7 +14,7 @@ public class New {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
-    @Column(columnDefinition = "varchar(1024)")
+    @Column(columnDefinition = "varchar(1000)")
     private String body;
     @ManyToOne
     @JoinColumn(name = "author_id")
