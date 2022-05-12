@@ -167,11 +167,11 @@ public class TicketREST {
 
         List<Optional<Ticket>> cloths = ticketService.findByUser(user.get());
 
-        if(cloths.isEmpty()){
-
-            //throw new ApiRequestException("005");
-            return responseHandler.generateResponse("000","No hay entradas compradas");
-        }
+//        if(cloths.isEmpty()){
+//
+//            throw new ApiRequestException("000");
+////            return responseHandler.generateResponse("000","No hay entradas compradas");
+//        }
 
         try{
 
