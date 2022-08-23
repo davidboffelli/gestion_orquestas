@@ -63,7 +63,7 @@ public class NewsByDefault implements CommandLineRunner {
         //body = "asdasd";
         n1.setBody(body);
         n1.setPublicDate(df.parse("01/05/2022"));
-        n1.setAuthor(userService.findByUsername("admin").get());
+        n1.setAuthor(userService.findByUsername("damian").get());
         n1.setEnabled(true);
         newService.create(n1);
 
@@ -72,7 +72,7 @@ public class NewsByDefault implements CommandLineRunner {
         body = "Informamos que el show del próximo 31 de mayo en el teatro Astengo será el de despedida de nuestro director de orquesta.";
         n2.setBody(body);
         n2.setPublicDate(df.parse("10/05/2022"));
-        n2.setAuthor(userService.findByUsername("admin").get());
+        n2.setAuthor(userService.findByUsername("damian").get());
         n2.setEnabled(true);
         newService.create(n2);
 
@@ -83,7 +83,7 @@ public class NewsByDefault implements CommandLineRunner {
         //body = "asdkkkkasd";
         n3.setBody(body);
         n3.setPublicDate(df.parse("25/05/2022"));
-        n3.setAuthor(userService.findByUsername("admin").get());
+        n3.setAuthor(userService.findByUsername("damian").get());
         n3.setEnabled(true);
         newService.create(n3);
 
