@@ -34,31 +34,31 @@ public class ShowsByDefault implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         Show show1 = new Show();
-        show1.setDate(new Date(System.currentTimeMillis()));
+        show1.setDate(df.parse("22/10/2022 20:00"));
         show1.setName("Charaguense Tour 2022 - Rosario");
         show1.setPlace("Teatro Astengo");
         show1.setTickets(150);
-        show1.setPublicDate(df.parse("31/05/2022"));
+        show1.setPublicDate(new Date(System.currentTimeMillis()));
         show1.setPrice(1000.0);
         showService.create(show1);
 
         Show show2 = new Show();
-        show2.setDate(new Date(System.currentTimeMillis()));
+        show2.setDate(df.parse("19/11/2022 20:00"));
         show2.setName("Charaguense Tour 2022 - Córdoba");
         show2.setPlace("Teatro Provincial");
         show2.setTickets(200);
-        show2.setPublicDate(df.parse("05/06/2022"));
+        show2.setPublicDate(new Date(System.currentTimeMillis()));
         show2.setPrice(2000.0);
         showService.create(show2);
 
         Show show3 = new Show();
-        show3.setDate(new Date(System.currentTimeMillis()));
+        show3.setDate(df.parse("29/10/2022 20:00"));
         show3.setName("Charaguense Tour 2022 - Mar del Plata");
         show3.setPlace("Abbey Road");
         show3.setTickets(150);
-        show3.setPublicDate(df.parse("10/06/2022"));
+        show3.setPublicDate(new Date(System.currentTimeMillis()));
         show3.setPrice(3000.0);
         showService.create(show3);
 

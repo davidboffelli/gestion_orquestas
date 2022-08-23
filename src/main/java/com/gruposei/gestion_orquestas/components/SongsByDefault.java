@@ -37,29 +37,29 @@ public class SongsByDefault implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         Composer c1 = new Composer();
-        c1.setName("Los Guerreros");
+        c1.setName("Maná");
         composerService.create(c1);
 
         Composer c2 = new Composer();
-        c2.setName("Lépoka");
+        c2.setName("Charagua");
         composerService.create(c2);
 
         Composer c3 = new Composer();
-        c3.setName("Fútbol o Muerte");
+        c3.setName("Perales");
         composerService.create(c3);
 
         Song song1 = new Song();
-        song1.setTitle("Ya es la hora, ya es la hora");
+        song1.setTitle("Corazón espinado");
         song1.setAuthor(c1);
         songService.create(song1);
 
         Song song2 = new Song();
-        song2.setTitle("Canción a María");
+        song2.setTitle("Un velero llamado libertad");
         song2.setAuthor(c2);
         songService.create(song2);
 
         Song song3 = new Song();
-        song3.setTitle("No me hableeee");
+        song3.setTitle("Viento");
         song3.setAuthor(c3);
         songService.create(song3);
 
@@ -78,33 +78,75 @@ public class SongsByDefault implements CommandLineRunner {
         typeMR3.setSystemName("video");
         musicalResourceTypeService.create(typeMR3);
 
-        String cancion = "\"Ya es la hora, ya es la hora\\nYa es la hora de alentar\\nEstamos todos hasta las bolas\\nY venimo a ve a central";
-        cancion += "\n\nY vamo vamo lakd\nñul boton\nY vamo vamo lakd\nñul boton\nY vamo vamo lakd\nñul boton";
-        cancion += "\nY vamo vamo lakdemia que tenemo que ganá!";
+        String cancion =
+
+                "Intro: Bm - G - F#  <-(MAYOR!!, si mayor)\n" +
+                        "(el Bm y el G, son mas cortos que el F#)\n" +
+
+                        "Bm     G       F#\n" +
+                        "Esa mujer me esta matando\n" +
+                        "Bm          G           F#\n" +
+                        "me ha espinado el corazon\n" +
+                        "Bm             G           F#\n" +
+                        "por mas que trato de olvidarla\n" +
+                        "Bm G         F#\n" +
+                        "mi alma no da razon\n" +
+
+                        "MI corazon aplastado\n" +
+                        "dolido y abandonado\n" +
+                        "a ver a ver tu sabes dime mi amor\n" +
+                        "cuanto amor di que dolor nos quedo\n" +
+
+                        "coro\n" +
+                        "Bm G  F#         Bm              G        F#\n" +
+                        "Ah ah ay corazon espinado (como duele me duele mama)\n" +
+                        "Ah ah ay como me duele el amor\n" +
+
+                        "como duele como duele el corazon\n" +
+                        "cuando uno es bien entregado\n" +
+                        "pero no olvides mujer que algun dia diras\n" +
+                        "ay ay ay como me duele el amor\n" +
+
+                        "coro\n" +
+
+                        "(hechale mi carlitos!)\n" +
+                        "Em                   Bm\n" +
+                        "como me duele el olvido\n" +
+                        "Em                  Bm\n" +
+                        "como duele el corazon\n" +
+                        "D                      A\n" +
+                        "como me duele estar vivo\n" +
+                        "Em                        F#\n" +
+                        "sin tenerte a un lado amor\n" +
+
+                        "Bm       G   F#\n" +
+                        "corazon espinado....\n" +
+                        "Bm       G   F#\n" +
+                        "corazon espinado....";
 
         MusicalResource musicalResource = new MusicalResource();
-        musicalResource.setName("Letra");
-        musicalResource.setDescription("La letra de la canción");
+        musicalResource.setName("Corazón espinado - Letra");
+        musicalResource.setDescription("Letra de la canción");
         musicalResource.setContent(cancion);
         musicalResource.setSong(song1);
         musicalResource.setTypeMusicalResource(typeMR1);
         musicalResourceService.create(musicalResource);
 
-        byte[] bytes = Files.readAllBytes(Paths.get("images/losguerreros.jpg"));
+        byte[] bytes = Files.readAllBytes(Paths.get("images/corazon_espinado.jpg"));
         String img = Base64.getEncoder().encodeToString(bytes);
 
         MusicalResource musicalResource2 = new MusicalResource();
-        musicalResource2.setName("La Hinchada");
-        musicalResource2.setDescription("Imagen termo");
+        musicalResource2.setName("Corazón espinado - Imagen");
+        musicalResource2.setDescription("Fondo de Orquesta");
         musicalResource2.setContent(img);
         musicalResource2.setSong(song1);
         musicalResource2.setTypeMusicalResource(typeMR2);
         musicalResourceService.create(musicalResource2);
 
         MusicalResource musicalResource3 = new MusicalResource();
-        musicalResource3.setName("Tamos rrrrrrrre locos");
-        musicalResource3.setDescription("Video termo");
-        musicalResource3.setContent("https://www.youtube.com/watch?v=6ITPQGFH_j8");
+        musicalResource3.setName("Corazón espinado - Video");
+        musicalResource3.setDescription("Video recursivo");
+        musicalResource3.setContent("https://www.youtube.com/watch?v=ttVMWT3HHw4");
         musicalResource3.setSong(song1);
         musicalResource3.setTypeMusicalResource(typeMR3);
         musicalResourceService.create(musicalResource3);
