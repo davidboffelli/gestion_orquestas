@@ -59,7 +59,7 @@ public class UsersByDefault implements CommandLineRunner{
         user4.setEmail("damianciancio7@gmail.com");
         user4.setAddress("Riobamba y Paraguay");
 //        user.setEnabled(true);
-        userService.create(user1);
+        userService.create(user4);
 
         User user2 = new User();
         user2.setUsername("guest");
