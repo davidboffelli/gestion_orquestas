@@ -62,7 +62,7 @@ public class NewsByDefault implements CommandLineRunner {
                 "informaremos cual será el último concierto en el que participará. Esten atentos! A despedirlo de la mejor manera";
         //body = "asdasd";
         n1.setBody(body);
-        n1.setPublicDate(df.parse("01/05/2022"));
+        n1.setPublicDate(new Date(System.currentTimeMillis()));
         n1.setAuthor(userService.findByUsername("damian").get());
         n1.setEnabled(true);
         newService.create(n1);
@@ -71,7 +71,7 @@ public class NewsByDefault implements CommandLineRunner {
         n2.setTitle("Gran despedida");
         body = "Informamos que el show del próximo 31 de mayo en el teatro Astengo será el de despedida de nuestro director de orquesta.";
         n2.setBody(body);
-        n2.setPublicDate(df.parse("10/05/2022"));
+        n2.setPublicDate(new Date(System.currentTimeMillis()));
         n2.setAuthor(userService.findByUsername("damian").get());
         n2.setEnabled(true);
         newService.create(n2);
@@ -82,7 +82,7 @@ public class NewsByDefault implements CommandLineRunner {
                "entre los que están El Chaltén, Ushuaia, El Bolsón, Fiambalá y La Quiaca! Más adelante informaremos los detalles.";
         //body = "asdkkkkasd";
         n3.setBody(body);
-        n3.setPublicDate(df.parse("25/05/2022"));
+        n3.setPublicDate(new Date(System.currentTimeMillis()));
         n3.setAuthor(userService.findByUsername("damian").get());
         n3.setEnabled(true);
         newService.create(n3);
